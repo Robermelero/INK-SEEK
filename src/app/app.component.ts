@@ -14,8 +14,8 @@ export class AppComponent {
     router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         const url = event.urlAfterRedirects || event.url;
-        this.hideHeader = url.includes('login') || url.includes('register');
-        this.hideNavbar = url.includes('login') || url.includes('register');
+        this.hideHeader = url.includes('login') || url.includes('register') || url.includes('pre-register');
+        this.hideNavbar = url.includes('login') || url.includes('register') || url.includes('pre-register');
       }
     });
   }

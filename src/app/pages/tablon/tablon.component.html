@@ -1,1 +1,24 @@
-<p>tablon works!</p>
+<div class="eventos-container">
+    <div class="buscador">
+      <input type="text" placeholder="Buscar..." />
+      <button>
+        <img src="/assets/img/lupa.png" alt="Lupa" />
+      </button>
+    </div>
+    <div class="eventos-lista">
+      <div class="evento-card" *ngFor="let evento of eventos">
+        <div class="foto">
+          <img [src]="evento.photo" alt="Foto del evento" />
+        </div>
+        <div class="contenido">
+          <h3>{{ evento.title }}</h3>
+          <p>{{ evento.date }}</p>
+          <p>{{ evento.place }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="nuevo">
+      <button *ngIf="isTatuador" (click)="goAdd()" class="boton">NUEVO EVENTO</button>
+    </div>
+  </div>
+  
