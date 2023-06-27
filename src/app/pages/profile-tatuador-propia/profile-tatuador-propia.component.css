@@ -1,0 +1,124 @@
+.fondo{
+    height: 808px;
+    width: 100%;
+    background-color:var(--gris1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.line1{
+    height: 20%;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+}
+.foto{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.imagen{
+    height: 100%;
+    width: 85%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative; 
+}
+.profileimg{
+height: 75%;
+width: 80%;
+border-radius: 50%;
+}
+.editar{
+    height: 100%;
+    width: 18%;
+    position:inherit
+}
+.medit{
+    height: 80%;
+    width: 100%;
+}
+.boton{
+    height: 15%;
+    width: 100%;
+    position: absolute;
+    right: 70%;
+}
+.info1{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.valoracion{
+    height: 15%;
+    width: 70%;
+}
+.line2{
+    height: 12%;
+    width: 80%;
+    display: flex;
+    text-align:left;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:flex-start;  
+}
+.margentienda{
+    height: 18%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.tienda{
+    height: 100%;
+    width: 30%;
+    background-color:var(--principal);
+    text-align: center;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.name{
+    height: 10%;
+    width: 80%;
+
+}
+.descrip{
+    height: auto;
+    width: 80%;
+}
+.line3{
+    height: 60%;
+    width: 100%;
+    border: 1px solid white;
+}
+img{
+    max-height: 100%;
+    max-width: auto;
+}
+.bedit{
+    max-height: 100%;
+    max-width: auto;  
+}
+p{
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+}
+h3{
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+}
+a{
+    text-decoration: none;
+}

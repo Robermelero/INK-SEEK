@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="background"></div>
+    <div class="content">
+      <img src="/assets/images/mariposilla solita 1.png" alt="mariposa" class="mariposa" [@volar]>
+      <img src="/assets/images/titulo.png" alt="título" class="titulo" [@aparecer]>
+      <div class="formulario" [@aparecer]>
+        <label class="name-label-email">Email</label>
+        <input type="text" placeholder=" " />
+        <label class="name-label-contraseña">Contraseña</label>
+        <input type="password" placeholder=" " />
+        <button (click)= goHome() class="boton">Sign in</button>
+        <p>¿No tienes una cuenta todavía?</p>
+        <a routerLink="/pre-register" routerLinkActive="active">SIGN UP</a>
+      </div>
+    </div>
+  </div>
+  
