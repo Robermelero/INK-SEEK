@@ -12,11 +12,11 @@
 }
 
 main{
-    min-height: 699px;
+    min-height: 750px;
     background-color: var(--negro);
 }
 .buscador{
-    padding-top: 60px;
+    padding-top: 120px;
     padding-bottom: 60px;
     /* border: 2px solid var(--principal); */
     height: 60px;
