@@ -1,1 +1,34 @@
-<p>conversacion-chat works!</p>
+<main class ="contenedor">
+    <!-- <div class="header">{{user.name}}</div> -->
+
+    <div class= "chat-container">
+        <div class ="chat-box">
+            <div class ="user">
+                <img src="/assets/chat-registro/albaricoque.png" alt="foto"/>
+                <div class ="user-info">
+                    <h2>Alba</h2>
+                </div>
+            </div>
+        </div>
+        <div class ="chats">
+            <div class ="user-chat">Hola!</div>
+            <div class ="tatuador-chat">Hola!</div>
+            <div class ="user-chat">Queria preguntarte acerca de poder pedir cita contigo para tatuarme</div>
+            <div class ="tatuador-chat">Claro!, dime que quieres y podemos irlo viendo</div>
+            <div class ="user-chat">Pues mira, quiero una polilla como el logo de INK-SEEK, no se si lo conoces</div>
+            <div class ="tatuador-chat">Obvio que si!, esta muy chulo el diseño!</div>
+            <div class ="user-chat">Peroooo.... sabes si va a doler el tatuajes?, me raya bastante la verdad</div>
+            <div class ="tatuador-chat">Pues depende de la zona</div>
+            <div class ="user-chat">Soy de vallecas</div>
+
+        </div>
+
+    </div>
+    <div class ="input-container" >
+        <input type="text" class ="chat" placeholder="Escribe tu mensaje" (keydown.enter)="enviarMensaje()" [(ngModel)] ="nuevoMensaje" >
+        <button type ="button" (click) ="enviarMensaje()">Enviar</button>
+    </div>
+    
+</main>
+
+   
