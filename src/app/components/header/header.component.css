@@ -97,6 +97,7 @@
     flex-direction: row;
     justify-content: flex-end;
     position: fixed;
+    z-index: 2;
 }
 
 .header nav {
