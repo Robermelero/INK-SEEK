@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-producto',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AddProductoComponent {
 
+  constructor(private router: Router) {}
+  
 }

@@ -8,6 +8,10 @@ import { Router } from '@angular/router';
 })
 export class AddEventoComponent {
 
+<<<<<<< HEAD
   constructor(private router: Router) {}
+=======
+
+>>>>>>> add-producto
 
 }
