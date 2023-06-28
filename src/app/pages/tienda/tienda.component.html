@@ -1,4 +1,23 @@
-<div class="card">
-    <div class="image"><img class="imagen" src="{{prenda.photo}}"></div>
-    <span class="title">{{prenda.title}}</span>
-</div>
+<!-- <ng-container *ngFor="let prenda of prendas">
+  <div class="prenda">
+      <div class="image"><img class="imagen" src="{{prenda.photo}}"></div>
+      <span class="title">{{prenda.title}}</span>
+  </div>
+</ng-container> -->
+<main>
+  <div class="add-search">
+    <div class="buscador">
+      <input type="text" placeholder="Buscar..." />
+      <button>
+        <img src="/assets/img/lupa.png" alt="Lupa" />
+      </button>
+    </div>
+    <div class="mas" (click)="goAdd()" *ngIf="isTatuador"><img src="/assets/Calendario/simbolo de mas.png" alt=""></div>
+  </div>  
+  <div class="card-container">
+    <div *ngFor="let prenda of prendas" class="card">
+        <div class="image"><img class="imagen" [src]="prenda.photo"></div>
+        <div class="title">{{prenda.title}}</div>
+    </div>
+  </div>  
+</main>
