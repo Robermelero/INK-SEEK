@@ -1,4 +1,7 @@
-<app-header></app-header>
-<!-- <router-outlet></router-outlet> -->
-<app-calendar></app-calendar>
-<app-navbar></app-navbar>
+<!-- <app-header *ngIf="!hideHeader"></app-header>
+<router-outlet></router-outlet>
+<app-navbar *ngIf="!hideNavbar"></app-navbar> -->
+<!-- <app-header></app-header> -->
+<app-header *ngIf="!hideHeader"></app-header>
+<router-outlet></router-outlet>
+<app-navbar *ngIf="!hideNavbar"></app-navbar>
