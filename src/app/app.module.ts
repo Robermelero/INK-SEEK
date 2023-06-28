@@ -33,6 +33,7 @@ import { GaleriaComponent } from './pages/galeria/galeria.component';
 import { ConfirmarFotoComponent } from './pages/confirmar-foto/confirmar-foto.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { RecomendacionesComponent } from './pages/recomendaciones/recomendaciones.component';
+import { EstrellasComponent } from './pages/estrellas/estrellas.component';
 
 
 
@@ -69,6 +70,7 @@ import { RecomendacionesComponent } from './pages/recomendaciones/recomendacione
     ConfirmarFotoComponent,
     AboutUsComponent,
     RecomendacionesComponent,
+    EstrellasComponent,
 
   ],
   imports: [

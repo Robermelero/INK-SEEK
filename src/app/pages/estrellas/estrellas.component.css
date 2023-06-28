@@ -22,11 +22,10 @@
 .opinion{
     background-color: var(--gris1);
     display:flex;
+    justify-content: start;
     flex-direction: column;
     align-items: center;
-
     height: 750px;
-    /* position:inherit; */
 }
 
 /* //////////////////// */
@@ -35,9 +34,11 @@
     color: white;
     margin-top: 70px;
     text-align: center;
-    height: 60px;
-    width: 200px;
+    height: 40px;
+    width: 230px;
     font-size: 20px;
+    /* border: 2px solid yellow; */
+    
 }
 
 .opiniones{
@@ -51,17 +52,14 @@
 
 .card {
     width: 350px;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(29,185,84, 0.1));
-    box-shadow: 0 1px 25px rgba(0,0,0,0.2);
+    background: linear-gradient(to right, rgba(0, 0, 0, 9), rgba(29,185,84, 0.3));
+    box-shadow: 0 1px 25px rgba(0,0,0,);
     top: 20%;
     left: 50%;
     padding: 12px 10px;
     border-left: 3px solid var(--gris2);
     transition: transform 0.7s ease;
     margin-bottom: 15px;
-
-    display: flex;
-    flex-direction: column;
 }
 
 .card:hover {
@@ -106,7 +104,6 @@
     background-color: var(--gris1);
     padding: 10px;
     padding-bottom: 50px;
-
     display: flex;
     justify-content: center;
   }
@@ -128,4 +125,59 @@
   transform: scale(1.1);
   color: var(--principal)
 }
+
+/* //.estrellas */
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+
+    /* border: 2px solid blue; */
+}
+
+.rating{
+    margin-left: 160px;
+    display: flex;
+    flex-direction: row-reverse;
+    text-decoration: none;
+
+    /* border: 2px solid rgb(217, 255, 0); */
+
+}
+
+.rating:nth-child(1){
+    transform: translateX(-80px);
+}
+.rating:nth-child(3){
+    transform: translateX(80px);
+}
+.rating input{
+    
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    appearance: none;
+    border-style: none;
+    margin: 3px;
+}
+
+.rating input::before{
+content: '\f005';
+position: absolute;
+font-family: fontAwesome;
+font-size: 34px;
+color: var(--negro);
+transition: .5s;
+}
+    .rating input:hover ~ input::before,
+    .rating input:hover::before,
+    .rating input:checked::before{
+        color: var(--principal);
+    }
 
