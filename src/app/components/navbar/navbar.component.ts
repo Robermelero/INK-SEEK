@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,11 +8,21 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
   isTatuador: boolean = true;
+  activeLink: string = '';
 
-  // constructor() {
+  constructor(private router: Router) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.activeLink = event.urlAfterRedirects;
+      }
+    });
+  }
 
-  //   let userType = AuthenticationService.getUserType(); 
+  isActiveLink(link: string): boolean {
+    return this.activeLink.includes(link);
+  }
 
-  //   this.isTatuador = userType === 'tatuador';
-  // }
+  setActiveLink(link: string): void {
+    this.activeLink = link;
+  }
 }
