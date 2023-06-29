@@ -1,21 +1,21 @@
 <div class="artista-container">
-    <div class="buscador">
-      <input type="text" placeholder="Buscar..." />
-      <button>
-        <img src="/assets/img/lupa.png" alt="Lupa" />
-      </button>
-    </div>
-    <div class="artista-card" *ngFor="let publicacion of publicaciones">
-        <div class="foto">
-          <img [src]="publicacion.photo" alt="Foto" />
-          <div class="perfil-info">
-            <a routerLink="/profile-tatuador-externa" routerLinkActive="active"></a>
-            <div class="perfil-foto">
-              <img [src]="publicacion.photoPerfil" alt="Foto de Perfil" />
-            </div>
-            <p class="perfil-nombre">{{ publicacion.perfil }}</p>
-          </div>
-        </div>
-      </div>
+  <div class="buscador">
+    <input type="text" placeholder="Buscar..." />
+    <button>
+      <img src="/assets/img/lupa.png" alt="Lupa" />
+    </button>
   </div>
-  
+  <div class="artista-card" *ngFor="let publicacion of publicaciones">
+    <div class="foto">
+      <a routerLink="/profile-tatuador-externa" routerLinkActive="active">
+        <img [src]="publicacion.photo" alt="Foto" />
+        <div class="perfil-info">
+          <div class="perfil-foto">
+            <img [src]="publicacion.photoPerfil" alt="Foto de Perfil" />
+          </div>
+          <p class="perfil-nombre">{{ publicacion.perfil }}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
