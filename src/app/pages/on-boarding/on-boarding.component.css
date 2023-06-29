@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Poppins:wght@100;200;600&display=swap');
+
+.onboard-container {
+  height: 811px;
+  width: 100%;
+  background-color: var(--gris1);
+  display: flex;
+  position: absolute;
+}
+
+.fullscreen-image {
+  width: 100%;
+  height: 100%;
+  object-fit:contain
+}
+
+.perfil{
+  background-image: url("src\assets\rober.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 6.5%;
+  width: 13.2%;
+  border: 3px solid var(--principal);
+  border-radius: 50%;
+  position: relative;
+  z-index: 9999;
+  position:inherit;
+  top: 30px;
+  right: 12px;
+  animation: aparecer 3s 7s forwards, desaparecer 3s 9s forwards;
+  opacity: 0;
+  scale: 1;
+}
+
+.calendario {
+
+  background-image: url("src\assets\onboard\iconos\calendario.png");
+  background-size:auto;
+  background-repeat: no-repeat;
+  height: 23px;
+  width: 23px;
+  position: relative;
+  z-index: 9999;
+  position:inherit;
+  bottom: 15.5px;
+  left: 32px;
+  animation: aparecer 3s 15s forwards, desaparecer 3s 18s forwards;
+  opacity: 0;
+  scale: 1;
+  
+}
+.buscar {
+  background-image: url("src\assets\onboard\iconos\buscar.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 24px;
+  width: 24px;
+  position: relative;
+  z-index: 9999;
+  position:inherit;
+  bottom: 13px;
+  left: 102px;
+  animation: aparecer 3s 23s forwards, desaparecer 3s 26s forwards;
+  opacity: 0;
+  scale: 1;
+}
+.foto {
+  background-image: url("src\assets\onboard\iconos\foto.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 26px;
+  width: 26px;
+  position: relative;
+  z-index: 9999;
+  position:inherit;
+  bottom: 14px;
+  left: 182px;
+  animation: aparecer 3s 31s forwards, desaparecer 3s 34s forwards;
+  opacity: 0;
+  scale: 1;
+}
+.tablon {
+  background-image: url("src\assets\onboard\iconos\tablon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 23px;
+  width: 23px;
+  position: relative;
+  z-index: 9999;
+  position:inherit;
+  bottom: 16px;
+  left: 266.5px;
+  animation: aparecer 3s 39s forwards, desaparecer 3s 42s forwards;
+  opacity: 0;
+  scale: 1;
+}
+
+.burger {
+  background-image: url("src\assets\onboard\iconos\burger.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 9999;
+  position:inherit;
+  top: 47px;
+  left: 26px;
+  animation: aparecer 3s 55s forwards, desaparecer 3s 58s forwards;
+  opacity: 0;
+  scale: 1;
+}
+.buscador {
+  background-image: url("src\assets\onboard\iconos\buscador.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 6.5%;
+  width: 245px;
+  position: relative;
+  z-index: 9999;
+  position:inherit;
+  top: 104.5px;
+  left: 72px;
+  animation: aparecer 3s 91s forwards, desaparecer 3s 92s forwards;
+  opacity: 0;
+  scale: 1;
+}
+.chat {
+    background-image: url("src\assets\onboard\iconos\chat.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 25px;
+  width: 25px;
+  position: relative;
+  z-index: 9999;
+  position:inherit;
+  bottom: 13.5px;
+  left: 339.5px;
+  animation: aparecer 3s 47s forwards, desaparecer 3s 50s forwards;
+  opacity: 0;
+  scale: 1;
+}
+
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+    scale: 1;
+  }
+  10%{
+    opacity: 1;
+    scale: 1.8;
+  }
+  100% {
+    opacity: 1;
+    scale: 1.5;
+  }
+}
+
+@keyframes desaparecer {
+  0% {
+    opacity: 1;
+    
+  }
+  30%{
+    opacity: 1;
+    scale: 1.8;
+  }
+  100% {
+    opacity: 0;
+    scale: 1;
+  }
+}
+
+
