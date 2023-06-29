@@ -6,17 +6,13 @@
     align-items: center;
     min-height: 100vh;
     background-color: var(--gris1);
-    /* min-height: ; */
     display: flex;
     justify-content: center;
-    display: block;
-    /* align-items:flex-start; */
 }
 
 .buscador{
-    padding-top: 60px;
+    padding-top: 90px;
     padding-bottom: 60px;
-    /* border: 2px solid var(--principal); */
     height: 60px;
     width: 100%;
     display: flex;
