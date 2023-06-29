@@ -8,7 +8,7 @@
     font-weight: 300;
     max-width: 390px;
     min-height: 60px;
-    
+
 }
 
 
@@ -70,7 +70,7 @@
     padding: 17px;
     width: 150px;
     background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6));
-    border-top: 1px solid var(--principal); 
+    border-top: 1px solid var(--principal);
 }
 
 .header input[type="checkbox"] {
@@ -86,7 +86,7 @@
     /* border: 2px solid red; */
 
 
-    
+
 }
 
 
@@ -111,33 +111,12 @@
     display: none;
     position: absolute;
     top: 48px;
-    left: 0; 
+    left: 0;
 }
 
 input[type="checkbox"]:checked ~ nav {
     top: 48px;
 
-  
+
     display: block;
-}
-.contenido{
-    position: fixed;
-    z-index: 1;
-
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to right, rgba(60, 60, 60, 0.9), rgba(0, 0, 0, 0.6));
-}
-
-
-.difuminado {
-    filter: blur(5px); 
-  }
-
-.boton-hamburguesa{
-    border-style: none;
-    background:none;
-    min-height: 48px;
 }

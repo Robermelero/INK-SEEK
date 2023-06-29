@@ -35,6 +35,8 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { RecomendacionesComponent } from './pages/recomendaciones/recomendaciones.component';
 import { FormsModule } from '@angular/forms';
 import { EstrellasComponent } from './pages/estrellas/estrellas.component';
+import { NavbarUserComponent } from './navbar-user/navbar-user.component';
+import { RegisterUserComponent } from './pages/register-user/register-user.component';
 
 
 @NgModule({
@@ -71,6 +73,8 @@ import { EstrellasComponent } from './pages/estrellas/estrellas.component';
     AboutUsComponent,
     RecomendacionesComponent,
     EstrellasComponent,
+    NavbarUserComponent,
+    RegisterUserComponent,
 
   ],
   imports: [

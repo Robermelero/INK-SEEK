@@ -1,7 +1,7 @@
 <main class = "contenedor">
     <section class ="mes" [ngClass]= "{'centered-title ': !isTatuador}" >
         <h1 class ="nombre_mes" style = "font-weight: bold">Julio</h1>
-        <a href="" *ngIf="isTatuador"><img src="/assets/Calendario/simbolo de mas.png" alt=""></a>
+        <a routerLink="/add-cita" routerLinkActive="active" *ngIf="isTatuador"><img src="/assets/Calendario/simbolo de mas.png" alt=""></a>
     </section>
     <section class="dia">
         <div class="dias__item">L</div>
@@ -64,6 +64,3 @@
 
 
 </main>
-
-
-
