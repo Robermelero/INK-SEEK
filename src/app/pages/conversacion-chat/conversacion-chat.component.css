@@ -54,7 +54,7 @@ main{
 
 .user {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     background-color: var(--negro);
     align-items: center;
     height: 60px;
