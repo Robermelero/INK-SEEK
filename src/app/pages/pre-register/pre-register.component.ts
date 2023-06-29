@@ -12,4 +12,7 @@ export class PreRegisterComponent {
   goRegister(){
     this.router.navigate(['/register'])
   }
+  goRegisterU(){
+    this.router.navigate(['/register-user'])
+  }
 }
