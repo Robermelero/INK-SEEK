@@ -104,8 +104,12 @@
     background-color: var(--gris1);
     padding: 10px;
     padding-bottom: 50px;
+
     display: flex;
     justify-content: center;
+
+    color: var(--blanco);
+    font-size: 18px;
   }
 
   button{
