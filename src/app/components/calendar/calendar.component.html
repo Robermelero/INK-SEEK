@@ -22,55 +22,45 @@
         <div class="calendario__dia"><a href=""style="color : var(--gris3)">30</a></div>
         <div class="calendario__dia"><a href=""style="color: var(--principal);">1</a></div>
         <div class="calendario__dia"><a href=""style="color: var(--principal);">2</a></div>
-        <div class="calendario__dia"><a href="">3</a></div>
-        <div class="calendario__dia"><a href="">4</a></div>
-        <div class="calendario__dia"><a href="">5</a></div>
-        <div class="calendario__dia"><a href="">6</a></div>
-        <div class="calendario__dia"><a href="">7</a></div>
+        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">3</button></div>
+        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">4</button></div>
+        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">5</button></div>
+        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">6</button></div>
+        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">7</button></div>
         <div class="calendario__dia"><a href=""style="color: var(--principal);">8</a></div>
         <div class="calendario__dia"><a href=""style="color: var(--principal);">9</a></div>
-        <div class="calendario__dia"><a href="">10</a></div>
-        <div class="calendario__dia"><a href="">11</a></div>
-        <div class="calendario__dia"><a href="">12</a></div>
-        <div class="calendario__dia"><a href="">13</a></div>
-        <div class="calendario__dia"><a href="">14</a></div>
+        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">10</button></div>
+        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">11</button></div>
+        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">12</button></div>
+        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">13</button></div>
+        <!-- <div class="calendario__dia"><a href="#" (onclick)="openModal">14</a></div> -->
+        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">14</button></div>
+        
+   
+        
+        
         <div class="calendario__dia"><a href=""style="color: var(--principal);">15</a></div>
         <div class="calendario__dia"><a href=""style="color: var(--principal);">16</a></div>
-        <div class="calendario__dia"><a href="">17</a></div>
-        <div class="calendario__dia"><a href="">18</a></div>
-        <div class="calendario__dia"><a href="">19</a></div>
-        <div class="calendario__dia"><a href="">20</a></div>
-        <div class="calendario__dia"><a href="">21</a></div>
+        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">17</button></div>
+        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">18</button></div>
+        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">19</button></div>
+        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">20</button></div>
+        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">21</button></div>
         <div class="calendario__dia"><a href=""style="color: var(--principal);">22</a></div>
         <div class="calendario__dia"><a href=""style="color: var(--principal);">23</a></div>
-        <div class="calendario__dia"><a href="">24</a></div>
-        <div class="calendario__dia"><a href="">25</a></div>
-        <div class="calendario__dia"><a href="">26</a></div>
-        <div class="calendario__dia"><a href="">27</a></div>
-        <div class="calendario__dia"><a href="">28</a></div>
+        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">24</button></div>
+        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">25</button></div>
+        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">26</button></div>
+        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">27</button></div>
+        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">28</button></div>
         <div class="calendario__dia"><a href=""style="color: var(--principal);">29</a></div>
         <div class="calendario__dia"><a href=""style="color: var(--principal);">30</a></div>
-        <div class="calendario__dia"><a href="">31</a></div>
+        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">31</button></div>
     </section>
 
 
-    <section class ="cards">
-        <div class ="content">
-            <h2 style="height: 20px;">Cita programada:</h2>
-
-            <h1>9:00</h1>
-        </div>
-        <div class ="content">
-            <h2 style="height: 20px;">Cita programada:</h2>
-
-            <h1>17:00</h1>
-        </div>
-        <div class ="content">
-            <h2 style="height: 20px;">Cita programada:</h2>
-
-            <h1>20:00</h1>
-        </div>
-    </section>
+   <app-cita *ngFor="let cita of citasAgendadas" [listaDeCitas]="cita"></app-cita>
+ 
 
 
 </main>
