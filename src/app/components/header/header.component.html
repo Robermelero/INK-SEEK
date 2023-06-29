@@ -1,15 +1,26 @@
 <div class="header">
-  <input type="checkbox">
+  <input type="checkbox" [(ngModel)]="mostrarContenido">
+  <button (click)="toggleHamburguesa()" class="boton-hamburguesa">
   <img src="/assets/img/pngwing.com.png" class="hamburguesa">
+</button>
 
   <nav>
-    <ul>   
-      <li><a href="#">Sobre nosotros</a></li>
+    <ul>
+      <li><a href="#">Perfil</a></li>   
+      <li><a href="#">Home</a></li>   
+      <li><a href="#">Citas</a></li>
+      <li><a href="#">Tablón</a></li>
+      <li><a href="#">Chat</a></li>
       <li><a href="#">Tips</a></li>
+      <li><a href="#">Sobre nosotros</a></li>
       <li><a href="#">Guía de uso</a></li>
+
     </ul>
   </nav>
 
   <img src="/assets/img/Header defi copia.png" class="inkseek">
   <div class="img-perfil"><img src="/assets/img/IMG_4465 1.png"></div>     
+</div>
+
+<div class="contenido" [ngClass]="{'difuminado': mostrarContenido}" *ngIf="mostrarContenido">       
 </div>

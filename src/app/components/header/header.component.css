@@ -8,8 +8,9 @@
     font-weight: 300;
     max-width: 390px;
     min-height: 60px;
-    
+
 }
+
 
 :root {
     --negro: #000000;
@@ -31,9 +32,10 @@
 
 .hamburguesa {
     padding: 5px;
-    margin-top: 3px;
     margin-left: 5px;
     margin-right: 75px;
+    /* border: 2px solid red; */
+
 }
 
 .inkseek {
@@ -53,6 +55,8 @@
     margin-left: 70px;
     margin-top: 6px;
     margin-right: 8px;
+    border: 2px solid var(--principal);
+
 }
 
 
@@ -67,8 +71,6 @@
     width: 150px;
     background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6));
     border-top: 1px solid var(--principal);
-    
-    
 }
 
 .header input[type="checkbox"] {
@@ -80,12 +82,17 @@
     top: 0;
     width: 48px;
     height: 48px;
-    
+
+    /* border: 2px solid red; */
+
+
+
 }
 
 
 .header input[type="checkbox"] {
     opacity: 0;
+
 }
 
 .header {
@@ -104,11 +111,32 @@
     display: none;
     position: absolute;
     top: 48px;
-    left: 0; 
+    left: 0;
 }
 
 input[type="checkbox"]:checked ~ nav {
     top: 48px;
-  
+
+
     display: block;
+}
+.contenido{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(60, 60, 60, 0.9), rgba(0, 0, 0, 0.6));
+    z-index: 1;
+}
+
+
+.difuminado {
+    filter: blur(5px);
+  }
+
+.boton-hamburguesa{
+    border-style: none;
+    background:none;
+    min-height: 48px;
 }
