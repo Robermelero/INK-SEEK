@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Poppins:wght@100;200;600&display=swap%27');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    max-width: 390px;
+    min-height: auto;
+  }
+ 
+  main {
+    background-color: var(--gris1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow:auto;
+    min-height: 100vh;
+    
+  }
+
+.descripcion {
+    margin-top: 60px;
+    /* border: solid 2px  red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+ 
+  .mariposa {
+
+    margin-bottom: 5px;
+  }
+  
+  .mariposa img {
+    height: 91px;
+    width: 100px;
+  }
+  
+  
+  .txt1 {
+    height: 280px;
+    width: 344px;
+    color: var(--blanco);
+    text-align: left;
+    /* border: solid 1px blue; */
+    font-size: 17px;
+  }
+    
+
+  .iconos {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    }
+  
+  .iconos img {
+    height: 30px;
+    width: 30px;
+    margin-left: 10px;
+  }
+  
+
+  .cartas {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+    margin-top:20px;
+  }
+  
+
+  .titulo {
+    text-align: center;
+    width: 374px;
+    height: 33px;
+    color:var(--blanco);
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+ 
+  .card {
+    width: 385px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--gris3);
+    margin-bottom: 20px;
+  }
+  
+   .img{
+    width: 127.53px;
+    height: 91.14px;
+    margin-left: 4px;
+    margin-right: 5px;
+  }
+    .img img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+  
+   .contenido {
+    height: 99%;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* border: 2px solid green; */
+    margin: 5px;
+    text-align: center;
+  }
+  
+  .title {
+
+    font-size: 27px;
+ 
+  
+  }
+  
+  .desc {
+    font-size: 17px;
+  }
+
+  span{
+    color: var(--principal);
+  }
+  
