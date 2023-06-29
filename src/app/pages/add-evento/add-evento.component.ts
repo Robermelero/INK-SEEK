@@ -9,5 +9,9 @@ import { Router } from '@angular/router';
 export class AddEventoComponent {
 
   constructor(private router: Router) {}
+  
+  goTablon(){
+    this.router.navigate(['/tablon'])
+  }
 
 }

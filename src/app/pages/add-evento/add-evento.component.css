@@ -23,7 +23,11 @@
     color : var(--gris3);
     padding-top: 80px;
     padding-left: 25px;
-    padding-right: 20px
+    padding-right: 20px;
+
+}
+.boton{
+right: 10px;
 }
 
 .inputs{
@@ -51,11 +55,13 @@
     flex-direction: row-reverse;
     padding-right: 30px;
     padding-top: 10px;
+
 }
 
 h1{
     font-family: 'Lato' sans-serif;
     font-weight: lighter;
+
 }
 
 .logo{

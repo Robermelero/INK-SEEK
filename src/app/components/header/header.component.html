@@ -12,14 +12,14 @@
       <li><a routerLink="/tablon" routerLinkActive="active">Tablón</a></li>
       <li><a routerLink="/chats" routerLinkActive="active">Chat</a></li>
       <li><a routerLink="/recomendaciones" routerLinkActive="active">Tips</a></li>
-      <li><a routerLink="/about-us" routerLinkActive="active">Sobre nosotros</a></li>
+      <li><a routerLink="/aboutUs" routerLinkActive="active">Sobre nosotros</a></li>
       <li><a routerLink="/on-boarding" routerLinkActive="active">Guía de uso</a></li>
 
     </ul>
   </nav>
 
-  <img src="/assets/img/Header defi copia.png" class="inkseek">
-  <div class="img-perfil"><img src="/assets/img/IMG_4465 1.png"></div>     
+  <img src="/assets/img/Header defi copia.png" class="inkseek" (click)= goHome() class="boton">
+  <div class="img-perfil"><img src="/assets/img/IMG_4465 1.png" (click)= goPerfil() class="boton"></div>     
 </div>
 
 <div class="contenido" [ngClass]="{'difuminado': mostrarContenido}" *ngIf="mostrarContenido">       

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User} from 'src/app/models/user'
 import { Tatuador } from 'src/app/models/tatuador';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-conversacion-chat',
   templateUrl: './conversacion-chat.component.html',
@@ -28,14 +29,16 @@ export class ConversacionChatComponent {
   //   {emisor : "2",
   //   mensaje : "Hola!"},
   // ]
-  // constructor(){
-  //   this.user = new User (1,"Alba", "Ricoque", "alba1234", 1234,"/assets/chat-registro/albaricoque.png")
-  //   this.tatuador = new Tatuador(2,"rober","Melero","12344",1234)
-  // }
+  constructor(private router: Router){
+
+  }
 
 
   enviarMensaje(){
     console.log(this.nuevoMensaje);
     this.nuevoMensaje =""
+  }
+  goChats(){
+    this.router.navigate(['/chats'])
   }
 }

@@ -7,7 +7,7 @@
     </div>
 
     <section class="chats">
-        <a href="">
+        <a routerLink="/conversacion-chat" routerLinkActive="active" >
             <div *ngFor="let conversacion of chats" class="chat">
                 <div class ="chat-foto"><img src="{{conversacion.photo}}" alt=""></div>
                 <div class ="chat-nombre">{{conversacion.user_name}}</div>

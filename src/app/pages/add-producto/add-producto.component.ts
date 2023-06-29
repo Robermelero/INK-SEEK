@@ -10,4 +10,8 @@ export class AddProductoComponent {
 
   constructor(private router: Router) {}
   
+  goTienda(){
+    this.router.navigate(['/tienda'])
+  }
+
 }

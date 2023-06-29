@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Poppins:wght@100;200;600&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -119,4 +117,24 @@ input[type="checkbox"]:checked ~ nav {
 
 
     display: block;
+}
+.contenido{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(60, 60, 60, 0.9), rgba(0, 0, 0, 0.6));
+    z-index: 1;
+}
+
+
+.difuminado {
+    filter: blur(5px);
+  }
+
+.boton-hamburguesa{
+    border-style: none;
+    background:none;
+    min-height: 48px;
 }
