@@ -7,11 +7,6 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
-  public mostrarContenido: boolean = false;
-
-public toggleHamburguesa() {
-  this.mostrarContenido=!this.mostrarContenido
 }
 
 
-}
