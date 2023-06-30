@@ -7,7 +7,7 @@ import { Router, NavigationEnd } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  isTatuador: boolean = true;
+  isTatuador: boolean = false;
   activeLink: string = '';
 
   constructor(private router: Router) {

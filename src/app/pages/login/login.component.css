@@ -27,21 +27,21 @@
   .mariposa {
     position: absolute;
     bottom: -350px;
-    animation: volar 8s 0.5s forwards;
+    animation: volar 4s 0.5s forwards;
     margin-right: 7px;
   }
   
   .titulo {
     padding-top: 190px;
     opacity: 0;
-    animation: aparecer 8s 3s forwards;
+    animation: aparecer 5s 1.5s forwards;
     margin-left: 5px;
   }
   
   .formulario {
     opacity: 0;
     padding-top: 135px;
-    animation: aparecer 5s 6s forwards;
+    animation: aparecer 2s 2.5s forwards;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -127,5 +127,6 @@
   a{
     color: var(--principal);
     font-size: 14px;
+    margin-top: 5px;
   }
   
