@@ -15,36 +15,37 @@ main{
     min-height: 750px;
     background-color: var(--negro);
 }
-.buscador{
-    padding-top: 120px;
-    padding-bottom: 60px;
-    /* border: 2px solid var(--principal); */
+.buscador {
+    padding-top: 40px;
+    padding-bottom: 40px;
     height: 60px;
     width: 100%;
     display: flex;
-    justify-content: center ;
+    justify-content: center;
     align-items: center;
-}
-
-.buscador button{
+  }
+  
+  .buscador button {
     background: none;
     border: 0;
-  color: inherit;
-  font: inherit;
-  line-height: normal;
-  overflow: visible;
-  padding: 0;
-  margin-left: 6px;
-}
-
-.buscador input{
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(29,185,84, 0.3));
-    height: 35px;
-    width: 200px;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    margin-left: 6px;
+  }
+  
+  .buscador input {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(29, 185, 84, 0.3));
+    height: 45px;
+    width: 250px;
     border: 0.1px solid var(--gristablon);
     border-radius: 5px;
     padding-left: 6px;
-}
+    color: var(--blanco);
+    font-size: 18px;
+  }
 
 .chats{
   

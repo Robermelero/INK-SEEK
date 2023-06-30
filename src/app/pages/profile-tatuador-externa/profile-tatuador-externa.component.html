@@ -1,28 +1,51 @@
 <div class="fondo">
     <div class="line1">
-        <div class="foto">
-            <div class="imagen">
-                <div class="profileimg"><img src="./assets/rober.png" alt=""></div>
-                <div class="editar">
-                    <div class="medit"></div>
-                    <div class="boton"><img src="./assets/AED.png" alt="" class="bedit"></div></div>
-            </div>
+      <div class="foto">
+        <div class="imagen">
+          <div class="profileimg">
+            <img src="./assets/rober.png" alt="">
+          </div>
+          <div class="editar">
+            <div class="medit"></div>
+            <a routerLink="">
+              <div class="boton" routerLinkActive="active">
+                <img src="./assets/AED.png" alt="" class="bedit">
+              </div>
+            </a>
+          </div>
         </div>
-        <div class="info1">
-            <div class="valoracion"><a routerLink="/opiniones"><img src="./assets/estrellas.png" alt=""  routerLinkActive="active"></a></div>
+      </div>
+      <div class="info1">
+        <div class="valoracion">
+          <a routerLink="/opiniones">
+            <img src="./assets/estrellas.png" alt="" routerLinkActive="active">
+          </a>
         </div>
+      </div>
     </div>
     <div class="line2">
-        <div class="name"><h3>RoberInk_Man</h3></div><br>
-        <div class="descrip"><p><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. </p></div><br>
-        <div class="margentienda">
-            <div class="chat"><a routerLink="/conversacion-chat"><p  routerLinkActive="active">Chat</p></a></div>
-            <div class="tienda"><a routerLink="/tienda"><p routerLinkActive="active">Tienda</p ></a></div><br>
+      <div class="name">
+        <h3>RoberInk_Man</h3>
+      </div><br>
+      <div class="descrip">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto</p>
+      </div>
+      <div class="button">
+      <div class="chat">
+        <a  routerLink="/conversacion-chat">
+            <p routerLinkActive="active">Chat</p></a>
+      </div>
+        <div class="tienda">
+          <a routerLink="/tienda">
+            <p routerLinkActive="active">Tienda</p>
+          </a>
+        </div>
     </div>
-</div>
-    <div class="line3">
-        <!-- <ng-container *ngFor="let image of images">
-        <app-image-card [imageCard]="image" [updateimage]="updateBook" (borrar_)="borrar($event)"></app-book-card>
-    </ng-container> -->
-</div>
-</div>
+    </div>
+    <div class="artista-card" *ngFor="let publicacion of publicaciones">
+      <div class="foto">
+          <img [src]="publicacion.photo" alt="Foto" />
+      </div>
+    </div>
+  </div>
+  

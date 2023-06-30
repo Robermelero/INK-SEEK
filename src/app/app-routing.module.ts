@@ -26,12 +26,14 @@ import { TablonComponent } from './pages/tablon/tablon.component';
 import { OnBoardingComponent } from './pages/on-boarding/on-boarding.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { RecomendacionesComponent } from './pages/recomendaciones/recomendaciones.component';
+import { RegisterUserComponent } from './pages/register-user/register-user.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full' },
   {path: 'login', component: LoginComponent, data: { hideHeader: true, hideNavbar: true } },
   {path: 'register', component: RegisterComponent, data: { hideHeader: true, hideNavbar: true } },
   {path: 'pre-register', component: PreRegisterComponent, data: { hideHeader: true, hideNavbar: true } },
+  {path: "register-user", component: RegisterUserComponent, data: { hideHeader: true, hideNavbar: true }},
   {path: 'home', component: HomeComponent },
   {path: "profile-tatuador-externa", component: ProfileTatuadorExternaComponent},
   {path: "profile-tatuador-propia", component: ProfileTatuadorPropiaComponent},
@@ -55,6 +57,7 @@ const routes: Routes = [
   {path: "on-boarding", component: OnBoardingComponent},
   {path: "aboutUs", component: AboutUsComponent},
   {path: "recomendaciones", component: RecomendacionesComponent},
+  
   
 ];
 
