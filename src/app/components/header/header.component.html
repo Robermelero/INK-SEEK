@@ -1,8 +1,8 @@
 <div class="header">
   <input type="checkbox" [(ngModel)]="mostrarContenido">
-  <button (click)="toggleHamburguesa()" class="boton-hamburguesa">
-  <img src="/assets/img/pngwing.com.png" class="hamburguesa">
-</button>
+  <button (click)="toggleHamburguesa()" id="hamburguesa" class="boton-hamburguesa">
+    <img src="/assets/img/pngwing.com.png" class="hamburguesa">
+  </button>
 
   <nav>
     <ul>   
@@ -14,14 +14,14 @@
       <li><a routerLink="/recomendaciones" routerLinkActive="active">Tips</a></li>
       <li><a routerLink="/aboutUs" routerLinkActive="active">Sobre nosotros</a></li>
       <li><a routerLink="/on-boarding" routerLinkActive="active">Guía de uso</a></li>
-      <li><a routerLink="/login" routerLinkActive="active">Cerrar sesion</a></li>
-
+      <li><a routerLink="/login" routerLinkActive="active">Cerrar sesión</a></li>
     </ul>
   </nav>
 
-  <img src="/assets/img/Header defi copia.png" class="inkseek" (click)= goHome() class="boton">
-  <div class="img-perfil"><img src="/assets/img/IMG_4465 1.png" (click)= goPerfil() class="boton"></div>     
+  <img src="/assets/img/Header defi copia.png" class="inkseek" (click)="goHome()" class="boton">
+  <div class="img-perfil"><img src="/assets/img/IMG_4465 1.png" (click)="goPerfil()" class="boton"></div>     
 </div>
 
-<div class="contenido" [ngClass]="{'difuminado': mostrarContenido}" *ngIf="mostrarContenido">       
+<div class="contenido" [ngClass]="{'difuminado': mostrarContenido}" *ngIf="mostrarContenido" (click)="toggleHamburguesa()" appCerrarMenu>
+  
 </div>

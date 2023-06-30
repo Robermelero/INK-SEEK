@@ -37,6 +37,7 @@ import { FormsModule } from '@angular/forms';
 import { EstrellasComponent } from './pages/estrellas/estrellas.component';
 import { NavbarUserComponent } from './navbar-user/navbar-user.component';
 import { RegisterUserComponent } from './pages/register-user/register-user.component';
+import { CerrarMenuDirective } from './cerrar-menu.directive';
 
 
 @NgModule({
@@ -75,6 +76,7 @@ import { RegisterUserComponent } from './pages/register-user/register-user.compo
     EstrellasComponent,
     NavbarUserComponent,
     RegisterUserComponent,
+    CerrarMenuDirective,
 
   ],
   imports: [

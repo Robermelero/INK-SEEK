@@ -27,6 +27,7 @@ import { OnBoardingComponent } from './pages/on-boarding/on-boarding.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { RecomendacionesComponent } from './pages/recomendaciones/recomendaciones.component';
 import { RegisterUserComponent } from './pages/register-user/register-user.component';
+import { EstrellasComponent } from './pages/estrellas/estrellas.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -57,6 +58,7 @@ const routes: Routes = [
   {path: "tablon", component: TablonComponent},
   {path: "aboutUs", component: AboutUsComponent},
   {path: "recomendaciones", component: RecomendacionesComponent},
+  {path: "estrellas", component: EstrellasComponent}
   
   
 ];
