@@ -150,7 +150,7 @@ i{
     background-color: var(--gris1);
     font-size: 1.2em;
     padding: 0 15px;
-   
+   color: white;
 }
 
 .input-container button {
