@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Poppins:wght@100;200;600&display=swap');
 
-.onboard-container {
+ .onboard-container {
   height: 811px;
   width: 100%;
   background-color: var(--gris1);
   display: flex;
   position: absolute;
+  font-family: 'lato';
+  color: var(--blanco);
 }
 
 .fullscreen-image {
@@ -124,7 +126,7 @@
   scale: 1;
 }
 .chat {
-    background-image: url("src\assets\onboard\iconos\chat.png");
+  background-image: url("src\assets\onboard\iconos\chat.png");
   background-size: contain;
   background-repeat: no-repeat;
   height: 25px;
@@ -138,9 +140,169 @@
   opacity: 0;
   scale: 1;
 }
+.añadir{
+background-image: url("src\assets\onboard\aña.png");
+background-size: contain;
+background-repeat: no-repeat;
+height: 25px;
+width: 25px;
+position: relative;
+z-index: 9999;
+position:inherit;
+bottom: 208.5px;
+right: 52px;
+animation: aparecer 3s 63s forwards, desaparecer 3s 66s forwards;
+opacity: 0;
+scale: 1;
+}
+.calendario2{
+background-size: contain;
+background-repeat: no-repeat;
+height: 375px;
+width: 350px;
+position: relative;
+z-index: 9999;
+position:inherit;
+bottom: 250px;
+left: 25px;
+animation: bordes 3s 71s forwards, bordes-out 3s 74s forwards;
+opacity: 0;
+scale: 1;
+}
+.consultar {
+background-size: contain;
+background-repeat: no-repeat;
+height: 140px;
+width: 340px;
+position: relative;
+z-index: 9999;
+position:inherit;
+bottom: 65px;
+left: 30px;
+opacity: 0;
+scale: 1;
+animation: bordes 3s 79s forwards, bordes-out 3s 82s forwards;
+}
 
 
-@keyframes aparecer {
+
+.elemento1{
+  background-image:url("src/assets/editarp.png");
+  background-size: contain;
+  background-repeat:no-repeat;
+  height: 6.5%;
+  width: 13.2%;
+  border: 3px solid var(--principal);
+  border-radius: 50%;
+  position: relative;
+  z-index: 99999;
+  position:inherit;
+  top: 200px;
+  right: 200px;
+  animation: aparecer 3s 90s forwards, desaparecer 3s 92s forwards;
+  opacity: 0;
+  scale: 1;
+} 
+
+.elemento2 {
+  background-image:url("src/assets/onboardv2/editar_tienda/foto_tienda.png");
+  background-size: contain;
+  background-repeat:no-repeat;
+  height: 10%;
+  width: 17.2%;
+  position: relative;
+  z-index: 9999;
+  position:inherit;
+  bottom: 340px;
+  left: 275px;
+  animation: aparecer 3s 98s forwards, desaparecer 3s 100s forwards;
+  opacity: 0;
+  scale: 1;
+  
+} 
+ .elemento3 {
+  background-image:url("src/assets/img/estresllas.png");
+  background-repeat:no-repeat;
+  background-size: contain;
+  height: 15%;
+  width: 23%;
+  position: relative;
+  z-index: 9999;
+  position:inherit;
+  bottom: 520px;
+  left: 260px;
+  animation: aparecer 3s 106s forwards, desaparecer 3s 108s forwards;
+  opacity: 0;
+  scale: 1;
+}
+.elemento4 {
+    background-image:url("src/assets/camara.png");
+    background-repeat:no-repeat;
+    background-size: contain;
+    height: 20%;
+    width: 20%;
+    position: relative;
+    z-index: 9999;
+    position:inherit;
+    bottom: 420px;
+    left: 235px;
+    animation: aparecer 3s 124s forwards, desaparecer 3s 126s forwards;
+    opacity: 0;
+    scale: 1;
+}
+.elemento5 {
+  background-image:url("src/assets/Vector.png");    
+  background-repeat:no-repeat;
+  background-size: contain;
+  height: 6.5%;
+  width: 13.2%;
+  border: 3px solid var(--principal);
+  border-radius: 50%;
+  position: relative;
+  z-index: 9999;
+  position:inherit;
+  bottom: 80px;
+  left: 310px;
+  animation: aparecer 3s 132s forwards, desaparecer 3s 134s forwards; 
+  opacity: 0;
+  scale: 1;
+}
+.elemento6 {
+  background-image:url("src/assets/onboardv2/chat/bocadillo.png");    
+  background-repeat:no-repeat;
+  background-size: contain;
+  height: 6.5%;
+  width: 13.2%;
+  border: 3px solid var(--principal);
+  border-radius: 50%;
+  position: relative;
+  z-index: 9999;
+  position:inherit;
+  bottom: 510px;
+  left: 300px;
+  animation: aparecer 3s 142s forwards, desaparecer 3s 144s forwards; 
+  opacity: 0;
+  scale: 1;
+}
+
+
+.elemento7 {
+  background-image:url("src/assets/img/buscador.png");    
+  background-repeat:no-repeat;
+  background-size: contain;
+  height: 8%;
+  width: 50%;
+  position: relative;
+  z-index: 9999;
+  position:inherit;
+  bottom: 610px;
+  left: 120px;
+animation: aparecer 3s 148s forwards, desaparecer 3s 150s forwards; 
+  opacity: 0;
+  scale: 1;
+}
+
+@keyframes aparecer{
   0% {
     opacity: 0;
     scale: 1;
@@ -154,8 +316,7 @@
     scale: 1.5;
   }
 }
-
-@keyframes desaparecer {
+@keyframes desaparecer{
   0% {
     opacity: 1;
     
@@ -170,4 +331,80 @@
   }
 }
 
+@keyframes bordes{
+  0% {
+    border: none;
+  }
+  100% {
+    border: 2px solid var(--principal);
+    opacity: 1;
+  }
+}
+@keyframes bordes-out{
+  0% {
+    border: 2px solid var(--principal);
+    opacity: 1;
+  }
+  100% {
+   border: none;
+  }
+}
+#arrowAnim {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 85%;
+ right: -6%;
 
+}
+
+.arrow {
+  width: 5vw;
+  height: 5vw;
+  border: 2.5vw solid;
+  border-color: rgb(29, 185, 84,0.18) transparent transparent rgb(29, 185, 84,0.18);
+  transform: rotate(135deg); 
+}
+
+.arrowSliding {
+  position: absolute;
+  animation: slide 4s linear infinite ;
+}
+
+.delay1 {
+  animation-delay: 1s;
+}
+
+.delay2 {
+  animation-delay: 2s;
+}
+
+.delay3 {
+  animation-delay: 3s;
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateX(-15vw);
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(-9vw);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(9vw);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(15vw);
+  }
+}
+p{
+  font-family:"lato";
+  color: var(--gris3);
+}
