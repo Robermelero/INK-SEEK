@@ -34,6 +34,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent, data: { hideHeader: true, hideNavbar: true } },
   {path: 'pre-register', component: PreRegisterComponent, data: { hideHeader: true, hideNavbar: true } },
   {path: "register-user", component: RegisterUserComponent, data: { hideHeader: true, hideNavbar: true }},
+  {path: "on-boarding", component: OnBoardingComponent, data: { hideHeader: true, hideNavbar: true }},
   {path: 'home', component: HomeComponent },
   {path: "profile-tatuador-externa", component: ProfileTatuadorExternaComponent},
   {path: "profile-tatuador-propia", component: ProfileTatuadorPropiaComponent},
@@ -54,7 +55,6 @@ const routes: Routes = [
   {path: "add-opinion", component: ModalAddOpinionComponent},
   {path: "respuesta", component: ModalRespuestaComponent},
   {path: "tablon", component: TablonComponent},
-  {path: "on-boarding", component: OnBoardingComponent},
   {path: "aboutUs", component: AboutUsComponent},
   {path: "recomendaciones", component: RecomendacionesComponent},
   

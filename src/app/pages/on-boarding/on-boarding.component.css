@@ -8,6 +8,7 @@
   position: absolute;
   font-family: 'lato';
   color: var(--blanco);
+  z-index: 9000;
 }
 
 .fullscreen-image {
