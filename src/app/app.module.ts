@@ -71,6 +71,7 @@ import { EstrellasComponent } from './pages/estrellas/estrellas.component';
     AboutUsComponent,
     RecomendacionesComponent,
     EstrellasComponent,
+    
 
   ],
   imports: [
