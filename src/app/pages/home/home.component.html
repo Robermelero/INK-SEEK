@@ -7,15 +7,7 @@
   </div>
   <div class="artista-card" *ngFor="let publicacion of publicaciones">
     <div class="foto">
-      <a routerLink="/profile-tatuador-externa" routerLinkActive="active">
-        <img [src]="publicacion.photo" alt="Foto" />
-        <div class="perfil-info">
-          <div class="perfil-foto">
-            <img [src]="publicacion.photoPerfil" alt="Foto de Perfil" />
-          </div>
-          <p class="perfil-nombre">{{ publicacion.perfil }}</p>
-        </div>
-      </a>
+      <img [src]="publicacion.photo" alt="Foto" />
     </div>
   </div>
 </div>

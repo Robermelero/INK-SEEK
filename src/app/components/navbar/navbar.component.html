@@ -8,7 +8,7 @@
       <img src="/assets/iconos/magnify-expand.png" alt="busqueda" *ngIf="!isActiveLink('/descubrir-artista')">
       <img src="/assets/iconos/magnify-expand1.png" alt="busqueda" *ngIf="isActiveLink('/descubrir-artista')">
     </a>
-    <a routerLink="/add-fotos" routerLinkActive="active" *ngIf="isTatuador" (click)="setActiveLink('/add-fotos')">
+    <a routerLink="/confirmar-foto" routerLinkActive="active" *ngIf="isTatuador" (click)="setActiveLink('/add-fotos')">
       <img src="/assets/iconos/camera-plus-outline.png" alt="camara" *ngIf="!isActiveLink('/add-fotos')">
       <img src="/assets/iconos/camera-plus-outline1.png" alt="camara" *ngIf="isActiveLink('/add-fotos')">
     </a>

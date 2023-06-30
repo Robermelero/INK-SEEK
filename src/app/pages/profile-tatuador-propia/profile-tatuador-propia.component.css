@@ -1,35 +1,168 @@
-.card {
-  position: relative;
-  width: 197px;
-  height: 247px;
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+.fondo {
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--gris1);
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.line1 {
+  height: 20%;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 70px;
+  margin-right: 20px;
+}
+
+.foto {
+  height: 100%;
+  width: 50%;
+  display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  background: var(--gris1);
-  padding: 0.5em;
-  padding-bottom: 3.4em;
-}
-
-.card .title {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.9em;
-  position: absolute;
-  left: 0.625em;
-  bottom: 1.875em;
-  font-weight: 400;
-  color: var(--blanco);
-}
-
-.image {
-  background: rgb(241, 241, 241);
-  width: 100%;
-  height: 100%;
+  justify-content: space-around;
 }
 
 .imagen {
+  height: 100%;
+  width: 85%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+}
+
+.profileimg {
+  height: 75%;
+  width: 80%;
+  border-radius: 50%;
+}
+
+.editar {
+  height: 100%;
+  width: 20%;
+  position:absolute;
+  margin-left: 100px;
+
+}
+
+
+
+.info1 {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.valoracion {
+  height: 100px;
+  width: 100px;
+  margin-right: 140px;
+  margin-left: 20px;
+}
+
+.line2 {
+  height: 12%;
+  width: 80%;
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+
+.tienda {
+  height: 25px;
+  width: 100px;
+  background-color: var(--principal);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-left: 220px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+
+.name {
+  height: 10%;
+  width: 80%;
+}
+
+.descrip {
+  height: auto;
+  width: 80%;
+}
+
+.line3 {
+  height: 55%;
+  width: 100%;
+}
+img {
+  max-height: 100%;
+  max-width: auto;
+
+}
+
+.bedit {
+  max-height: 45px;
+  max-width: 45px;
+  margin-left: 15px;
+  margin-top: 85px;
+}
+
+p {
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+}
+
+h3 {
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+}
+
+.artista-card {
+  position: relative;
+  width: 380px;
+  height: 500px;
+  margin: 15px 10px;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px var(--black);
+  background-color: var(--gristablon);
+  color: var(--gris3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.artista-card:last-child {
+  margin-bottom: 90px;
+}
+
+.foto {
+  position: relative;
   width: 100%;
   height: 100%;
-  object-fit:cover;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
 }
