@@ -1,13 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Poppins:wght@100;200;600&display=swap%27');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
-    max-width: 390px;
-    min-height: auto;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&display=swap');
  
   main {
     background-color: var(--gris1);
@@ -46,7 +37,7 @@
     color: var(--blanco);
     text-align: left;
     /* border: solid 1px blue; */
-    font-size: 17px;
+    font-size: 18px;
   }
     
 

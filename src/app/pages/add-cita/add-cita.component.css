@@ -63,3 +63,13 @@ h1{
 .logo{
     margin-left: 25px;
 }
+.margenY{
+    margin-right: 30px;
+    margin-top: 8px;
+    }
+    .exit{
+        width: 6%;
+        height: 3%;
+        position: absolute;
+        
+    }

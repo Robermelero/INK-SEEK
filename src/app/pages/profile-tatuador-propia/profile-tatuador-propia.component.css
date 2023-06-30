@@ -1,7 +1,27 @@
-.card {
-  position: relative;
-  width: 197px;
-  height: 247px;
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+.fondo {
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--gris1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.line1 {
+  height: 20%;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 70px;
+  margin-right: 20px;
+}
+
+.foto {
+  height: 100%;
+  width: 50%;
   display: flex;
   flex-direction: row;
   align-items: center;
