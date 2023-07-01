@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
 .eventos-container {
     display: flex;
@@ -76,23 +76,27 @@
   }
   
   .contenido h3 {
-    font-size: 24px;
+    font-size: 18px;
     margin: 0;
   }
   
   .contenido p {
-    font-size: 21px;
+    font-size: 18px;
     margin: 8px 0;
   }
    button.boton {
-    width: 150px;
-    height: 42px;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(29,185,84, 0.3));
-    color: var(--gris3);
-    border: none;
-    border-radius: 8px;
+      height: 30px;
+      width: 150px;
+      background-color: var(--principal);
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      padding-bottom: 5px;
+      color: var(--blanco);
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
     margin-top: 20px;
     margin-left: 210px;
     margin-bottom: 100px;

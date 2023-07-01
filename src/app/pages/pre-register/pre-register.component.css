@@ -3,7 +3,7 @@
 
 .background-black{
     background-color: var(--negro);
-    height: 808px;
+    min-height: 100vh;
 }
 
 .background-image {
@@ -25,26 +25,22 @@ span{
     position: absolute;
     width: 334px;
     height: 65px;
-    left: 29px;
-    top: 548px;
     font-family: 'Lato', sans-serif;
     font-style: italic;
     font-weight: 400;
     font-size: 35px;
     line-height: 42px;
     text-align: center;
-    letter-spacing: 0.02em;
     color: var(--blanco);
     background-color: transparent;
     border: none;
-    animation: borderAnimation 5s 0.5s ease forwards;
-    
+    animation: borderAnimation 3s 0.5s ease forwards;
+    z-index: 2;
     box-sizing: border-box;
-    position: absolute;
     width: 333px;
     height: 68px;
     left: 30px;
-    top: 539px;
+    top: 500px;
     border-radius: 20px;
     
 }
@@ -53,28 +49,21 @@ span{
     position: absolute;
     width: 334px;
     height: 66px;
-    left: 29px;
-    top: 669px;
     font-family: 'Lato', sans-serif;
-    font-style: italic;
     font-weight: 400;
     font-size: 35px;
-    line-height: 42px;
     text-align: center;
-    letter-spacing: 0.02em;
     color: var(--blanco);
     background-color: transparent;
     border: none;
-    animation: borderAnimation 5s 2s ease forwards;
-    
+    animation: borderAnimation 3s 1s ease forwards;
+    z-index: 2;
     box-sizing: border-box;
-    position: absolute;
-    width: 333px;
-    height: 66px;
     left: 29px;
-    top: 661px;
-    border-radius: 20px;  
+    top: 590px;
+    border-radius: 20px;
 }
+
 
 
 @keyframes borderAnimation {

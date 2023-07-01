@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
 .container {
     position: relative;
     overflow: hidden;
     height: 100vh;
+    font-family: 'Lato', sans-serif;
   }
 
   .background {
@@ -118,4 +119,5 @@
   a{
     color: var(--principal);
     font-size: 14px;
+    margin-top: 5px;
   } 

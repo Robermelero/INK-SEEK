@@ -12,6 +12,7 @@
     width: 100%;
     height: 100%;
     background-image: url("../../../assets/images/fondo-degradado.png");
+
   }
   
   .content {
@@ -28,11 +29,10 @@
     position: absolute;
     bottom: -350px;
     animation: volar 4s 0.5s forwards;
-    margin-right: 7px;
   }
   
   .titulo {
-    padding-top: 190px;
+    padding-top: 230px;
     opacity: 0;
     animation: aparecer 5s 1.5s forwards;
     margin-left: 5px;
