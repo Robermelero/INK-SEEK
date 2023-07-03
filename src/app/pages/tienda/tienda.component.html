@@ -7,17 +7,21 @@
 <main>
   <div class="add-search">
     <div class="buscador">
-      <input type="text" placeholder="Buscar..." />
-      <button>
-        <img src="/assets/img/lupa.png" alt="Lupa" />
-      </button>
+      <div class="input-wrapper">
+        <input type="text" placeholder="Buscar...">
+        <img src="/assets/img/lupa-gris.png" alt="Lupa" class="lupa-img">
+      </div>
     </div>
-    <div class="mas" (click)="goAdd()" *ngIf="isTatuador"><img src="/assets/Calendario/simbolo de mas.png" alt=""></div>
-  </div>  
+    <div class="mas" (click)="goAdd()" *ngIf="isTatuador">
+      <img src="/assets/Calendario/simbolo de mas.png" alt="">
+    </div>
+  </div>
   <div class="card-container">
     <div *ngFor="let prenda of prendas" class="card">
-        <div class="image"><img class="imagen" [src]="prenda.photo"></div>
-        <div class="title">{{prenda.title}}</div>
+      <div class="image">
+        <img class="imagen" [src]="prenda.photo">
+      </div>
+      <div class="title">{{prenda.title}}</div>
     </div>
-  </div>  
+  </div>
 </main>
