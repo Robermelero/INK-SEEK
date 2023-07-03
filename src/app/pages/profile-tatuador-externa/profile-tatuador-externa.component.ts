@@ -19,7 +19,8 @@ export class ProfileTatuadorExternaComponent {
       // new Publicacion(4, "https://cdntattoofilter.com/event/17902/s.jpg", "https://i0.wp.com/lamiradafotografia.es/wp-content/uploads/2014/07/simpson-rock.jpg", "MrPrint")
     ];
   }
-  
+  quitarCaja(){
+    }
   
   ngOnInit(): void {}
   

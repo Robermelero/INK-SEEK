@@ -19,6 +19,7 @@
   <div class="card-container">
     <div *ngFor="let prenda of prendas" class="card">
       <div class="image">
+        <button class="buter" type="button" (click)="quitarCaja()" *ngIf="isTatuador">X</button>
         <img class="imagen" [src]="prenda.photo">
       </div>
       <div class="title">{{prenda.title}}</div>
