@@ -38,6 +38,7 @@
     </div>
     <div class="artista-card" *ngFor="let publicacion of publicaciones">
       <div class="foto">
+        <button class="buter" type="button" (click)="quitarCaja()" >X</button>
           <img [src]="publicacion.photo" alt="Foto" />
       </div>
     </div>

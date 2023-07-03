@@ -22,6 +22,7 @@ export class TiendaComponent implements OnInit {
   goAdd(){
     this.router.navigate(['/add-producto'])
   }
-
+  quitarCaja(){
+  }
   ngOnInit(): void {}
 }

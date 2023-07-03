@@ -92,3 +92,17 @@ position:absolute;
   height: 20px;
   right: 5px;
 }
+.buter{
+  background-color:var(--gristablon) ;
+  color: var(--gris3);
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  border: transparent;
+  font-size: 14pt;
+  font-weight: bold;
+  margin-top: 3px;
+  margin-left: 3px;
+  position: absolute;
+
+}

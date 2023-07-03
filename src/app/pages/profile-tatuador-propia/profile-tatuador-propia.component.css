@@ -170,3 +170,20 @@ h3 {
   object-fit: cover;
   border-radius: 5px;
 }
+
+  .buter{ 
+    background-color:var(--gristablon) ;
+    color: var(--gris3);
+    width: 30px;
+    height: 30px;
+    padding: 3px;
+    padding-bottom: 4px;
+    border-radius: 8px;
+    border: transparent;
+    font-size: 14pt;
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 900;
+} 
