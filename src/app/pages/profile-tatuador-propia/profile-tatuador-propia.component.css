@@ -44,11 +44,8 @@
 }
 
 .editar {
-  height: 100%;
-  width: 20%;
   position:absolute;
-  margin-left: 100px;
-
+  margin-left: 120px;
 }
 
 
@@ -63,10 +60,14 @@
 }
 
 .valoracion {
-  height: 100px;
-  width: 100px;
+  height: 30px;
+  width: 30px;
   margin-right: 140px;
   margin-left: 20px;
+  position: fixed;
+  top: 100px;
+  right: 0px;
+  scale: 0.9;
 }
 
 .line2 {
@@ -81,17 +82,19 @@
 
 
 .tienda {
-  height: 25px;
-  width: 100px;
-  background-color: var(--principal);
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-  margin-left: 220px;
-  margin-bottom: 10px;
-  border-radius: 10px;
+  height: 30px;
+  width: 30px;
+  background-image:url("src/assets/iconos/camisetita.png");
+  background-repeat:no-repeat;
+  background-size: contain;
+  position: fixed;
+  top: 236px;
+  right: 30px;
+  border: 1px solid var(--principal);
+  border-radius: 7px;
+  background-size: 80%;
+  background-position: center;
+ 
 }
 
 
