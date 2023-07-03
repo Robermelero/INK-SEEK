@@ -184,10 +184,7 @@ opacity: 0;
 scale: 1;
 animation: bordes 3s 79s forwards, bordes-out 3s 82s forwards;
 }
-
-
-
-.elemento1{
+/* .elemento1{
   background-image:url("src/assets/editarp.png");
   background-size: contain;
   background-repeat:no-repeat;
@@ -249,9 +246,9 @@ animation: bordes 3s 79s forwards, bordes-out 3s 82s forwards;
     left: 235px;
     animation: aparecer 3s 124s forwards, desaparecer 3s 126s forwards;
     opacity: 0;
-    scale: 1;
-}
-.elemento5 {
+    scale: 1; */
+/* } */
+/* .elemento5 {
   background-image:url("src/assets/Vector.png");    
   background-repeat:no-repeat;
   background-size: contain;
@@ -408,4 +405,4 @@ animation: aparecer 3s 148s forwards, desaparecer 3s 150s forwards;
 p{
   font-family:"lato";
   color: var(--gris3);
-}
+} 
