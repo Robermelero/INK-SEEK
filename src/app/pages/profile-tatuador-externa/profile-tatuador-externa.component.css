@@ -88,39 +88,30 @@
   background-repeat:no-repeat;
   background-size: contain;
   position: absolute;
-  top: 236px;
+  top: 180px;
   right: 30px;
   border: 1px solid var(--principal);
   border-radius: 7px;
   background-size: 80%;
   background-position: center;
+  margin-right: 1.5px;
 }
-.button{
-    display: flex;
-    flex-direction: row;
-    width: 300px;
-    height: 40px;
-    padding-top: 15px;
-    padding-left: 100px;
-    margin-left: 30px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    gap: 15px;
+.chat {  
+  height: 30px;
+  width: 30px;
+  background-image:url("src/assets/iconos/chat-processing-outline1.png");
+  background-repeat:no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 230px;
+  right: 30px;
+  border: 1px solid var(--principal);
+  border-radius: 7px;
+  background-size: 80%;
+  background-position: center;
+  margin-right: 2px;
 }
-.chat {
-    height: 25px;
-    width: 100px;
-    background-color: var(--gristablon);
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
-    position: fixed;
-    top: 330px;
-  left: 30px;
-    scale: 0.9;
-  }
+
 
 
 .name {
