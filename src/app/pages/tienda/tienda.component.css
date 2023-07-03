@@ -63,6 +63,7 @@ position:absolute;
 .buscador {
   padding-top: 20px;
   padding-bottom: 10px;
+  padding-right: 35px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -91,4 +92,9 @@ position:absolute;
   width: 20px;
   height: 20px;
   right: 5px;
+}
+.atras{
+  width: 25px;
+  margin-top:25px;
+  margin-left: 25px;
 }

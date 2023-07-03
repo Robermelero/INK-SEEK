@@ -16,31 +16,28 @@
     padding: 60px 0;
     text-align: center;
 }
+.centered-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
  .mes{
     display: flex;
-    flex-direction: row;
-  
+    flex-direction: row; 
+    justify-content: center;
     align-items: center;
-
-
 }
 .nombre_mes{
     font-family: 'Lato', sans-serif;
     text-align: center;
-    font-weight: 34;
-    padding: 30px 0;
-    color: white;
-
+    font-size: 30px;
+    padding-top: 30px;
+    padding-bottom:30px;
+    color: var(--gris3);
+    width: 200px;
 }
-.centered-title{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
 
-    padding-right: 50px ;
-}
-.nombre_mes:not(.centered-title){
+/* .nombre_mes:not(.centered-title){
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -48,7 +45,7 @@
 
     margin-left: 180px;
     margin-right: 100px;
-}
+} */
 
 
 .dia{
@@ -61,7 +58,6 @@
     border-top: 1px solid var(--gris2);
     color: white;
     font-weight: bold;
-
 }
 
 .calendario{
@@ -112,5 +108,28 @@
     flex-direction: column;
     justify-content: center;
 }
+.mes div img{
+    width: 8px;
+}
+.mes div{
+    padding-top: 30px;
+    padding-bottom:30px;   
+}
+.mas{
+    padding-top: 30px;
+    padding-bottom:30px;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+}
+/* .flecha1{
+   
+    position:absolute;
+    left:135px
+}
+.flecha2{
+    position:absolute;
+    left:250px
+} */
 
 

@@ -38,6 +38,7 @@ import { EstrellasComponent } from './pages/estrellas/estrellas.component';
 import { NavbarUserComponent } from './navbar-user/navbar-user.component';
 import { RegisterUserComponent } from './pages/register-user/register-user.component';
 import { CerrarMenuDirective } from './cerrar-menu.directive';
+import { ModificarCitaComponent } from './pages/modificar-cita/modificar-cita.component';
 
 
 @NgModule({
@@ -77,6 +78,7 @@ import { CerrarMenuDirective } from './cerrar-menu.directive';
     NavbarUserComponent,
     RegisterUserComponent,
     CerrarMenuDirective,
+    ModificarCitaComponent,
 
   ],
   imports: [

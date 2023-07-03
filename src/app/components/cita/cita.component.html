@@ -1,12 +1,9 @@
 <section class ="cards">
-    <button><div class ="content" >
-        <h2 style="height: 20px;">Cita programada:</h2>
-       
-        <h1>{{listaDeCitas.hora}}</h1>
-        
-
-       
-    </div> 
-</button>
-    
+    <button  (click)= goModificar()>
+        <div class ="content" >
+            <p class="cliente">Cliente: {{listaDeCitas.user_name}}</p>  
+            <p>Hora: {{listaDeCitas.hora}}</p>
+            <p>Especificaciones: {{listaDeCitas.asunto}}</p>       
+        </div>
+    </button>   
 </section>
