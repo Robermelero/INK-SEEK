@@ -1,27 +1,23 @@
 <main>
     <div class="buscador">
-        <input type="text" placeholder="Buscar..." />
-        <button>
-            <img src="/assets/img/lupa.png" alt="Lupa">
-        </button>
-    </div>
+        <div class="input-wrapper">
+          <input type="text" placeholder="Buscar...">
+          <img src="/assets/img/lupa-gris.png" alt="Lupa" class="lupa-img">
+        </div>
+      </div>
 
     <section class="chats">
         <a routerLink="/conversacion-chat" routerLinkActive="active" >
-            <div *ngFor="let conversacion of chats" class="chat">
-                <div class ="chat-foto"><img src="{{conversacion.photo}}" alt=""></div>
-                <div class ="chat-nombre">{{conversacion.user_name}}</div>
-                <div class ="chat-logo"><img src="/assets/chat-registro/Communication-gris.png" alt=""></div>
-            </div>
             <div class="chat">
                 <div class ="chat-foto"><img src="/assets/chat-registro/moro.png" alt=""></div>
                 <div class ="chat-nombre">El moro</div>
                 <div class ="chat-logo"><img src="/assets/chat-registro/Communication.png" alt=""></div>
             </div>
-            
-        </a>
-    
-
-
+            <div *ngFor="let conversacion of chats" class="chat">
+                <div class ="chat-foto"><img src="{{conversacion.photo}}" alt=""></div>
+                <div class ="chat-nombre">{{conversacion.user_name}}</div>
+                <div class ="chat-logo"><img src="/assets/chat-registro/Communication-gris.png" alt=""></div>
+            </div>             
+        </a>  
     </section>
 </main>

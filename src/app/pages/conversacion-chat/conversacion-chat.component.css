@@ -97,13 +97,12 @@ i{
 /* chat section ///////////////*/
 
 
-.chats {
-    
+.chats {   
  
     width: 100%;
     padding: 0 15px;
     color: white; 
-    margin-top: 105px;
+    margin-top: 115px;
 }
 
 .user-chat {
@@ -148,28 +147,29 @@ i{
     border: 1px solid var(--gris2);
     border-radius: 36px;
     background-color: var(--gris1);
-    font-size: 1.2em;
+    font-size: 15px;
     padding: 0 15px;
    color: white;
 }
 
 .input-container button {
-    width: 45px;
-    height: 45px;
+    width: 65px;
+    height: 35px;
     background-color: transparent;
     color: white;
     overflow: hidden;
-    /* position: relative; */
-    margin-left: 5px;
     cursor: pointer;
     transition: 0.4s ease-in-out;
     border-style: none;
-    margin-bottom: 5px;
+    position:absolute;
+    right: 50px;
+    font-size: 20px;
+    color:var(--gris3);
+    bottom:1.5px;
 }
 
 .input-container button:active {
     transform: scale(0.85);
-
 }
 
 .chats  :last-child{

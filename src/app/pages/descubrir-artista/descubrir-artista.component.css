@@ -11,35 +11,36 @@
   }
   
   .buscador {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    height: 60px;
+    padding-top: 20px;
+    padding-bottom: 10px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
-  .buscador button {
-    background: none;
-    border: 0;
-    color: inherit;
-    font: inherit;
-    line-height: normal;
-    overflow: visible;
-    padding: 0;
-    margin-left: 6px;
+  .input-wrapper {
+    position: relative;
   }
   
-  .buscador input {
+  .input-wrapper input {
     background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(29, 185, 84, 0.3));
     height: 45px;
     width: 250px;
     border: 0.1px solid var(--gristablon);
     border-radius: 5px;
-    padding-left: 6px;
     color: var(--blanco);
     font-size: 18px;
+    padding-left: 10px;
+  }
+  
+  .input-wrapper .lupa-img {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    right: 5px;
   }
   
   .artista-card {

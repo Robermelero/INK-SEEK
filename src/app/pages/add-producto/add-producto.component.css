@@ -1,6 +1,4 @@
-
-
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
 *{
     font-family: 'Lato' sans-serif;
@@ -13,7 +11,6 @@
  
 }
 
-
 .head{
     height: 80px;
     display: flex;
@@ -22,36 +19,57 @@
     align-content: center;
     font-weight: 300;
     color : var(--gris3);
-    padding-top: 80px;
+    padding-top: 75px;
     padding-left: 25px;
-    padding-right: 20px
+    padding-right: 20px;
+}
+
+
+.Text{
+    margin: 5px;
 }
 
 .inputs{
+    
     height: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     font-weight: 300;
-    padding-top: 40px;
     padding-left: 20px;
     padding-right: 20px;
     color: var(--gris3);
+    gap:15px;
+    z-index: 1;
 }
 .inputs input{
     height: 50px;
     background: var(--gris1);
     border-radius: 36px;
     border: 1px solid var(--principal);
-    color: var(--blanco);
-    font-size: 14px;
+    font-size: 15px;
+   
 }
 
-.back{
+.back{    
+    height: 343px;
     display: flex;
     flex-direction: row-reverse;
     padding-right: 30px;
-    padding-top: 10px;
+    position:relative;
+    margin-bottom: 50px; 
+    
+    background-image: url("/assets/Calendario/polilla.png");
+    background-position: 25px ;    
+    background-repeat: no-repeat;  
+}
+
+.tick{ 
+    margin-left:350px;
+    z-index: 10;
+    margin-bottom: 90px;
+    position:absolute;
+    top:330px;
 }
 
 h1{
@@ -61,6 +79,7 @@ h1{
 
 .logo{
     margin-left: 25px;
+    z-index: 0;
 }
 .margenY{
     margin-right: 30px;
@@ -69,6 +88,11 @@ h1{
     .exit{
         width: 6%;
         height: 3%;
-        position: absolute;
-        
+        margin-top: 10px;  
+    }
+    .cruz{
+        position:absolute;
+        right: 12px;
+        top:85px;
+        z-index:999;
     }

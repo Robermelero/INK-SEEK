@@ -1,10 +1,15 @@
 <div class="eventos-container">
+  <div class="add-search">
     <div class="buscador">
-      <input type="text" placeholder="Buscar..." />
-      <button>
-        <img src="/assets/img/lupa.png" alt="Lupa" />
-      </button>
+      <div class="input-wrapper">
+        <input type="text" placeholder="Buscar...">
+        <img src="/assets/img/lupa-gris.png" alt="Lupa" class="lupa-img">
+      </div>
     </div>
+    <div class="mas" (click)="goAdd()" *ngIf="isTatuador">
+      <img src="/assets/Calendario/simbolo de mas.png" alt="">
+    </div>
+  </div>
     <div class="eventos-lista">
       <div class="evento-card" *ngFor="let evento of eventos">
         <div class="foto">
@@ -17,8 +22,5 @@
         </div>
       </div>
     </div>
-    <div class="nuevo">
-      <button *ngIf="isTatuador" (click)="goAdd()" class="boton">Nuevo evento</button>
-    </div>
-  </div>
+</div>
   

@@ -1,25 +1,22 @@
 
 <main class ="contenedor">
     <section class="head">
-        <h1 class ="Text" >Nueva Cita</h1>
+        <h1 class ="Text" >Nueva cita</h1>
         <div class="margenY">
-            <div class="exit"> <img src="./assets/delete.png" alt="" routerLink="/calendario" routerLinkActive="active"></div>
+            <div class="exit"> <img src="./assets/delete.png" alt="" routerLink="/calendario" routerLinkActive="active" class="cruz"></div>
         </div>
     </section>
 
     <section class ="inputs">
-        <input type="text" placeholder="     Nombre de la cita">
-        <h1 class ="Text" >Fecha</h1>
-        <input type="text" placeholder="     Fecha                                                                                        00-00-00" class ="fecha">
-        <h1 class ="Text" >Hora</h1>
-        <input type="text" placeholder="     Hora                                                                                                   00:00">
+        <input type="text" placeholder="     Asunto">
+        <input type="text" placeholder="     Correo electrónico">
+        <input type="text" placeholder="     Fecha" class ="fecha">
+        <input type="text" placeholder="     Hora">
     </section>
-
-
-    <section class ="back">
-        <a routerLink="/calendario" routerLinkActive="active"><img src="/assets/Calendario/Vector.png" alt=""></a>
-    
-    </section>
+    <div>
+        <a routerLink="/calendario" routerLinkActive="active"><img src="/assets/Calendario/Vector.png" alt="" class="tick"></a>
+    </div>
+    <section class ="back"></section>
     
     <!-- <div class ="logo">
             <img src="/assets/Calendario/polilla.png" alt="">

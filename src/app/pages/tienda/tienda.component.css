@@ -20,9 +20,9 @@ main{
 }
 
 .mas{
-padding-top: 50px;
+padding-top: 30px;
 margin-left: 320px;
-position:absolute
+position:absolute;
 
 }
 .card {
@@ -61,8 +61,8 @@ position:absolute
 }
 
 .buscador {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 20px;
+  padding-bottom: 10px;
   width: 100%;
   display: flex;
   justify-content: center;
