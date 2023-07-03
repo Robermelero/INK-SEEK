@@ -145,7 +145,7 @@ i{
 .input-container input {
     height: 35px;
     width: 350px;
-    border: 2px solid var(--principal);
+    border: 1px solid var(--gris2);
     border-radius: 36px;
     background-color: var(--gris1);
     font-size: 1.2em;
