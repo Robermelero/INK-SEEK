@@ -1,7 +1,7 @@
 <div class="opinion">
     <div class="text"> M i s <span class=" opiniones ">&nbsp; o p i n i o n e s </span> </div>
 
-
+    <div><img  src="./assets/images/flecha-atras.png" alt="" routerLink="/profile-tatuador-propia" routerLinkActive="active" class="atras"></div>
     <div class="card" *ngFor="let opinion of opiniones; let i = index" (click)="showResponseInput(i)">
         <div class="card2">
             <div class="perfil"><img src="{{opinion.photo}}"></div>

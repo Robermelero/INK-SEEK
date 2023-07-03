@@ -132,3 +132,10 @@
   color: var(--principal)
 }
 
+.atras{
+  width: 25px;
+  position: absolute;
+  top:65px;
+  left: 25px;
+
+}

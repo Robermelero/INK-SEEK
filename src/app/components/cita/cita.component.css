@@ -6,37 +6,31 @@
 
 
 .cards {
-   width: 100%;
-   height: 58px;
    display: flex;
    flex-direction: column;
+   margin:5px;
    align-items: center;
-   /* margin-top: 20px; */
-   /* border: 2px solid red; */
 }
-
-.content{
-  
+.cliente{
+   font-size: 20px;
+   
+}
+.content{  
    width: 336px;
-   height: 48px;
+   height: 100px;
    display: flex;
-   flex-direction: row;
+   flex-direction: column;
    justify-content: space-around;
-   align-items:center;
+   align-items: flex-start;
    background-color: var(--gris1);
- 
    border-radius: 10px;
-
-}
-
-.content h2{
-   padding-bottom: 30px;
+   padding-left: 10px;
 }
 
 button{
-    font-size: 1em;
+   font-size: 1em;
    color: white;
    background-color: transparent;
-    border-style: none;
-    box-shadow: inset 0,0,0,0 var(--gris2);
+   border-style: none;
+   box-shadow: inset 0,0,0,0 var(--gris2);
 }
