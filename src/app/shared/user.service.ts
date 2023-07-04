@@ -29,4 +29,11 @@ export class UserService {
     let url = `${this.url}/profile`
     return this.http.put(url, usuario)
   }
+
+  //LOGIN
+  login(email: string, password: string): Observable<any> {
+    const url = `${this.url}/login`;
+    const body = { email, password };
+    return this.http.post<any>(url, body);
+  }
 }
