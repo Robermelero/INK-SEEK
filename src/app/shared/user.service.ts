@@ -7,19 +7,11 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class UserService {
-  private url: string = 'http://localhost:4000';
-  public isTatuador: boolean = false;
-  public user: User;
+  private url: string = 'http://localhost:3000';
 
-  constructor(private http: HttpClient) {
-    this.isTatuador = false;
-    this.user = null;
-  }
+  constructor(private http: HttpClient) {}
 
   register(user: User): Observable<any> {
     return this.http.post<any>(`${this.url}/registro`, user);
-  }
-  setTatuador(isTatuador: boolean) {
-    this.isTatuador = isTatuador;
   }
 }

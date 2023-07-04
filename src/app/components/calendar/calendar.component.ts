@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent {
-  isTatuador = true
+  is_Tatuador: boolean;
   citasAgendadas: Cita[];
   fecha : Date = new Date(2023, 6, 14, 9, 30, 0)
   horaFinal : string = this.fecha.getHours()+":"+this.fecha.getMinutes()

@@ -32,7 +32,7 @@ import { ModificarCitaComponent } from './pages/modificar-cita/modificar-cita.co
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full' },
   {path: 'login', component: LoginComponent, data: { hideHeader: true, hideNavbar: true } },
-  {path: 'register', component: RegisterComponent, data: { hideHeader: true, hideNavbar: true } },
+  {path: 'register', component: RegisterComponent, pathMatch: 'full', data: { hideHeader: true, hideNavbar: true } },
   {path: 'pre-register', component: PreRegisterComponent, data: { hideHeader: true, hideNavbar: true } },
   {path: "on-boarding", component: OnBoardingComponent, data: { hideHeader: true, hideNavbar: true }},
   {path: 'home', component: HomeComponent },
