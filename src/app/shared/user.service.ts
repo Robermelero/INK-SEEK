@@ -7,29 +7,12 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class UserService {
-<<<<<<< HEAD
-  private url: string = 'http://localhost:4000';
-  public isTatuador: boolean = false;
-  public user: User;
-  public logueado: boolean = true;
-
-  constructor(private http: HttpClient) {
-    this.isTatuador = false;
-    this.user = null;
-    this.logueado = true;
-  }
-=======
   private url: string = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {}
->>>>>>> register22
 
   register(user: User): Observable<any> {
     return this.http.post<any>(`${this.url}/registro`, user);
-  }
-<<<<<<< HEAD
-  setTatuador(isTatuador: boolean) {
-    this.isTatuador = isTatuador;
   }
   //FUNCIONALIDAD PARA EDITAR EL PERFIL DEL USUARIO
   public edit (usuario: User){
@@ -37,6 +20,3 @@ export class UserService {
     return this.http.put(url, usuario)
   }
 }
-=======
-}
->>>>>>> register22
