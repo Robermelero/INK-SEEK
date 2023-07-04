@@ -5,16 +5,16 @@
         <img class="inkseek" src="/assets/images/name-preRegister.png">      
       <div class="formulario">
         <label class="name-label-nombre">Nombre</label>
-        <input type="text" placeholder=" " />
+        <input type="text" placeholder=" " #nuevoNombre/>
         <label class="name-label-apellidos">Apellidos</label>
-        <input type="text" placeholder=" " />
+        <input type="text" placeholder=" " #nuevoApellido/>
         <label class="name-label-email">Email</label>
-        <input type="text" placeholder=" " />
+        <input type="text" placeholder=" " #nuevoEmail/>
         <label class="name-label-contraseña">Contraseña</label>
-        <input type="text" placeholder=" " />
+        <input type="text" placeholder=" " #nuevoPassword/>
         <label class="name-label-contraseña2">Confirma contraseña</label>
-        <input type="password" placeholder=" " />
-        <button (click)=goProfile() class="boton">Sign up</button>
+        <input type="password" placeholder=" " #nuevoPassword2/>
+        <button (click)="register(nuevoNombre, nuevoApellido, nuevoEmail, nuevoPassword, nuevoPassword2)" class="boton">Sign up</button>
         <p>¿Tienes cuenta?</p>
         <a routerLink="/login">Sign in</a>
       </div>

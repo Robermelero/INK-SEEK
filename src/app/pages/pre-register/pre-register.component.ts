@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-pre-register',
   templateUrl: './pre-register.component.html',
@@ -9,10 +10,7 @@ import { Router } from '@angular/router';
 export class PreRegisterComponent {
 
   constructor(private router: Router) {}
-  goRegister(){
-    this.router.navigate(['/register'])
-  }
-  goRegisterU(){
-    this.router.navigate(['/register-user'])
+  goRegister(isTatuador: boolean) {
+    this.router.navigate(['/register'], { queryParams: { tatuador: isTatuador } });
   }
 }
