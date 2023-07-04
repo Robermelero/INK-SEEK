@@ -10,10 +10,12 @@ export class UserService {
   private url: string = 'http://localhost:4000';
   public isTatuador: boolean = false;
   public user: User;
+  public logueado: boolean = true;
 
   constructor(private http: HttpClient) {
     this.isTatuador = false;
     this.user = null;
+    this.logueado = true;
   }
 
   register(user: User): Observable<any> {
@@ -21,5 +23,10 @@ export class UserService {
   }
   setTatuador(isTatuador: boolean) {
     this.isTatuador = isTatuador;
+  }
+  //FUNCIONALIDAD PARA EDITAR EL PERFIL DEL USUARIO
+  public edit (usuario: User){
+    let url = `${this.url}/profile`
+    return this.http.put(url, usuario)
   }
 }
