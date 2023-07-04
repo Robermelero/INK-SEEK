@@ -9,7 +9,7 @@ import { User } from '../models/user';
 export class UserService {
   private url: string = 'http://localhost:4000';
   public isTatuador: boolean = false;
-  public user: User;
+  public user: User = new User (1, "Alba", "Carranza", "alba@gmail.com", "https://www.freepik.es/fotos-vectores-gratis/cara-mujer","12345678", "no" )
   public logueado: boolean = true;
 
   constructor(private http: HttpClient) {

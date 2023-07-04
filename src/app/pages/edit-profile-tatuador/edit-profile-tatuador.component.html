@@ -12,20 +12,26 @@
             <div class="newPhoto"><img src="./assets/camara.png" alt=""></div>
         </div>
      <div class="line2">
-        <label class="name-label-nombre">Nombre</label>
+        <label class="name-label-nombre"></label>
         <input type="text" placeholder=" " />
+        <label class="name-label-nombre" *ngIf = "isTatuador" >AKA</label>
+        <input type="text" placeholder=" " *ngIf = "isTatuador" />
         <label class="name-label-apellidos">Apellidos</label>
         <input type="text" placeholder=" " />
         <label class="name-label-email">Email</label>
         <input type="text" placeholder=" " />
-        <label class="name-label-email">Estudio</label>
-        <input type="text" placeholder=" " />
+        <label class="name-label-email" *ngIf = "isTatuador" >Estudio</label>
+        <input type="text" placeholder=" " *ngIf = "isTatuador" />
         <label class="name-label-contraseña">Contraseña</label>
         <input type="text" placeholder=" " />
         <label class="name-label-contraseña2">Confirma contraseña</label>
         <input type="password" placeholder=" " />
-        <div class="check">
-            <a routerLink="/profile-tatuador-propia" routerLinkActive="active"><img src="./assets/Vector.png" alt=""></a></div>
+        <div class="checkUser" *ngIf = "!isTatuador">
+            <a routerLink="/profile-tatuador-propia" routerLinkActive="active"><img src="./assets/Vector.png" alt=""></a>
+        </div>
+        <div class="checkTatuador" *ngIf = "isTatuador">
+            <a routerLink="/profile-tatuador-propia" routerLinkActive="active"><img src="./assets/Vector.png" alt=""></a>
+        </div>
      </div>
     </div>
     <div class="margenY"></div>
