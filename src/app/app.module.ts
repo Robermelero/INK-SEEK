@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -39,6 +39,7 @@ import { NavbarUserComponent } from './navbar-user/navbar-user.component';
 import { CerrarMenuDirective } from './cerrar-menu.directive';
 import { ModificarCitaComponent } from './pages/modificar-cita/modificar-cita.component';
 import { CamaraComponent } from './pages/camara/camara.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -84,7 +85,9 @@ import { CamaraComponent } from './pages/camara/camara.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

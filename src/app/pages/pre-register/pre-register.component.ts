@@ -11,6 +11,6 @@ export class PreRegisterComponent {
 
   constructor(private router: Router) {}
   goRegister(isTatuador: boolean) {
-    this.router.navigate(['/register'], { queryParams: { tatuador: isTatuador } });
+    this.router.navigate(['/register'], { queryParams: { tatuador: isTatuador.toString() } });
   }
 }
