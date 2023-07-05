@@ -9,24 +9,27 @@ import { User } from '../models/user';
 export class UserService {
   private url: string = 'http://localhost:4000';
   public isTatuador: boolean = false;
-  public user: User = new User (1, "Alba", "Carranza", "alba@gmail.com", "https://www.freepik.es/fotos-vectores-gratis/cara-mujer","12345678", "no" )
+  public user: User;
   public logueado: boolean = true;
 
   constructor(private http: HttpClient) {
     this.isTatuador = false;
     this.user = null;
     this.logueado = true;
+    this.user = new User (1, "Alba", "Carranza", "alba@gmail.com", "https://www.freepik.es/fotos-vectores-gratis/cara-mujer","12345678", "si" )
   }
 
   register(user: User): Observable<any> {
     return this.http.post<any>(`${this.url}/registro`, user);
   }
+
   setTatuador(isTatuador: boolean) {
     this.isTatuador = isTatuador;
   }
+
   //FUNCIONALIDAD PARA EDITAR EL PERFIL DEL USUARIO
   public edit (usuario: User){
-    let url = `${this.url}/profile`
+    let url = `${this.url}/edit-profile-tatuador`
     return this.http.put(url, usuario)
   }
 }

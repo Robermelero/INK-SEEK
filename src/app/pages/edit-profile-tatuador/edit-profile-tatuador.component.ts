@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/shared/user.service';
+import { Tatuador } from 'src/app/models/tatuador';
 
 @Component({
   selector: 'app-edit-profile-tatuador',
@@ -15,6 +16,7 @@ export class EditProfileTatuadorComponent {
   constructor(public userService: UserService){
     this.usuario = this.userService.user;
     console.log(this.usuario)
-  }
+    
 
-}
+    }
+  }

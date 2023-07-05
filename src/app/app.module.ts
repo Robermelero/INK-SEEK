@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,6 +43,7 @@ import { ModificarCitaComponent } from './pages/modificar-cita/modificar-cita.co
 import { CamaraComponent } from './pages/camara/camara.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,11 +83,14 @@ import { CamaraComponent } from './pages/camara/camara.component';
     ModificarCitaComponent,
     CamaraComponent,
 
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
