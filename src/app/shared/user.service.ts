@@ -8,17 +8,18 @@ import { User } from '../models/user';
 })
 export class UserService {
   private url: string = 'http://localhost:3000';
- 
   public is_Tatuador: boolean;
+  public user: User;
+  public logueado: boolean = false;
 
-  setIsTatuador(value: boolean) {
-    this.is_Tatuador = value;
+  constructor(private http: HttpClient) {
+    this.is_Tatuador;
+    this.user = new User();
+    this.logueado = true;
   }
 
-  getIsTatuador(): boolean {
-    return this.is_Tatuador;
-  }
-  constructor(private http: HttpClient) {}
+
+ 
 
   register(user: User): Observable<any> {
     return this.http.post<any>(`${this.url}/registro`, user);
@@ -27,5 +28,16 @@ export class UserService {
   public edit (usuario: User){
     let url = `${this.url}/profile`
     return this.http.put(url, usuario)
+  }
+
+  //LOGIN
+  // login(email: string, password: string): Observable<any> {
+  //   const url = `${this.url}/login`;
+  //   const body = { email, password };
+  //   return this.http.post<any>(url, body);
+  // }
+   public login (user:User){
+    let url = `${this.url}/login`;
+    return this.http.post(url,user);
   }
 }
