@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Prenda } from 'src/app/models/prenda';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/shared/user.service';
 
 @Component({
   selector: 'app-tienda',
@@ -9,9 +10,9 @@ import { Router } from '@angular/router';
 })
 export class TiendaComponent implements OnInit {
   public prendas: Prenda[];
-  public isTatuador: Boolean = true;
+  public is_Tatuador : Boolean
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private userService: UserService) {
     this.prendas = [
       new Prenda(1, "Skull shirt", "/assets/images/image 1.png"),
       new Prenda(2, "Rose shirt", "/assets/images/image 2.png"),
