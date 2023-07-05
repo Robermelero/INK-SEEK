@@ -6,6 +6,12 @@ export class User {
       public email?: string,
       public photo_perfil?: string,
       public password?: string,
-      public is_Tatuador?: boolean
+      public is_Tatuador?: boolean,
+
+      public nickname?: string,
+      public style?: string,
+      public studio?: string,
+      public valoracion?: string,
+      public descripcion?: string,
     ) {}
     }
