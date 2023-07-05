@@ -33,7 +33,7 @@ import { GaleriaComponent } from './pages/galeria/galeria.component';
 import { ConfirmarFotoComponent } from './pages/confirmar-foto/confirmar-foto.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { RecomendacionesComponent } from './pages/recomendaciones/recomendaciones.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { EstrellasComponent } from './pages/estrellas/estrellas.component';
 import { CerrarMenuDirective } from './cerrar-menu.directive';
 import { ModificarCitaComponent } from './pages/modificar-cita/modificar-cita.component';
