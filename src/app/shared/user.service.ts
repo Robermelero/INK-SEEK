@@ -8,7 +8,16 @@ import { User } from '../models/user';
 })
 export class UserService {
   private url: string = 'http://localhost:3000';
+ 
+  public is_Tatuador: boolean;
 
+  setIsTatuador(value: boolean) {
+    this.is_Tatuador = value;
+  }
+
+  getIsTatuador(): boolean {
+    return this.is_Tatuador;
+  }
   constructor(private http: HttpClient) {}
 
   register(user: User): Observable<any> {

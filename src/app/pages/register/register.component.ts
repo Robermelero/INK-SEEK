@@ -55,9 +55,9 @@ console.log(user)
         user.id_user = Number(data);
         
       }if(this.is_Tatuador===true){
-        this.router.navigate(['/profile-tatuador-propia'])
+        this.router.navigate(['/login'])
       }
-      else(this.router.navigate(['/edit-profile-user']))
+      else(this.router.navigate(['/login']))
     });
   }
 

@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class PreRegisterComponent {
 
   constructor(private router: Router) {}
-  goRegister(isTatuador: boolean) {
-    this.router.navigate(['/register'], { queryParams: { tatuador: isTatuador.toString() } });
+  goRegister(is_Tatuador: boolean) {
+    this.router.navigate(['/register'], { queryParams: { tatuador: is_Tatuador.toString() } });
   }
 }
