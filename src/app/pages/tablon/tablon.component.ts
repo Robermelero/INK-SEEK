@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Evento } from '../../models/evento';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/shared/user.service';
 
 @Component({
   selector: 'app-tablon',
@@ -9,9 +10,10 @@ import { Router } from '@angular/router';
 })
 export class TablonComponent implements OnInit{
   public eventos: Evento [];
-  isTatuador: boolean = true;
+  is_Tatuador: boolean = true;
 
-  constructor(private router: Router){
+  constructor(private router: Router, public userService:UserService){
+    this.is_Tatuador = userService.is_Tatuador;
     this.eventos = [
         new Evento (1, "https://cdntattoofilter.com/event/18061/s.jpg", "8º Asturias Tattoo Expo", "30 JUN - 02 JUL", "Gijón, Asturias"),
         new Evento (2, "https://cdntattoofilter.com/event/18184/s.jpg", "4th Ibiza Tattoo Convention", "08 - 10 SEP", "Ibiza, Islas Baleares"),

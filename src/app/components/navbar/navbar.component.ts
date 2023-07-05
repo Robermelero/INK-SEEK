@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import { UserService } from 'src/app/shared/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,11 +8,12 @@ import { Router, NavigationEnd } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  isTatuador: boolean = false;
+  isTatuador: boolean;
   
   activeLink: string = '';
 
-  constructor(private router: Router) {
+  constructor(private router: Router, public userService:UserService) {
+    this.isTatuador = userService.is_Tatuador;
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.activeLink = event.urlAfterRedirects;
