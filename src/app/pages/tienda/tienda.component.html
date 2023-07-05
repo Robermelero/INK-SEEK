@@ -13,14 +13,14 @@
         <img src="/assets/img/lupa-gris.png" alt="Lupa" class="lupa-img">
       </div>
     </div>
-    <div class="mas" (click)="goAdd()" *ngIf="isTatuador">
+    <div class="mas" (click)="goAdd()" *ngIf="is_Tatuador">
       <img src="/assets/Calendario/simbolo de mas.png" alt="">
     </div>
   </div>
   <div class="card-container">
     <div *ngFor="let prenda of prendas" class="card">
       <div class="image">
-        <button class="buter" type="button" (click)="quitarCaja()" *ngIf="isTatuador">X</button>
+        <button class="buter" type="button" (click)="quitarCaja()" *ngIf="is_Tatuador">X</button>
         <img class="imagen" [src]="prenda.photo">
       </div>
       <div class="title">{{prenda.title}}</div>

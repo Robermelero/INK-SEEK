@@ -1,5 +1,5 @@
 <section class ="cards">
-    <button  (click)= goModificar()>
+    <button  (click)= goModificar() *ngIf="is_Tatuador">
         <div class ="content" >
             <p class="cliente">Cliente: {{listaDeCitas.user_name}}</p>  
             <p>Hora: {{listaDeCitas.hora}}</p>

@@ -6,6 +6,6 @@ export class User {
       public email?: string,
       public photo_perfil?: string,
       public password?: string,
-      public isTatuador?: boolean
+      public is_Tatuador?: boolean
     ) {}
     }
