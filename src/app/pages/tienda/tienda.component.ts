@@ -3,6 +3,7 @@ import { Prenda } from 'src/app/models/prenda';
 import { Router } from '@angular/router';
 import { TiendaService } from 'src/app/shared/tienda.service';
 import { Respuesta } from 'src/app/models/respuesta';
+import { UserService } from 'src/app/shared/user.service';
 
 @Component({
   selector: 'app-tienda',
@@ -14,15 +15,33 @@ export class TiendaComponent implements OnInit {
   public is_Tatuador: Boolean = true;
 
   constructor(private router: Router,
-              public tiendaService : TiendaService) {
+              public tiendaService : TiendaService,
+              public userService : UserService) {
     this.tiendaService.getAll().subscribe((respuesta :Respuesta)=>{
-      this.prendas = respuesta.data_prenda
-    })
+      this.prendas = respuesta.data_prenda;
+    console.log(this.prendas)})
   }
   goAdd(){
     this.router.navigate(['/add-producto'])
   }
-  quitarCaja(){
+
+  delete(prenda:Prenda){
+    console.log("ENTROOOOOOOOOOOOO")
+    this.tiendaService.delete(prenda.id_photo).subscribe((respuesta : Respuesta)=>{
+
+      this.prendas = this.prendas.filter(prenda1 => prenda1.id_photo !== prenda.id_photo)
+      console.log(respuesta)
+    })
+    
   }
+
+  // quitarCaja(prenda : Prenda){
+    // console.log("ENTROOOOOOOOOOOOO")
+    // this.tiendaService.delete(prenda.id_photo).subscribe((respuesta : Respuesta)=>{
+
+    //   this.prendas = this.prendas.filter(prenda1 => prenda1.id_photo !== prenda.id_photo)
+    //   console.log(respuesta)
+    // })
+  // }
   ngOnInit(): void {}
 }

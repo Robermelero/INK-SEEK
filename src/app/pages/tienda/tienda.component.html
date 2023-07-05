@@ -20,10 +20,10 @@
   <div class="card-container">
     <div *ngFor="let prenda of prendas" class="card">
       <div class="image">
-        <button class="buter" type="button" (click)="quitarCaja()" *ngIf="is_Tatuador">X</button>
-        <img class="imagen" [src]="prenda.photo">
+        <button  *ngIf="is_Tatuador" class="buter" type="button" (click)="delete(prenda)">X</button>
+        <img class="imagen" src="{{prenda.photo}}">
       </div>
-      <div class="title">{{prenda.title}}</div>
+      <p class="title">{{prenda.name}}</p>
     </div>
   </div>
 </main>
