@@ -39,7 +39,7 @@ import { NavbarUserComponent } from './navbar-user/navbar-user.component';
 import { CerrarMenuDirective } from './cerrar-menu.directive';
 import { ModificarCitaComponent } from './pages/modificar-cita/modificar-cita.component';
 import { CamaraComponent } from './pages/camara/camara.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -84,7 +84,8 @@ import { CamaraComponent } from './pages/camara/camara.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

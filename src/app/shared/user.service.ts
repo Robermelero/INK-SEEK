@@ -7,13 +7,13 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class UserService {
-  private url: string = 'http://localhost:4000';
+  private url: string = 'http://localhost:3000';
   public isTatuador: boolean = false;
   public user: User;
-  public logueado: boolean = true;
+  public logueado: boolean = false;
 
   constructor(private http: HttpClient) {
-    this.isTatuador = false;
+    this.isTatuador =false;
     this.user = null;
     this.logueado = true;
   }
