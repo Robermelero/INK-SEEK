@@ -10,7 +10,7 @@ export class UserService {
   private url: string = 'http://localhost:3000';
   public is_Tatuador: boolean;
   public user: User;
-  public logueado: boolean = true;
+  public logueado: boolean = false;
 
   constructor(private http: HttpClient) {
     this.is_Tatuador;
