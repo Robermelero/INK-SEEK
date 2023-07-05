@@ -1,17 +1,42 @@
 <div class="container">
-    <div class="background"></div>
-    <div class="content">
-      <img src="/assets/images/mariposilla solita copia3.png" alt="mariposa" class="mariposa" [@volar]>
-      <img src="/assets/images/titulo.png" alt="título" class="titulo" [@aparecer]>
-      <div #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="formulario"  [@aparecer] >
-        <label class="name-label-email">Email</label>
-        <input type="text" placeholder=" " />
-        <label class="name-label-contraseña">Contraseña</label>
-        <input type="password" placeholder=" " />
-        <button (click)= onSubmit(loginForm) class="boton"; [disabled]="loginForm.invalid">Sign in</button>
-        <p>¿No tienes una cuenta todavía?</p>
-        <a routerLink="/pre-register" routerLinkActive="active">Sign up</a>
-      </div>
-    </div>
+  <div class="background"></div>
+  <div class="content">
+    <img src="/assets/images/mariposilla solita copia3.png" alt="mariposa" class="mariposa" [@volar]>
+    <img src="/assets/images/titulo.png" alt="título" class="titulo" [@aparecer]>
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="formulario">
+      <label class="name-label-email">Email</label>
+
+      <input type="text" class="form-control" placeholder=" " name="email" [(ngModel)]="user.email" 
+      #emailID="ngModel" [ngClass]="{'is-invalid': (emailID.dirty || emailID.touched) && emailID.invalid}" email required/>
+
+      <label class="name-label-contraseña">Contraseña</label>
+      <input type="password" class="form-control" placeholder=" " name="password" [(ngModel)]="user.password"
+      #passwordID="ngModel" [ngClass]="{'is-invalid': (passwordID.dirty || passwordID.touched) && passwordID.invalid}" minlength="8" required />
+      
+      <button  class="boton" [disabled]="loginForm?.form.invalid" [ngClass]="{'disabled': loginForm?.form.invalid}">Sign in</button>
+
+      <p>¿No tienes una cuenta todavía?</p>
+      <a routerLink="/pre-register" routerLinkActive="active">Sign up</a>
+    </form>
   </div>
+</div>
+
+<!-- <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="mb-4">
+  <div class="form-group">
+      <label>Email</label>
+      <input type="email" style="width: 250px;" class="form-control" name="email" [(ngModel)]="user.email" #emailID="ngModel" [ngClass]="{'is-invalid': (emailID.dirty || emailID.touched) && emailID.invalid}" email required>
+      <div *ngIf="(emailID.dirty || emailID.touched) && emailID.invalid" class="invalid-feedback">
+      </div>
+  </div>
+  <div class="form-group">
+      <label>Contraseña</label>
+      <input type="password" style="width: 250px;" class="form-control" name="password" [(ngModel)]="user.password" #passwordID="ngModel" [ngClass]="{'is-invalid': (passwordID.dirty || passwordID.touched) && passwordID.invalid}" minlength="8" required>
+      <div *ngIf="(passwordID.dirty || passwordID.touched) && passwordID.invalid" class="invalid-feedback">
+      </div>
+  </div>
+  <div class="form-group">
+      <button class="btn btn-danger btn-block" [disabled]="loginForm?.form.invalid"> Submit</button>
+  </div>
+</form> -->
+
   

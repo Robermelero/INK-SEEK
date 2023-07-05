@@ -10,9 +10,10 @@ import { UserService } from 'src/app/shared/user.service';
 })
 export class TiendaComponent implements OnInit {
   public prendas: Prenda[];
-  public is_Tatuador : Boolean
+  public is_Tatuador: Boolean = true;
 
-  constructor(private router: Router, private userService: UserService) {
+  constructor(private router: Router,public userService:UserService) {
+    this.is_Tatuador = userService.is_Tatuador;
     this.prendas = [
       new Prenda(1, "Skull shirt", "/assets/images/image 1.png"),
       new Prenda(2, "Rose shirt", "/assets/images/image 2.png"),

@@ -33,12 +33,13 @@ import { GaleriaComponent } from './pages/galeria/galeria.component';
 import { ConfirmarFotoComponent } from './pages/confirmar-foto/confirmar-foto.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { RecomendacionesComponent } from './pages/recomendaciones/recomendaciones.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EstrellasComponent } from './pages/estrellas/estrellas.component';
 import { CerrarMenuDirective } from './cerrar-menu.directive';
 import { ModificarCitaComponent } from './pages/modificar-cita/modificar-cita.component';
 import { CamaraComponent } from './pages/camara/camara.component';
 import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -84,8 +85,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
