@@ -1,6 +1,6 @@
 export class Prenda {
     constructor(
-        public id_prenda:number,
+        public id_producto:number,
         public title:string,
         public photo:string    
     ){}

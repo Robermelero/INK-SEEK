@@ -12,9 +12,9 @@ export class ConversacionChatComponent {
   // public tatuador : Tatuador
   // public user : User
   // public mensajes: any =[
-  //   {emisor : "1",
+  //   {emisor : "id_user",
   //   mensaje : "Hola!"},
-  //   {emisor : "2",
+  //   {emisor : "id_tatuador",
   //   mensaje : "Hola!"},
   //   {emisor : "1",
   //   mensaje : "Queria preguntarte acerca de poder pedir cita contigo para tatuarme!"},
