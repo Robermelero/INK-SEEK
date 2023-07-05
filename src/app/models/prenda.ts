@@ -1,7 +1,10 @@
 export class Prenda {
     constructor(
-        public id_producto:number,
-        public title:string,
-        public photo:string    
+        
+        public name?:string,
+        public photo?:string,
+        public id_producto?  : number,
+        public id_user? : number,
+        public id_photo? : number
     ){}
 }
