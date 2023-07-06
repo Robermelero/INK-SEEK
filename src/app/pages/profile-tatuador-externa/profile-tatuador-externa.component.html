@@ -9,7 +9,9 @@
             <div class="medit"></div>
             <a routerLink="">
               <div class="boton" routerLinkActive="active">
-                <img src="./assets/AED.png" alt="" class="bedit">
+                <button [ngClass]="{ 'followed': isFollowed }" (click)="toggleFollow()">
+                  <img src="./assets/AED.png" alt="" class="bedit">
+                </button>
               </div>
             </a>
           </div>

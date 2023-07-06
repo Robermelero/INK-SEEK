@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Publicacion } from 'src/app/models/publicacion';
+import { UserService } from 'src/app/shared/user.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-profile-tatuador-externa',
@@ -10,8 +12,9 @@ import { Publicacion } from 'src/app/models/publicacion';
 export class ProfileTatuadorExternaComponent {
 
   public publicaciones: Publicacion[];
+  public isFollowed: boolean;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private userService: UserService) {
     this.publicaciones = [
       new Publicacion(1, "https://media.istockphoto.com/id/491837154/es/foto/tattooist-demostrar-el-proceso-tatuaje-en-mano.jpg?s=612x612&w=0&k=20&c=SIXqBrUogTu8qdZMP4mDDkjFYZlRbkjdDYl5PFHjnyg=", "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x", "ArtTattoo"),
       // new Publicacion(2, "https://i.guim.co.uk/img/media/f6c77429ba6ce8bf2527c150551157b06d788b99/0_182_7276_4366/master/7276.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=ab66ffe8723aa6885bdef487bef1930e", "https://e0.pxfuel.com/wallpapers/442/989/desktop-wallpaper-perfil-boy-face-thumbnail.jpg", "RoseInk"),
@@ -19,6 +22,36 @@ export class ProfileTatuadorExternaComponent {
       // new Publicacion(4, "https://cdntattoofilter.com/event/17902/s.jpg", "https://i0.wp.com/lamiradafotografia.es/wp-content/uploads/2014/07/simpson-rock.jpg", "MrPrint")
     ];
   }
+
+  followUser(id_user: number) {
+    this.userService.followUser(id_user).subscribe(
+      (response) => {
+        console.log('Usuario seguido exitosamente');
+        this.isFollowed = true; 
+      },
+      (error) => {
+        console.error('Error al seguir al usuario:', error);
+      }
+    );
+  }
+  
+  unfollowUser(id_user: number) {
+    this.userService.unfollowUser(id_user).subscribe(
+      (response) => {
+        console.log('Dejaste de seguir al usuario exitosamente');
+        this.isFollowed = false; 
+      },
+      (error) => {
+        console.error('Error al dejar de seguir al usuario:', error);
+      }
+    );
+  }
+
+  toggleFollow() {
+    this.isFollowed = !this.isFollowed;
+  }
+  
+  
   quitarCaja(){
     }
   

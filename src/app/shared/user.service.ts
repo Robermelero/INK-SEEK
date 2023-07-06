@@ -40,4 +40,16 @@ export class UserService {
     let url = `${this.url}/login`;
     return this.http.post(url,user);
   }
+
+  public followUser(id_user: number): Observable<any> {
+    const url = `${this.url}/users/${id_user}/follow`;
+    return this.http.post(url, {});
+  }
+
+  public unfollowUser(id_user: number): Observable<any> {
+    const url = `${this.url}/users/${id_user}/unfollow`;
+    return this.http.post(url, {});
+  }
 }
+
+
