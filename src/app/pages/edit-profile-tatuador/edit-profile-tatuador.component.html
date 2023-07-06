@@ -1,38 +1,49 @@
-
 <div class="fondo">
     <div class="margenY">
         <div class="exit"> <img src="./assets/delete.png" alt="" routerLink="/profile-tatuador-propia" routerLinkActive="active"></div>
     </div>
     <div class="centro">
-        <div class="line1">
-            <div class="profileimg"><img src="./assets/rober.png" alt=""></div>
+        <div class="foto">
+            <div ><img src="./assets/rober.png" alt="" class="profileimg"></div>
         </div>
-        <div class="margenX">
-            <div class="margedit"></div>
-            <div class="newPhoto"><img src="./assets/camara.png" alt=""></div>
+        <div class="editar">
+            <div><img src="./assets/camara.png"  class="editarEmoji" alt=""></div>
         </div>
-     <div class="line2">
-        <label class="name-label-nombre"></label>
-        <input type="text" placeholder=" " />
-        <label class="name-label-nombre" *ngIf = "isTatuador" >AKA</label>
-        <input type="text" placeholder=" " *ngIf = "isTatuador" />
+    <div class="user-form" *ngIf = "!is_Tatuador">
+        <label class="name-label-nombre">Nombre</label>
+        <input type="text" #name placeholder=" " [value]="this.usuario.name"/>
         <label class="name-label-apellidos">Apellidos</label>
-        <input type="text" placeholder=" " />
+        <input type="text" #last_name placeholder=" " [value]="this.usuario.last_name"/>
         <label class="name-label-email">Email</label>
-        <input type="text" placeholder=" " />
-        <label class="name-label-email" *ngIf = "isTatuador" >Estudio</label>
-        <input type="text" placeholder=" " *ngIf = "isTatuador" />
+        <input type="text" #email placeholder=" " [value]="this.usuario.email"/>
         <label class="name-label-contraseña">Contraseña</label>
-        <input type="text" placeholder=" " />
-        <label class="name-label-contraseña2">Confirma contraseña</label>
-        <input type="password" placeholder=" " />
-        <div class="checkUser" *ngIf = "!isTatuador">
-            <a routerLink="/profile-tatuador-propia" routerLinkActive="active"><img src="./assets/Vector.png" alt=""></a>
-        </div>
-        <div class="checkTatuador" *ngIf = "isTatuador">
-            <a routerLink="/profile-tatuador-propia" routerLinkActive="active"><img src="./assets/Vector.png" alt=""></a>
-        </div>
-     </div>
+        <input type="text" #password placeholder=" " [value]="this.usuario.password"/>
+        <div class="checkUser" >
+            <button routerLink="/edit-profile-tatuador" routerLinkActive="active" class="usuario" (click)="info(name, last_name, email, password)"><img src="./assets/Vector.png" alt="">
+            </button>
+        </div>    
     </div>
-    <div class="margenY"></div>
+    <div class="tatuador-form">
+    <label class="name-label-nombre">Nombre</label>
+    <input type="text" #name [value]="this.usuario.name" />
+    <label class="name-label-nombre">AKA</label>
+    <input type="text" #nickname [value]="this.usuario.nickname" />
+    <label class="name-label-apellidos">Apellidos</label>
+    <input type="text" #last_name [value]="this.usuario.last_name" />
+    <label class="name-label-email">Email</label>
+    <input type="text" #email [value]="this.usuario.email" />
+    <label class="name-label-email">Estudio</label>
+    <input type="text" #studio [value]="this.usuario.studio" />
+    <label class="name-label-email">Estilo</label>
+    <input type="text" #style [value]="this.usuario.style" />
+    <label class="name-label-email" id="desc">Descripción</label>
+    <textarea #descripcion type="text" class="descripcion-input" [value]="this.usuario.descripcion"></textarea>
+    <label class="name-label-contraseña">Contraseña</label>
+    <input type="text" #password placeholder=" " [value]="this.usuario.password" />
+    <div class="checkTatuador">
+      <button routerLink="/profile-tatuador-propia" routerLinkActive="active" class="tatuador" (click)="info2(name.value, nickname.value, last_name.value, email.value, studio.value, style.value, descripcion.value, password.value)">
+        <img src="./assets/Vector.png" alt="">
+      </button>
+    </div>
+</div>
 </div>

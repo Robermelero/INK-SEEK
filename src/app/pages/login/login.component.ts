@@ -4,12 +4,34 @@ import { Router } from '@angular/router';
 import { Respuesta } from 'src/app/models/respuesta';
 import { NgForm } from '@angular/forms';
 import { User } from 'src/app/models/user';
+import { trigger, state, style, animate, transition } from '@angular/animations';
+
 
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  animations: [
+    trigger('volar', [
+      state('inicial', style({
+        transform: 'translateY(0)'
+      })),
+      state('final', style({
+        transform: 'translateY(-85vh)'
+      })),
+      transition('inicial => final', animate('4s 0.5s')),
+    ]),
+    trigger('aparecer', [
+      state('inicial', style({
+        opacity: 0
+      })),
+      state('final', style({
+        opacity: 1
+      })),
+      transition('inicial => final', animate('5s 1.5s')),
+    ])
+  ]
 })
 export class LoginComponent implements OnInit {
  

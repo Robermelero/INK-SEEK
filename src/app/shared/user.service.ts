@@ -26,7 +26,7 @@ export class UserService {
   }
   //FUNCIONALIDAD PARA EDITAR EL PERFIL DEL USUARIO
   public edit (usuario: User){
-    let url = `${this.url}/profile`
+    let url = `${this.url}/edit-profile-tatuador`
     return this.http.put(url, usuario)
   }
 

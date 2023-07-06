@@ -1,55 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
-.margenY{
 
-    width: 10%;
+.fondo{
+  min-height: 100vh;
+  width: 392px;
+  background-color:var(--gris1);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 70px;
+  border:2px solid pink;
 }
 
 .centro{
     min-height: 810px;
-    width: 80%;
+    width: 392px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    border:1px solid green;
 }
-.fondo{
-    min-height: 100vh;
-    width: 100%;
-    background-color:var(--gris1);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding-top: 70px;
-}
-.line1{
-    height: 20%;
+
+.foto{
+    height: 150px;
     width: 100%;
     display: flex;
     flex-direction: row;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     border:1px solid red;
-
+    
 }
+
 .exit{
-    width: 6%;
-    height: 3%;
+    width: 20px;
+    height: 20px;
     position: absolute;
-    top:10%;
-    left:7%;
+    top:75px;
+    left:20px;
+    border:1px solid blue;
 }
 
-.newPhoto{
-    height: 5%;
-    width: 9%;
+.editarEmoji{
+    height: 40px;
     position: absolute;
-    top:170px;
-    right:120px;
+    top:180px;
+    right:100px;
 }
-.line2{
+
+.user-form{
   padding-bottom: 150px;
     height: auto;
     width: 100%;
@@ -58,13 +60,25 @@
     justify-content: space-around;
     flex-direction: column;
     border:1px solid blue;
-
 }
+
+.tatuador-form{
+  padding-bottom: 150px;
+    height: auto;
+    width: 100%;
+    display: flex;
+    padding-top:20px;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    border:1px solid blue;
+}
+
 .profileimg{
-    height: 75%;
-    width: 39%;
+    height: 150px;
+    width: 150px;
     border-radius: 50%;
-    position: relative; 
+    border:1px solid red;
 }
 
 .checkTatuador{
@@ -75,6 +89,17 @@
   margin-bottom: 70px;
   border:1px solid blue;
 }
+
+.tatuador{
+  background-color: transparent;
+  border: none;
+}
+
+.usuario{
+  background-color: transparent;
+  border: none;
+}
+
 .checkUser{
 
     position: absolute;
@@ -83,16 +108,28 @@
     margin-bottom: 70px;
     border:1px solid blue;
 }
+
 p{
     color: white;
     font-family: 'Lato', sans-serif;
     font-size: 13px;
 }
 
+  .tatuador-form input[type="text"],
+  .tatuador-form input[type="password"] {
+    width: 307px;
+    height: 30px;
+    margin-bottom: 40px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--gris3);
+    background-color: transparent;
+    color: var(--blanco);
+    font-size: 18px;
+  }
 
-
-  .line2 input[type="text"],
-  .line2 input[type="password"] {
+  .user-form input[type="text"],
+  .user-form input[type="password"] {
     width: 307px;
     height: 30px;
     margin-bottom: 40px;
@@ -105,16 +142,24 @@ p{
     font-size: 18px;
   }
 
-  .line2 input[type="text"]::placeholder,
-  .line2 input[type="password"]::placeholder {
+  .tatuador-form  input[type="text"]::placeholder,
+  .tatuador-form  input[type="password"]::placeholder {
     border: none;
   }
+
+ 
+
+  .user-form  input[type="text"]::placeholder,
+  .user-form  input[type="password"]::placeholder {
+    border: none;
+  }
+
   .name-label-email {
     color: var(--blanco);
     font-size: 16px;
     margin-right: 268px;
-
   } 
+
   .name-label-nombre {
     color: var(--blanco);
     font-size: 16px;
@@ -139,8 +184,47 @@ p{
     margin-right: 155px;
     width:150px;
   } 
-  .line2 input[type="text"]:focus,
-  .line2 input[type="password"]:focus {
+
+  .tatuador-form  input[type="text"]:focus,
+  .tatuador-form  input[type="password"]:focus {
     outline: none;
     border-bottom: 1px solid var(--principal); 
   }
+
+  .user-form  input[type="text"]:focus,
+  .user-form  input[type="password"]:focus {
+    outline: none;
+    border-bottom: 1px solid var(--principal); 
+  }
+
+  .invalid-feedback{
+    color: var(--blanco)
+  }
+
+  textarea[type="text"] {
+    width: 307px;
+    height: 60px;
+    margin-bottom: 40px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--gris3);
+    background-color: transparent;
+    color: var(--blanco);
+    font-size: 18px;
+  }
+
+  textarea[type="text"]:focus {
+    outline: none;
+    border-bottom: 1px solid var(--principal); 
+  }
+
+  textarea[type="text"]::placeholder {
+    border: none;
+  }
+
+  #desc{
+    margin-left: 35px;
+  }
+ 
+  
