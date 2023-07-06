@@ -9,17 +9,15 @@
   justify-content: space-around;
   align-items: center;
   padding-top: 70px;
-  border:2px solid pink;
 }
 
 .centro{
-    min-height: 810px;
+    min-height: 650px;
     width: 392px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border:1px solid green;
 }
 
 .foto{
@@ -31,7 +29,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border:1px solid red;
     
 }
 
@@ -41,7 +38,6 @@
     position: absolute;
     top:75px;
     left:20px;
-    border:1px solid blue;
 }
 
 .editarEmoji{
@@ -52,14 +48,14 @@
 }
 
 .user-form{
-  padding-bottom: 150px;
-    height: auto;
-    width: 100%;
-    display: flex;
-    margin-top:40px;
-    justify-content: space-around;
-    flex-direction: column;
-    border:1px solid blue;
+  padding-bottom: 190px;
+  height: auto;
+  width: 100%;
+  display: flex;
+  padding-top:20px;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
 }
 
 .tatuador-form{
@@ -71,14 +67,12 @@
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    border:1px solid blue;
 }
 
 .profileimg{
     height: 150px;
     width: 150px;
     border-radius: 50%;
-    border:1px solid red;
 }
 
 .checkTatuador{
@@ -87,26 +81,29 @@
   top:870px;
   right: 38px;
   margin-bottom: 70px;
-  border:1px solid blue;
 }
 
 .tatuador{
   background-color: transparent;
   border: none;
+  position:absolute;
+  right: 10px;
+  top:120px
+  
 }
 
 .usuario{
   background-color: transparent;
   border: none;
+  
 }
 
 .checkUser{
 
     position: absolute;
-    top:720px;
+    top:620px;
     right: 38px;
     margin-bottom: 70px;
-    border:1px solid blue;
 }
 
 p{

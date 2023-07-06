@@ -19,19 +19,4 @@ export class AddCitaComponent {
     private citaService: CitaService,
     private userService: UserService
   ) {}
-
-  agregarCita() {
-    const id_user = this.userService.login();
-    this.cita.id_user = id_user;
-
-    this.citaService.addCita(this.cita).subscribe(
-      response => {
-        console.log('Cita agregada con éxito');
-        this.router.navigate(['/calendario']);
-      },
-      error => {
-        console.log('Error al agregar la cita:', error);
-      }
-    );
-  }
 }

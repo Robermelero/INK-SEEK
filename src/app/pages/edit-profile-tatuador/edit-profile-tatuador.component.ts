@@ -1,5 +1,4 @@
-import { Component, HostListener } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
 import { Respuesta } from 'src/app/models/respuesta';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/shared/user.service';
@@ -12,25 +11,12 @@ import { UserService } from 'src/app/shared/user.service';
 export class EditProfileTatuadorComponent {
   public is_Tatuador: boolean;
   public usuario: User;
-  public registro: FormGroup;
 
-  constructor(public userService: UserService, private formBuilder: FormBuilder,) {
+  constructor(public userService: UserService) {
     this.usuario = this.userService.user;
+    this.is_Tatuador = this.userService.is_Tatuador;
     console.log(this.usuario);
-    this.buildForm();
   } 
-
-  private buildForm() {
-    const minPassLength = 8;
-    const maxPassLength = 16;
-
-    this.registro = this.formBuilder.group({
-      nombre: ['', Validators.required],
-      apellido: ['', Validators.required],
-      correo: ['', [Validators.required, Validators.email]],
-      contraseña: ['', [Validators.required, Validators.minLength(minPassLength), Validators.maxLength(maxPassLength)]],
-    });
-  }
 
   info(newName: HTMLInputElement, newLastname: HTMLInputElement, newEmail: HTMLInputElement, newPassword: HTMLInputElement) {
     this.usuario.name = newName.value;
