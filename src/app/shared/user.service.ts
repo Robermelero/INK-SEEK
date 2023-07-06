@@ -34,4 +34,9 @@ export class UserService {
     let url = `${this.url}/login`;
     return this.http.post(url,user);
   }
+
+  public getTatuador(): Observable<any> {
+    let url = `${this.url}/explorar}`
+    return this.http.get(url)
+  }
 }
