@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/shared/user.service';
 
 @Component({
   selector: 'app-header',
@@ -7,10 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-
+  public is_Tatuador: Boolean;
   public mostrarContenido: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, public userService: UserService) {
+    this.is_Tatuador = this.userService.is_Tatuador
+  }
 
   public toggleHamburguesa() {
     this.mostrarContenido = !this.mostrarContenido;
@@ -21,7 +24,12 @@ export class HeaderComponent {
   }
 
   public goPerfil() {
-    this.router.navigate(['/profile-tatuador-propia']);
+    if (this.is_Tatuador == true){
+      this.router.navigate(['/profile-tatuador-propia']);
+    }else{
+      this.router.navigate(['/edit-profile-tatuador']);
+    }
+    
   }
 
   @HostListener('document:click', ['$event.target'])
