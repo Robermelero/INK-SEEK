@@ -19,14 +19,14 @@ place:string=""
   postEvent() {
     let evento = new Evento(
       0,
+      this.photo,
       this.title,
       this.date,
-      this.photo,
       this.place,
       0
     );
     this.eventsService
-    .postEvent("3",evento.title,evento.date, evento.photo, evento.place)
+    .postEvent("3",evento.photo,evento.title, evento.date, evento.place)
     .subscribe((data:any) => {
       if (data && data.error === false && data.eventos){
         const newEvent=data.eventos[0]

@@ -100,7 +100,19 @@
       flex-direction: row;
       justify-content: center;
     }
-
+    .buter{ 
+      background-color:rgb(179, 179, 179,0.2) ;
+      color: var(--gris3);
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      border: transparent;
+      font-size: 14pt;
+      font-weight: bold;
+      position: relative;
+      top: -40px;
+      left: -1px;
+  } 
   
   
   
