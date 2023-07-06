@@ -8,12 +8,12 @@ import { UserService } from 'src/app/shared/user.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  isTatuador: boolean;
+  public is_Tatuador: boolean;
   
   activeLink: string = '';
 
   constructor(private router: Router, public userService:UserService) {
-    this.isTatuador = userService.is_Tatuador;
+    this.is_Tatuador = userService.is_Tatuador;
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.activeLink = event.urlAfterRedirects;
