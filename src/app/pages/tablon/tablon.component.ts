@@ -13,7 +13,7 @@ export class TablonComponent implements OnInit{
   is_Tatuador: boolean = false;
 
   constructor(private router: Router, private userService: UserService){
-    this.is_Tatuador = this.userService.getIsTatuador();
+    this.is_Tatuador = this.userService.is_Tatuador
     this.eventos = [
         new Evento (1, "https://cdntattoofilter.com/event/18061/s.jpg", "8º Asturias Tattoo Expo", "30 JUN - 02 JUL", "Gijón, Asturias"),
         new Evento (2, "https://cdntattoofilter.com/event/18184/s.jpg", "4th Ibiza Tattoo Convention", "08 - 10 SEP", "Ibiza, Islas Baleares"),

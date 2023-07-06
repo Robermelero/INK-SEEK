@@ -13,7 +13,7 @@ export class NavbarComponent {
   activeLink: string = '';
 
   constructor(private router: Router, private userService: UserService) {
-    this.is_Tatuador = this.userService.getIsTatuador();
+    this.is_Tatuador = this.userService.is_Tatuador
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.activeLink = event.urlAfterRedirects;

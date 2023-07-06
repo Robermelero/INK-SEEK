@@ -11,13 +11,6 @@ export class UserService {
  
   public is_Tatuador: boolean;
 
-  setIsTatuador(value: boolean) {
-    this.is_Tatuador = value;
-  }
-
-  getIsTatuador(): boolean {
-    return this.is_Tatuador;
-  }
   constructor(private http: HttpClient) {}
 
   register(user: User): Observable<any> {
@@ -27,5 +20,9 @@ export class UserService {
   public edit (usuario: User){
     let url = `${this.url}/profile`
     return this.http.put(url, usuario)
+  }
+  public login (user:User){
+    let url = `${this.url}/login`;
+    return this.http.post(url,user);
   }
 }

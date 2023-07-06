@@ -12,7 +12,7 @@ export class CitaComponent {
   is_Tatuador: boolean=false
   @Input() listaDeCitas : Cita
   constructor(private router: Router, private userService: UserService) {
-    this.is_Tatuador = this.userService.getIsTatuador();
+    this.is_Tatuador = this.userService.is_Tatuador
   }
   goModificar(){
     this.router.navigate(['/modificar-cita', this.listaDeCitas.id_user])

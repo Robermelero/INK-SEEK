@@ -1,9 +1,11 @@
-<section class ="cards">
-    <button  (click)= goModificar() *ngIf="is_Tatuador">
-        <div class ="content" >
-            <p class="cliente">Cliente: {{listaDeCitas.user_name}}</p>  
-            <p>Hora: {{listaDeCitas.hora}}</p>
-            <p>Especificaciones: {{listaDeCitas.asunto}}</p>       
+<section class="cards">
+    <ng-container *ngFor="let cita of listaDeCitas">
+      <button (click)="goModificar()" *ngIf="is_Tatuador">
+        <div class="content">
+          <p class="cliente">Cliente: {{ cita.email }}</p>
+          <p>Hora: {{ cita.hora }}</p>
+          <p>Especificaciones: {{ cita.asunto }}</p>
         </div>
-    </button>   
-</section>
+      </button>
+    </ng-container>
+  </section>
