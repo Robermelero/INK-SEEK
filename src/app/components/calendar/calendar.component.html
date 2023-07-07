@@ -1,68 +1,36 @@
-<main class = "contenedor">
-    <section class ="mes" [ngClass]= "{'centered-title ': !is_Tatuador}" >       
-        <div class="flecha1"><img src="/assets/images/Arrow 3.png" alt=""></div>
-        <p class ="nombre_mes" style = "font-weight: bold">Marzo</p>
-        <div class="flecha2"><img src="/assets/images/Arrow 2.png" alt="" ></div>
-        <a routerLink="/add-cita" routerLinkActive="active" *ngIf="is_Tatuador" class="mas"><img src="/assets/Calendario/simbolo de mas.png" alt=""></a>
+<main class="contenedor">
+    <section class="mes" [ngClass]="{ 'centered-title': !is_Tatuador }">
+      <div class="flecha1" (click)="changeMonth(-1)"><img src="/assets/images/Arrow 3.png" alt=""></div>
+      <p class="nombre_mes" style="font-weight: bold">{{ viewDate | date: 'MMMM' }}</p>
+      <div class="flecha2" (click)="changeMonth(1)"><img src="/assets/images/Arrow 2.png" alt=""></div>
+      <a routerLink="/add-cita" routerLinkActive="active" *ngIf="is_Tatuador" class="mas"><img src="/assets/Calendario/simbolo de mas.png" alt=""></a>
     </section>
     <section class="dia">
-        <div class="dias__item">L</div>
-        <div class="dias__item">M</div>
-        <div class="dias__item">X</div>
-        <div class="dias__item">J</div>
-        <div class="dias__item">V</div>
-        <div class="dias__item" style="color: var(--principal);">S</div>
-        <div class="dias__item" style="color: var(--principal);">D</div>
+      <div class="dias__item">L</div>
+      <div class="dias__item">M</div>
+      <div class="dias__item">X</div>
+      <div class="dias__item">J</div>
+      <div class="dias__item">V</div>
+      <div class="dias__item" style="color: var(--principal);">S</div>
+      <div class="dias__item" style="color: var(--principal);">D</div>
     </section>
-
-
-    <section class ="calendario">
-        <div class="calendario__dia"><a href=""style="color : var(--gris3)">26</a></div>
-        <div class="calendario__dia"><a href=""style="color : var(--gris3)">27</a></div>
-        <div class="calendario__dia"><a href=""style="color : var(--gris3)">28</a></div>
-        <div class="calendario__dia"><a href=""style="color : var(--gris3)">29</a></div>
-        <div class="calendario__dia"><a href=""style="color : var(--gris3)">30</a></div>
-        <div class="calendario__dia"><a href=""style="color: var(--principal);">1</a></div>
-        <div class="calendario__dia"><a href=""style="color: var(--principal);">2</a></div>
-        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">3</button></div>
-        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">4</button></div>
-        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">5</button></div>
-        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">6</button></div>
-        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">7</button></div>
-        <div class="calendario__dia"><a href=""style="color: var(--principal);">8</a></div>
-        <div class="calendario__dia"><a href=""style="color: var(--principal);">9</a></div>
-        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">10</button></div>
-        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">11</button></div>
-        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">12</button></div>
-        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">13</button></div>
-        <!-- <div class="calendario__dia"><a href="#" (onclick)="openModal">14</a></div> -->
-        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">14</button></div>
-        
-   
-        
-        
-        <div class="calendario__dia"><a href=""style="color: var(--principal);">15</a></div>
-        <div class="calendario__dia"><a href=""style="color: var(--principal);">16</a></div>
-        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">17</button></div>
-        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">18</button></div>
-        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">19</button></div>
-        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">20</button></div>
-        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">21</button></div>
-        <div class="calendario__dia"><a href=""style="color: var(--principal);">22</a></div>
-        <div class="calendario__dia"><a href=""style="color: var(--principal);">23</a></div>
-        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">24</button></div>
-        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">25</button></div>
-        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">26</button></div>
-        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">27</button></div>
-        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">28</button></div>
-        <div class="calendario__dia"><a href=""style="color: var(--principal);">29</a></div>
-        <div class="calendario__dia"><a href=""style="color: var(--principal);">30</a></div>
-        <div class="calendario__dia"><button  (click)="obtenerCitasAgendadas()">31</button></div>
-    </section>
-
-
-   <app-cita *ngFor="let cita of citasAgendadas" [listaDeCitas]="cita"></app-cita>
- 
-
-
-</main>
+  
+    <div class="calendario">
+        <div class="calendario__dia" *ngFor="let day of calendarDays" (click)="handleDayClick(day)">
+          <ng-container *ngIf="day.date">
+            <a href=""
+              [ngClass]="{'current-date': isSameDate(day.date, currentDate), 'has-citas': day.hasCitas}"
+              style="color: {{ getTextColor(day) }}">{{ day.date | date: 'd' }}</a>
+            <div class="citas-marker" *ngIf="day.hasCitas"></div>
+          </ng-container>
+        </div>
+      </div>
+    
+      <section class="citas-agendadas">
+        <div class="cita-card" *ngFor="let cita of selectedDayCitas">
+          <p class="cliente">Cliente: {{ cita.email }}</p>
+          <p>Hora: {{ cita.hora }}</p>
+          <p>Especificaciones: {{ cita.asunto }}</p>
+        </div>
+      </section>
+    </main>

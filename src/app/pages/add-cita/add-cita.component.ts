@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { CitaService } from 'src/app/shared/cita.service';
-import { Cita } from 'src/app/models/cita';
+import { CitaService } from '../../shared/cita.service';
+import { Cita } from '../../models/cita';
 import { UserService } from 'src/app/shared/user.service';
 import { User } from 'src/app/models/user';
 
@@ -12,18 +12,33 @@ import { User } from 'src/app/models/user';
 })
 export class AddCitaComponent {
   cita: Cita = new Cita();
-  usuario: User
+  clienteId: number;
+  public user: User;
+  public idTatuador: number;
 
-  constructor(
-    private router: Router,
-    private citaService: CitaService,
-    private userService: UserService
-  ) {}
+  constructor(private router: Router, private citaService: CitaService, private userService: UserService) {
+    this.idTatuador = this.userService.user.id_user;
+  }
 
   agregarCita() {
-    const id_user = this.userService.login();
-    this.cita.id_user = id_user;
+    const emailCliente = this.cita.email;
+    this.userService.obtenerIdCliente(emailCliente).subscribe(
+      (idCliente: number) => {
+        if (idCliente) {
+          this.guardarCita(this.idTatuador, idCliente.toString());
+        } else {
+          console.log('No se encontró el cliente con el correo electrónico especificado');
+        }
+      },
+      error => {
+        console.log('Error al obtener el ID del cliente:', error);
+      }
+    );
+  }
 
+  guardarCita(idTatuador: number, idCliente: string) {
+    this.cita.id_user = idTatuador;
+    this.cita.email = idCliente;
     this.citaService.addCita(this.cita).subscribe(
       response => {
         console.log('Cita agregada con éxito');

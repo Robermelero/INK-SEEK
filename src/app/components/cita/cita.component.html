@@ -1,11 +1,11 @@
 <section class="cards">
-    <ng-container *ngFor="let cita of listaDeCitas">
-      <button (click)="goModificar()" *ngIf="is_Tatuador">
-        <div class="content">
-          <p class="cliente">Cliente: {{ cita.email }}</p>
-          <p>Hora: {{ cita.hora }}</p>
-          <p>Especificaciones: {{ cita.asunto }}</p>
-        </div>
-      </button>
-    </ng-container>
-  </section>
+  <ng-container *ngFor="let cita of selectedDayCitas">
+    <button (click)="goModificar()" *ngIf="is_Tatuador">
+      <div class="content">
+        <p class="cliente">Cliente: {{ cita.email }}</p>
+        <p>Hora: {{ cita.hora }}</p>
+        <p>Especificaciones: {{ cita.asunto }}</p>
+      </div>
+    </button>
+  </ng-container>
+</section>

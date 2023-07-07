@@ -11,13 +11,13 @@
     <section class="inputs">
       <input type="text" placeholder="Asunto" [(ngModel)]="cita.asunto" name="asunto" />
       <input type="text" placeholder="Correo electrónico" [(ngModel)]="cita.email" name="email" />
-      <input type="text" placeholder="Fecha" class="fecha" [(ngModel)]="cita.fecha" name="fecha" />
+      <input type="text" placeholder="Fecha" class="fecha" [(ngModel)]="cita.date" name="fecha" />
       <input type="text" placeholder="Hora" [(ngModel)]="cita.hora" name="hora" />
     </section>
     <div>
-      <a routerLink="/calendario" routerLinkActive="active">
+      <button (click)="agregarCita()">
         <img src="/assets/Calendario/Vector.png" alt="" class="tick" />
-      </a>
+      </button>
     </div>
     <section class="back"></section>
   </main>

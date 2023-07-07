@@ -11,27 +11,27 @@ export class UserService {
   public is_Tatuador: boolean;
   public user: User;
   public logueado: boolean = false;
+  public idUser: number;
 
   constructor(private http: HttpClient) {
-    this.is_Tatuador;
+    this.is_Tatuador
     this.user = new User();
     this.logueado = true;
   }
 
-
- 
+  obtenerIdCliente(email: string): Observable<any> {
+    return this.http.get(`${this.url}/user/${email}`);
+  }
 
   register(user: User): Observable<any> {
     return this.http.post<any>(`${this.url}/registro`, user);
   }
-  //FUNCIONALIDAD PARA EDITAR EL PERFIL DEL USUARIO
-  public edit (usuario: User){
-    let url = `${this.url}/profile`
-    return this.http.put(url, usuario)
+
+  editProfile(usuario: User): Observable<any> {
+    return this.http.put<any>(`${this.url}/profile`, usuario);
   }
-//LOGIN//
-   public login (user:User){
-    let url = `${this.url}/login`;
-    return this.http.post(url,user);
+
+  login(user: User): Observable<any> {
+    return this.http.post<any>(`${this.url}/login`, user);
   }
 }

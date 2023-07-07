@@ -8,11 +8,20 @@ import { Cita } from '../models/cita';
   providedIn: 'root'
 })
 export class CitaService {
+
   private url = "http://localhost:3000";
 
   constructor(private http: HttpClient) {}
 
-  addCita(cita: Cita): Observable<any> {
-    return this.http.post<any>(`${this.url}/add-cita`, cita);
+  addCita(cita: Cita): Observable<Cita> {
+    return this.http.post<Cita>(`${this.url}/add-cita`, cita);
   }
+  updateCita(cita:Cita): Observable<Cita> {
+    return this.http.put<Cita>(`${this.url}/cita/${cita.id_cita}`, cita);
+  }
+  getCitas(): Observable<Cita[]> {
+    return this.http.get<Cita[]>(`${this.url}/citas`);
+  }
+
+  
 }

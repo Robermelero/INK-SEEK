@@ -13,35 +13,6 @@ import { User } from 'src/app/models/user';
 })
 export class LoginComponent implements OnInit {
  
-  // email: string;
-  // password: string;
-  
-  // constructor(private userService: UserService, private router: Router) {}
-  
-  // onSubmit(form: NgForm): void {
-  //   this.email = form.value.email;
-  //   this.password = form.value.password;
-    
-  
-  //   this.userService.login(this.email, this.password).subscribe({
-  //     next: (response: Respuesta) => {
-  //       if (response.mensaje === 'se ha iniciado sesion') {
-  //         console.log('se ha iniciado sesion');
-  //         this.router.navigate(['/home']);
-  //       } else {
-  //         console.error('Error en el inicio de sesión:', response.error);
-  //       }
-  //     },
-  //     error: (error: any) => {
-  //       console.error('Error en el inicio de sesión:', error);
-  //     }
-  //   });
-  // }
-  // ngOnInit(): void 
-  // {
-    
-  // }
-  
     public user: User;
   constructor(public userService: UserService, public router: Router){
     this.user = new User()
