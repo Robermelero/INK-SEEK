@@ -23,25 +23,46 @@ export class DescubrirArtistaComponent implements OnInit {
     ];
   }
 
-  // getTatuador(nickname:string, style:string, studio:string){
-  //   let nombre= nickname
-  //   console.log(nombre)  
-  //   this.userService.getTatuador(this.nickname)
-  //   .subscribe((res: Respuesta)=>
-  //   {
-  //     if (nickname == "" || nickname == null || nickname == undefined || res.mensaje == "No hay libros"){
-  //       this.userService.getTatuador()
-  //       .subscribe((res: Respuesta) => {
-  //         this.libros = res.data;
-  //         console.log(res)          
-  //       })    
-  //     }else{
-  //       this.libros = res.data;
-  //       console.log(this.libros)
-  //       console.log("holaaaaa")
+  getTatuador(nickname:string, style:string, studio:string){
+    let nombre= nickname;
+    let estudio=studio;
+    let estilo= style;
+    console.log(nombre)  
+    this.userService.buscarTatuador(nombre,estudio,estilo)
+    .subscribe((res: Respuesta)=>
+    {
+      if (nickname == "" || nickname == null || nickname == undefined || res.mensaje == "Parece que no hay resultados"){
+        this.userService.buscarTatuador(nombre,estudio,estilo)
+        .subscribe((res: Respuesta) => {
+          this.tatuador = res.data_tatuador;
+          console.log(res)          
+        })    
+      }else{
+        this.tatuador= res.data_tatuador;
+        console.log(this.tatuador)
+        console.log("holaaaaa")
         
+      }
+    })
+  }
+
+  // buscarTatuador(nickname: string) {
+  //   this.userService.getTatuador(nickname).subscribe(
+  //     (response: any) => {
+  //       if (response.error) {
+  //         // No se encontraron tatuadores
+  //         console.log(response.mensaje);
+  //       } else {
+  //         // Tatuadores encontrados
+  //         const tatuadores = response.data;
+  //         console.log(tatuadores);
+  //         // Aquí puedes realizar las operaciones necesarias con los tatuadores encontrados
+  //       }
+  //     },
+  //     (error: any) => {
+  //       console.error(error);
   //     }
-  //   })
+  //   );
   // }
 
   goAdd() {
