@@ -7,5 +7,5 @@ export class Respuesta {
                 public mensaje: string,
                 public data_user: User,
                 public data_prenda : Prenda[],
-                public data : User []){}
+                public data_artistas : User []){}
 }
