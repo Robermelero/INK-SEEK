@@ -41,6 +41,6 @@ export class UserService {
  public getArtistas(){
   let url = `${this.url}/descubrir-artista`
   return this.http.get(url)
-}
+  }
 }
  
