@@ -26,7 +26,7 @@ export class CalendarComponent implements OnInit {
 
   getTextColor(day: any): string {
     if (this.isSameDate(day.date, this.currentDate)) {
-      return 'border-color: rgb(18, 180, 180); border-radius: '; 
+      return 'red'; 
     } else if (day.hasCitas) {
       return 'blue'; 
     } else {
