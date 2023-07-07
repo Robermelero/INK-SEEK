@@ -135,10 +135,12 @@ img {
 }
 
 .bedit {
-  max-height: 45px;
-  max-width: 45px;
-  margin-left: 15px;
-  margin-top: 85px;
+  height: 45px;
+  width: 45px;
+  background-color: red;
+  border:none;
+  /* margin-right:50px;
+  z-index: ; */
 }
 
 p {
@@ -186,3 +188,5 @@ h3 {
   object-fit: cover;
   border-radius: 5px;
 }
+
+

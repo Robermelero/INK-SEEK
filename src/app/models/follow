@@ -1,8 +1,0 @@
-export class follow {
-    constructor(
-        public id_follow?: number,
-        public id_user?: number,
-        public id_follower?:number
-
-    ) {}
-    }

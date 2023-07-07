@@ -31,25 +31,27 @@ export class UserService {
   }
 
   //LOGIN
-  // login(email: string, password: string): Observable<any> {
-  //   const url = `${this.url}/login`;
-  //   const body = { email, password };
-  //   return this.http.post<any>(url, body);
-  // }
+ 
    public login (user:User){
     let url = `${this.url}/login`;
     return this.http.post(url,user);
   }
 
   public followUser(id_user: number): Observable<any> {
-    const url = `${this.url}/users/${id_user}/follow`;
-    return this.http.post(url, {});
+    console.log('holaaaa');
+    const url = `${this.url}/user/${id_user}/follow/`;
+    console.log(id_user);
+    return this.http.post<any>(url, {});
   }
-
+  
   public unfollowUser(id_user: number): Observable<any> {
-    const url = `${this.url}/users/${id_user}/unfollow`;
-    return this.http.post(url, {});
+    console.log('adiooooos');
+    const url = `${this.url}/user/${id_user}/unfollow`;
+    console.log(url);
+    return this.http.post<any>(url, {});
   }
+  
+ 
 }
 
 

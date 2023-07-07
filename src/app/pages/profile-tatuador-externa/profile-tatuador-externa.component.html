@@ -4,17 +4,10 @@
         <div class="imagen">
           <div class="profileimg">
             <img src="./assets/rober.png" alt="">
-          </div>
-          <div class="editar">
-            <div class="medit"></div>
-            <a routerLink="">
-              <div class="boton" routerLinkActive="active">
-                <button [ngClass]="{ 'followed': isFollowed }" (click)="toggleFollow()">
-                  <img src="./assets/AED.png" alt="" class="bedit">
+          </div>                  
+                <button class="bedit" type="button" [ngClass]="{ 'followed': isFollowed }" (click)="toggleFollow()">
+                  <img src="./assets/AED.png" >
                 </button>
-              </div>
-            </a>
-          </div>
         </div>
       </div>
       <div class="info1">
