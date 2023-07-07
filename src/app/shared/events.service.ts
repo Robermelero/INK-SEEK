@@ -17,7 +17,7 @@ export class EventsService {
     return this.http.get<any>(`${this.url}/events`);
   }
 
-  postEvent(id_user: string,photo:string, title: string, date: string,place:string): Observable<any> {
+  postEvent(id_user: number,photo:string, title: string, date: string,place:string): Observable<any> {
     return this.http.post<any>(`${this.url}/evento/${id_user}`, {id_user, photo,title, date,place });
   }
 
