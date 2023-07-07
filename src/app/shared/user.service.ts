@@ -7,19 +7,17 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class UserService {
-  private url: string = 'http://localhost:3000';
+  public url: string = 'http://localhost:3000';
   public is_Tatuador: boolean;
   public user: User;
   public logueado: boolean = false;
+  public artistas : User [];
 
   constructor(private http: HttpClient) {
-    this.is_Tatuador;
+    this.is_Tatuador = true;
     this.user = new User();
     this.logueado = true;
   }
-
-
- 
 
   register(user: User): Observable<any> {
     return this.http.post<any>(`${this.url}/registro`, user);
@@ -30,8 +28,14 @@ export class UserService {
     return this.http.put(url, usuario)
   }
 //LOGIN//
-   public login (user:User){
+  public login (user:User){
     let url = `${this.url}/login`;
     return this.http.post(url,user);
   }
+ //ARTISTAS EXPLORA
+ public getArtistas(){
+  let url = `${this.url}/descubrir-artista`
+  return this.http.get(url)
 }
+}
+ 

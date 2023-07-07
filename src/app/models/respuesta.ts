@@ -6,5 +6,6 @@ export class Respuesta {
                 public codigo: number,
                 public mensaje: string,
                 public data_user: User,
-                public data_prenda : Prenda[]){}
+                public data_prenda : Prenda[],
+                public data : User []){}
 }

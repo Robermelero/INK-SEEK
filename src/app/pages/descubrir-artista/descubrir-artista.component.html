@@ -5,17 +5,10 @@
       <img src="/assets/img/lupa-gris.png" alt="Lupa" class="lupa-img">
     </div>
   </div>
-  <div class="artista-card" *ngFor="let publicacion of publicaciones">
-    <div class="foto">
-      <a routerLink="/profile-tatuador-externa" routerLinkActive="active">
-        <img [src]="publicacion.photo" alt="Foto" />
-        <div class="perfil-info">
-          <div class="perfil-foto">
-            <img [src]="publicacion.photoPerfil" alt="Foto de Perfil" />
-          </div>
-          <p class="perfil-nombre">{{ publicacion.perfil }}</p>
-        </div>
-      </a>
-    </div>
+  <div class="artistas">
+    <ng-container *ngFor="let artista of artistas">
+        <app-artistas [artistaPadre] = "artista"></app-artistas>
+    </ng-container> 
+    <div *ngIf="artistas.length===0" class="noLibros">En estos momentos, no hay artistas disponibles</div>
   </div>
 </div>

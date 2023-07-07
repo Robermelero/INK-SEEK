@@ -109,4 +109,8 @@
     width: auto;
 
   }
+
+  .artistas:last-child{
+    margin-bottom:90px;
+  }
   

@@ -11,10 +11,12 @@ import { UserService } from 'src/app/shared/user.service';
 export class EditProfileTatuadorComponent {
   public is_Tatuador: boolean;
   public usuario: User;
+  public id_user: number;
 
   constructor(public userService: UserService) {
     this.usuario = this.userService.user;
     this.is_Tatuador = this.userService.is_Tatuador;
+    this.id_user = this.userService.user.id_user;
     console.log(this.usuario);
   } 
 

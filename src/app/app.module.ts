@@ -40,6 +40,7 @@ import { CerrarMenuDirective } from './cerrar-menu.directive';
 import { ModificarCitaComponent } from './pages/modificar-cita/modificar-cita.component';
 import { CamaraComponent } from './pages/camara/camara.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ArtistasComponent } from './components/artistas/artistas.component';
 
 
 
@@ -80,6 +81,7 @@ import { HttpClientModule } from '@angular/common/http';
     CerrarMenuDirective,
     ModificarCitaComponent,
     CamaraComponent,
+    ArtistasComponent,
 
   ],
   imports: [
