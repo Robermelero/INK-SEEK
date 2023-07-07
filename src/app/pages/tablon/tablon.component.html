@@ -2,7 +2,7 @@
   <div class="add-search">
     <div class="buscador">
       <div class="input-wrapper">
-        <input type="text" placeholder="Buscar...">
+        <input type="text" placeholder="Buscar..." [(ngModel)]="search" (keyup)="searchEvent()">
         <img src="/assets/img/lupa-gris.png" alt="Lupa" class="lupa-img">
       </div>
     </div>
@@ -12,7 +12,8 @@
   </div>
     <div class="eventos-lista">
       <div class="evento-card" *ngFor="let evento of eventos">
-        <div class="foto">
+        <button class="buter" type="button" (click)="deleteEvent(evento)" *ngIf="evento.id_user === id_user">X</button>
+        <div class="foto"> 
           <img [src]="evento.photo" alt="Foto del evento" />
         </div>
         <div class="contenido">
