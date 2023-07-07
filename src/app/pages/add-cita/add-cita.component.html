@@ -15,9 +15,9 @@
       <input type="text" placeholder="Hora" [(ngModel)]="cita.hora" name="hora" />
     </section>
     <div>
-      <a routerLink="/calendario" routerLinkActive="active">
+      <button (click)="agregarCita()">
         <img src="/assets/Calendario/Vector.png" alt="" class="tick" />
-      </a>
+      </button>
     </div>
     <section class="back"></section>
   </main>

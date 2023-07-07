@@ -12,11 +12,16 @@ export class UserService {
   public user: User;
   public logueado: boolean = false;
   public artistas : User [];
+  public idUser: number;
 
   constructor(private http: HttpClient) {
     this.is_Tatuador = true;
     this.user = new User();
     this.logueado = true;
+  }
+
+  obtenerIdCliente(email: string): Observable<any> {
+    return this.http.get(`${this.url}/user/${email}`);
   }
 
   register(user: User): Observable<any> {

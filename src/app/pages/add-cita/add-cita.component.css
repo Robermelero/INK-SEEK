@@ -46,9 +46,11 @@
 .inputs input{
     height: 50px;
     background: var(--gris1);
+    padding-left: 15px;
     border-radius: 36px;
     border: 1px solid var(--principal);
-    font-size: 15px;   
+    font-size: 15px;
+    color: var(--blanco); 
 }
 
 .back{    

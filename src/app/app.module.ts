@@ -41,6 +41,9 @@ import { ModificarCitaComponent } from './pages/modificar-cita/modificar-cita.co
 import { CamaraComponent } from './pages/camara/camara.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ArtistasComponent } from './components/artistas/artistas.component';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -90,7 +93,11 @@ import { ArtistasComponent } from './components/artistas/artistas.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory}),
+          CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
