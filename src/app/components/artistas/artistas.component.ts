@@ -15,10 +15,9 @@ export class ArtistasComponent {
   @Input() artistaPadre: User;
 
   constructor(private router: Router, public userService: UserService) {
-    // this.user = this.userService.user;    
   }
 
-  // goAdd() {
-  //   this.router.navigate(['/add-evento']);
-  // }
+  verPerfil() {
+    this.router.navigate(['/profile-tatuador-externa', this.artistaPadre.id_user]);
+  }
 }

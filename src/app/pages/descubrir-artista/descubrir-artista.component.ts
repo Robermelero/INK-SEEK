@@ -23,5 +23,14 @@ export class DescubrirArtistaComponent implements OnInit {
       console.log(res)
     })
   }
+  
   ngOnInit(): void {}
-}
+  mostrarPerfil(artista: User) {
+    this.userService.goPerfilartista(artista.id_user)
+    .subscribe((res:Respuesta) => {
+      
+    })
+    this.router.navigate(['/profile-tatuador-externa', artista.id_user]);
+    console.log(artista.id_user)
+  }
+} 

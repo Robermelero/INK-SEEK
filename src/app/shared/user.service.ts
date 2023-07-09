@@ -42,5 +42,23 @@ export class UserService {
   let url = `${this.url}/descubrir-artista`
   return this.http.get(url)
   }
+
+  public goPerfilartista(id_artista: number){
+    let url = `${this.url}/profile-tatuador-externa/${id_artista}`
+  return this.http.get(url)
+  }
+
+  getTatuadorInfo(){
+    console.log("caca");
+    console.log(this.user);
+    
+    return this.http.get(`${this.url}/profile-tatuador-propia/${this.user.id_user}`);
+  }
+
+  deleteCardPerfil(id_photo: number): Observable<any> {
+    let url = (`${this.url}/profile-tatuador-propia/${id_photo}`);
+    return this.http.delete(url)
+
+  }
 }
  

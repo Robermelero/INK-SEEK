@@ -7,7 +7,7 @@
   </div>
   <div class="artistas">
     <ng-container *ngFor="let artista of artistas">
-        <app-artistas [artistaPadre] = "artista"></app-artistas>
+        <app-artistas [artistaPadre] = "artista" (click)="mostrarPerfil(artista)"></app-artistas>
     </ng-container> 
     <div *ngIf="artistas.length===0" class="noLibros">En estos momentos, no hay artistas disponibles</div>
   </div>
