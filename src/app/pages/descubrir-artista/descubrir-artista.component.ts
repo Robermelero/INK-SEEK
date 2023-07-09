@@ -30,7 +30,7 @@ export class DescubrirArtistaComponent implements OnInit {
     this.userService.buscarTatuador(nickname,style,studio)
     .subscribe((res: Respuesta)=>
     {
-      if (!nickname && !style && !studio){
+      if (!nickname || !style || !studio){
         this.userService.buscarTatuador(nickname,style,studio)
         .subscribe((res: Respuesta) => {
           this.artistas = res.data_artistas;
