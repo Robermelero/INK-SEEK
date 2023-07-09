@@ -23,5 +23,43 @@ export class DescubrirArtistaComponent implements OnInit {
       console.log(res)
     })
   }
+
+  // getTatuador(nickname:string, style:string, studio:string){
+  //   let nombre= nickname;
+  //   let estudio=studio;
+  //   let estilo= style;
+  //   console.log(nombre)  
+  //   this.userService.buscarTatuador(nombre,)
+  //   .subscribe((res: Respuesta)=>
+  //   {
+  //     if (nickname == "" || nickname == null || nickname == undefined || res.mensaje == "Parece que no hay resultados"){
+  //       this.userService.buscarTatuador(nombre,)
+  //       .subscribe((res: Respuesta) => {
+  //         this.artistas = res.data_artistas;
+  //         console.log(res)          
+  //       })    
+  //     }else{
+  //       this.artistas= res.data_artistas;
+  //       console.log(this.artistas)
+  //       console.log("holaaaaa")
+        
+  //     }
+  //   })
+  // }
+
+  goAdd() {
+    this.router.navigate(['/add-evento']);
+  }
+
   ngOnInit(): void {}
+
+
 }
+
+
+
+  
+
+ 
+  
+
