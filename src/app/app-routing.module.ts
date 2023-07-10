@@ -36,7 +36,6 @@ const routes: Routes = [
   {path: 'pre-register', component: PreRegisterComponent, data: { hideHeader: true, hideNavbar: true } },
   {path: "on-boarding", component: OnBoardingComponent, data: { hideHeader: true, hideNavbar: true }},
   {path: 'home', component: HomeComponent },
-  {path: "profile-tatuador-externa", component: ProfileTatuadorExternaComponent},
   {path: "profile-tatuador-propia", component: ProfileTatuadorPropiaComponent},
   {path: "edit-profile-tatuador", component: EditProfileTatuadorComponent},
   {path: "edit-profile-user", component: EditProfileUserComponent},
@@ -59,7 +58,7 @@ const routes: Routes = [
   {path: "recomendaciones", component: RecomendacionesComponent},
   {path: "estrellas", component: EstrellasComponent},
   {path: "modificar-cita/:id", component: ModificarCitaComponent},
-  { path: 'profile-tatuador-externa/:id', component: ProfileTatuadorExternaComponent }
+  { path: 'profile-tatuador-externa/:id_user', component: ProfileTatuadorExternaComponent }
 
   
   

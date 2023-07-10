@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/shared/user.service';
 
 @Component({
@@ -10,13 +11,17 @@ import { UserService } from 'src/app/shared/user.service';
 export class HeaderComponent {
   public is_Tatuador: Boolean;
   public mostrarContenido: boolean = false;
+  public user: User;
 
   constructor(private router: Router, public userService: UserService) {
     this.is_Tatuador = this.userService.is_Tatuador
+    this.user = this.userService.user
+    
   }
 
   public toggleHamburguesa() {
     this.mostrarContenido = !this.mostrarContenido;
+
   }
   
   public goHome() {

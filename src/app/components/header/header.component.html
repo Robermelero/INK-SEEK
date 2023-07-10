@@ -18,7 +18,7 @@
   </nav>
 
   <img src="/assets/img/Header defi copia.png" class="inkseek" (click)="goHome()" class="boton">
-  <div class="img-perfil"><img src="/assets/img/IMG_4465 1.png" (click)="goPerfil()" class="boton"></div>     
+  <div class="img-perfil"><img class="img-perfil2" src={{this.user.photo}} (click)="goPerfil()" class="boton"></div>     
 </div>
 
 <div class="contenido" [ngClass]="{'difuminado': mostrarContenido}" *ngIf="mostrarContenido" (click)="toggleHamburguesa()" appCerrarMenu>

@@ -14,9 +14,7 @@ export class ProfileTatuadorPropiaComponent{
   public user: User;
   public publicaciones: Publicacion[] = [];
 
-  constructor(private router: Router, public userService: UserService) {
-
-    
+  constructor(private router: Router, public userService: UserService) {    
     
     this.user = this.userService.user
     console.log(this.user);

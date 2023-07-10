@@ -61,12 +61,14 @@
 .tatuador-form{
   padding-bottom: 150px;
     height: auto;
-    width: 100%;
+    width: 80%;
     display: flex;
     padding-top:20px;
     justify-content: space-around;
-    align-items: center;
     flex-direction: column;
+}
+label{
+  width: 100px;
 }
 
 .profileimg{
@@ -202,7 +204,6 @@ p{
     width: 307px;
     height: 60px;
     margin-bottom: 40px;
-    padding: 5px;
     border: none;
     outline: none;
     border-bottom: 1px solid var(--gris3);
@@ -220,8 +221,5 @@ p{
     border: none;
   }
 
-  #desc{
-    margin-left: 35px;
-  }
  
   

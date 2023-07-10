@@ -43,8 +43,9 @@ export class UserService {
   return this.http.get(url)
   }
 
-  public goPerfilartista(id_artista: number){
-    let url = `${this.url}/profile-tatuador-externa/${id_artista}`
+  public perfilArtista(tatuador: User){
+    let url = `${this.url}/profile-tatuador-externa/${tatuador.id_user}`
+    console.log(url)
   return this.http.get(url)
   }
 
