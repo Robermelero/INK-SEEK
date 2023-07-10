@@ -58,7 +58,7 @@ const routes: Routes = [
   {path: "recomendaciones", component: RecomendacionesComponent},
   {path: "estrellas", component: EstrellasComponent},
   {path: "modificar-cita/:id", component: ModificarCitaComponent},
-  { path: 'profile-tatuador-externa/:id_user', component: ProfileTatuadorExternaComponent }
+  { path: 'profile-tatuador-externa', component: ProfileTatuadorExternaComponent }
 
   
   

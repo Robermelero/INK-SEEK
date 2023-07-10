@@ -43,7 +43,8 @@ export class DescubrirArtistaComponent implements OnInit {
   ngOnInit(): void {
     this.userService.getArtistas()
     .subscribe((res:Respuesta) => {
-      this.artistas = res.data_artistas;
+      // this.artistas = res.data_artistas;
+      this.userService.artistas = res.data_artistas;
     })
   }
 }

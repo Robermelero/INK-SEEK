@@ -19,6 +19,15 @@
   margin-right: 20px;
 }
 
+.bedit {
+  height: 45px;
+  width: 45px;
+  background-color: red;
+  border:none;
+  /* margin-right:50px;
+  z-index: ; */
+}
+
 .foto {
   height: 100%;
   width: 50%;

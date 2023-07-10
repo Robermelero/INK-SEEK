@@ -18,14 +18,11 @@ export class ArtistasComponent {
   constructor(private router: Router, public userService: UserService) {
   }
 
-  verPerfil(tatuador: User) {
+  verPerfil() {
     console.log("caca")
-    this.artistaPadre = tatuador;
-    this.userService.perfilArtista(tatuador)
-    .subscribe((res:Respuesta) => {
-      this.artistaPadre = res.data_user[0]
-      console.log(this.artistaPadre)
-    })
-    this.router.navigate(['/profile-tatuador-externa', this.artistaPadre.id_user]);
+    this.userService.usuarioSeleccionado = this.artistaPadre
+      this.router.navigate(['/profile-tatuador-externa']);
+
+    }
   }
-}
+

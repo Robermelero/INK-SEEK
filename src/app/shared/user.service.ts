@@ -13,9 +13,10 @@ export class UserService {
   public logueado: boolean = false;
   public artistas : User [];
   public idUser: number;
+  public usuarioSeleccionado: User;
 
   constructor(private http: HttpClient) {
-    this.is_Tatuador = true;
+    this.is_Tatuador;
     this.user = new User();
     this.logueado = true;
   }
@@ -54,6 +55,20 @@ export class UserService {
     console.log(this.user);
     
     return this.http.get(`${this.url}/profile-tatuador-propia/${this.user.id_user}`);
+  }
+
+  public followUser(id_user: number): Observable<any> {
+    console.log('holaaaa');
+    const url = `${this.url}/user/${id_user}/follow/`;
+    console.log(id_user);
+    return this.http.post<any>(url, {});
+  }
+  
+  public unfollowUser(id_user: number): Observable<any> {
+    console.log('adiooooos');
+    const url = `${this.url}/user/${id_user}/unfollow`;
+    console.log(url);
+    return this.http.post<any>(url, {});
   }
 
   deleteCardPerfil(id_photo: number): Observable<any> {
