@@ -1,42 +1,50 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
-  selector: 'app-camara',
-  templateUrl: './camara.component.html',
-  styleUrls: ['./camara.component.css']
+  selector: 'app-camera',
+  templateUrl: './camera.component.html',
+  styleUrls: ['./camera.component.css']
 })
-export class CamaraComponent {
-  @ViewChild('cameraInput', { static: false }) cameraInput: ElementRef;
-  @ViewChild('photoImage', { static: false }) photoImage: ElementRef;
+export class CameraComponent {
+  @ViewChild('videoElement', { static: true }) videoElement: ElementRef;
+  private video: HTMLVideoElement;
+  private mediaStream: MediaStream;
+
+  constructor() {
+    this.video = this.videoElement.nativeElement;
+  }
+
+  capturePhoto() {
+    const canvas = document.createElement('canvas');
+    canvas.width = this.video.videoWidth;
+    canvas.height = this.video.videoHeight;
+    canvas.getContext('2d').drawImage(this.video, 0, 0, canvas.width, canvas.height);
+
+    // Aquí puedes enviar la foto a la API REST para guardarla en la base de datos
+    const photoDataUrl = canvas.toDataURL('image/jpeg');
+    this.uploadPhoto(photoDataUrl);
+  }
+
+  uploadPhoto(photoDataUrl: string) {
+    // Aquí puedes utilizar una librería o realizar una petición HTTP para enviar la foto a la API REST
+    // Puedes enviarla en formato base64 o como un archivo binario, dependiendo de la configuración de tu API REST
+  }
 
   ngAfterViewInit() {
-    const camera = this.cameraInput.nativeElement as HTMLInputElement;
-    const photo = this.photoImage.nativeElement as HTMLImageElement;
-    const open = document.querySelector('#open');
+    // Inicia la captura del video al cargar el componente
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(stream => {
+        this.mediaStream = stream;
+        this.video.srcObject = stream;
+        this.video.play();
+      })
+      .catch(error => console.error('Error al acceder a la cámara: ', error));
+  }
 
-    open.addEventListener('click', function() {
-      camera.click();
-    });
-
-    camera.addEventListener('change', function(e) {
-      const target = e.target as HTMLInputElement;
-      if (target.files && target.files.length > 0) {
-        const file = target.files[0];
-        photo.src = URL.createObjectURL(file);
-
-        const xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-          if (this.readyState === 4 && this.status === 200) {
-            console.log(xhttp.responseText);
-          }
-        };
-
-        const formData = new FormData();
-        formData.append('photo', file);
-
-        xhttp.open('POST', window.location.href + 'upload', true);
-        xhttp.send(formData);
-      }
-    });
+  ngOnDestroy() {
+    // Detiene la captura del video al destruir el componente
+    if (this.mediaStream) {
+      this.mediaStream.getTracks().forEach(track => track.stop());
+    }
   }
 }
