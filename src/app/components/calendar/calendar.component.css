@@ -109,7 +109,7 @@ top: 98px;
     flex-direction: column;
     margin:5px;
     padding-left: 10px;
-    border: var(--gris2) solid 2px;
+    padding-bottom: 80px;
  }
  .cliente{
     font-size: 20px;
@@ -121,7 +121,6 @@ top: 98px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: flex-start;
     background-color: var(--gris1);
     border-radius: 10px;
     padding-left: 10px;
@@ -136,5 +135,11 @@ top: 98px;
  }
  .noCitas{
   color: var(--gris3);
+ }
+ .cita-card{
+  margin: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-left: 1px solid var(--gris3);
  }
   

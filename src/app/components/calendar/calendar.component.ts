@@ -128,12 +128,17 @@ export class CalendarComponent implements OnInit {
     return false;
   }
 
-  handleDayClick(day: any) {
-    this.selectedDay = day;
-    if (day && day.date) {
-      this.generateDayCards(day.date);
-    }
+ handleDayClick(day: any) {
+  this.selectedDay = day;
+  if (day && day.date) {
+    this.generateDayCards(day.date);
+    this.selectedDayCitas = this.currentDayCitas.filter(cita => {
+      const citaDate = new Date(cita.fecha);
+      return this.isSameDate(citaDate, day.date);
+    });
   }
+}
+
 
   isSameDate(date1: Date, date2: Date): boolean {
     if (!date1 || !date2) {
