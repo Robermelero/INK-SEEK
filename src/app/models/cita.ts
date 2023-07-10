@@ -5,8 +5,10 @@ export class Cita {
         public id_user? : number,
         public email?: string,
         public asunto?:string,
-        public date? :Date,
+        public fecha? :string,
         public hora? : string,
+        public name? : string,
+        public last_name?: string,
     ){
 
     }

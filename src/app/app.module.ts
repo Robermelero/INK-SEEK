@@ -44,6 +44,9 @@ import { ArtistasComponent } from './components/artistas/artistas.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { CommonModule } from '@angular/common';
+import { DatePipe } from '@angular/common';
+import { DecimalPipe } from '@angular/common';
+
 
 
 
@@ -99,7 +102,8 @@ import { CommonModule } from '@angular/common';
       useFactory: adapterFactory}),
           CommonModule,
   ],
-  providers: [],
+  providers: [DatePipe,
+    DecimalPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

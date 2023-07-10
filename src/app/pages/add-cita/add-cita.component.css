@@ -98,3 +98,11 @@ h1{
         top:85px;
         z-index:999;
     }
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        width: 30px;
+        height: 30px;
+        padding-right: 15px;
+        color: var(--principal);
+        cursor: pointer;
+        border: var(--principal);
+      }
