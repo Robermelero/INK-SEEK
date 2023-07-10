@@ -52,9 +52,14 @@ export class UserService {
 
   getTatuadorInfo(){
     console.log("caca");
-    console.log(this.user);
-    
+    console.log(this.user);    
     return this.http.get(`${this.url}/profile-tatuador-propia/${this.user.id_user}`);
+  }
+
+  getTatuadorInfo2(){
+    console.log("caca");
+    console.log(this.usuarioSeleccionado);    
+    return this.http.get(`${this.url}/profile-tatuador-externa/${this.usuarioSeleccionado.id_user}`);
   }
 
   public followUser(id_user: number): Observable<any> {
