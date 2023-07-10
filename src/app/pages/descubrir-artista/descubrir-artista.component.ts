@@ -24,27 +24,18 @@ export class DescubrirArtistaComponent implements OnInit {
     })
   }
 
-  getTatuador(nickname:string, style:string, studio:string){
-
-     
-    this.userService.buscarTatuador(nickname,style,studio)
-    .subscribe((res: Respuesta)=>
-    {
-      if (!nickname || !style || !studio){
-        this.userService.buscarTatuador(nickname,style,studio)
-        .subscribe((res: Respuesta) => {
-          this.artistas = res.data_artistas;
-          console.log(res)          
-        })    
-      }else{
-        this.artistas= res.data_artistas;
-        console.log(this.artistas)
-        console.log("holaaaaa")
-        
+  getTatuador(inputValue: string) {
+    this.userService.buscarTatuador(inputValue).subscribe(
+      (response: any) => {
+        this.artistas = response.data;
+        console.log(response);
+      },
+      (error: any) => {
+        console.error(error);
       }
-    })
+    );
   }
-
+  
   goAdd() {
     this.router.navigate(['/add-evento']);
   }

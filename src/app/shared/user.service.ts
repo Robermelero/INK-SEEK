@@ -44,11 +44,12 @@ export class UserService {
   }
 
 // BUSCAR TATUADOR//
-public buscarTatuador(nickname: string, style: string, studio: string): Observable<any> {
-  let url = `${this.url}/explorar?nickname=${nickname}&style=${style}&studio=${studio}`;
+public buscarTatuador(inputValue: string): Observable<any> {
+  let url = `${this.url}/explorar?nickname=${inputValue}&style=${inputValue}&studio=${inputValue}`;
   return this.http.get(url);
 }
 
 }
+
 
  
