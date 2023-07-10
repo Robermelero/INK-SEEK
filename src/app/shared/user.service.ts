@@ -12,18 +12,18 @@ export class UserService {
   public user: User;
   public logueado: boolean = false;
   public artistas : User [];
-  public idUser: number;
+  public id_user: number;
 
   constructor(private http: HttpClient) {
     this.is_Tatuador = true;
     this.user = new User();
     this.logueado = true;
   }
-
+// OBTENER EL ID DE UN USER DESDE SU EMAIL///
   obtenerIdCliente(email: string): Observable<any> {
     return this.http.get(`${this.url}/user/${email}`);
   }
-
+ //REGISTRO DE USUARIOS///
   register(user: User): Observable<any> {
     return this.http.post<any>(`${this.url}/registro`, user);
   }
@@ -42,6 +42,10 @@ export class UserService {
   let url = `${this.url}/descubrir-artista`
   return this.http.get(url)
   }
+  //BUSCAR CITAS POR ID LOGUEADO
+  public getCitas(user: number): Observable<any> {
+    return this.http.get(`${this.url}/citas/${user}`);
+  }
 
 // BUSCAR TATUADOR//
 public buscarTatuador(inputValue: string): Observable<any> {
@@ -52,4 +56,3 @@ public buscarTatuador(inputValue: string): Observable<any> {
 }
 
 
- 

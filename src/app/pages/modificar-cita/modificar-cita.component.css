@@ -58,7 +58,9 @@
     background: var(--gris1);
     border-radius: 36px;
     border: 1px solid var(--principal);
-    font-size: 15px;   
+    font-size: 15px;  
+    padding-left: 20px; 
+    color: white;
 }
 
 .back{    
@@ -94,6 +96,7 @@ h1{
 .margenY{
     margin-right: 30px;
     margin-top: 8px;
+
     }
     .exit{
         width: 6%;
@@ -110,3 +113,21 @@ h1{
         width: 25px;
         margin-top:10px
     }
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        width: 30px;
+        height: 30px;
+        padding-right: 15px;
+        color: var(--principal);
+        cursor: pointer;
+        border: var(--principal);
+      }
+      .contenedor input[type="time"]::-webkit-calendar-picker-indicator {
+        width: 30px;
+        height: 30px;
+        padding-right: 15px;
+        color: var(--principal);
+        cursor: pointer;
+        border: var(--principal);
+      }
+      
+    

@@ -2,7 +2,7 @@
   <ng-container *ngFor="let cita of selectedDayCitas">
     <button (click)="goModificar()" *ngIf="is_Tatuador">
       <div class="content">
-        <p class="cliente">Cliente: {{ cita.email }}</p>
+        <p class="cliente">Cliente: {{cita.name}}{{cita.last_name}}</p>
         <p>Hora: {{ cita.hora }}</p>
         <p>Especificaciones: {{ cita.asunto }}</p>
       </div>

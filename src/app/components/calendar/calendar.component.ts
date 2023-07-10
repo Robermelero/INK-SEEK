@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Cita } from 'src/app/models/cita';
 import { UserService } from 'src/app/shared/user.service';
 import { CitaService } from 'src/app/shared/cita.service';
+import { User } from 'src/app/models/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-calendar',
@@ -9,15 +11,23 @@ import { CitaService } from 'src/app/shared/cita.service';
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent implements OnInit {
+  selectedDate: Date;
   is_Tatuador: boolean = true;
-  citasAgendadas: Cita[] = [];
+  citasAgendadas: Cita[]=[];
   viewDate: Date = new Date();
-  calendarDays: any[] = [];
-  selectedDayCitas: Cita[] = [];
+  calendarDays: any[];
+  selectedDayCitas: Cita[];
   currentDate: Date = new Date();
+  public usuario: User;
+  public id_user: number;
+  citas: Cita[] | undefined;
+  currentDayCitas: Cita[];
+  selectedDay: any;
 
-  constructor(public userService: UserService, public citaService: CitaService) {
-    // this.is_Tatuador = userService.is_Tatuador;
+  constructor(public userService: UserService, public citaService: CitaService, public router: Router) {
+    this.is_Tatuador = userService.is_Tatuador;
+    this.usuario = this.userService.user;
+    this.id_user = this.userService.user.id_user;
   }
 
   getCurrentDate(): Date {
@@ -26,18 +36,33 @@ export class CalendarComponent implements OnInit {
 
   getTextColor(day: any): string {
     if (this.isSameDate(day.date, this.currentDate)) {
-      return 'red'; 
-    } else if (day.hasCitas) {
-      return 'blue'; 
+      return 'aqua';
     } else {
-      return day.textColor; 
+      return day.textColor;
     }
   }
 
   ngOnInit(): void {
     this.currentDate = this.getCurrentDate();
-    this.getCitasAgendadas();
-    this.generateCalendarDays();
+    this.citaService.getCitas(this.id_user).subscribe(
+      (response: any) => {
+        console.log('Citas obtenidas:', response);
+        if (!response.error) {
+          this.citasAgendadas = response.data_citas || [];
+        } else {
+          console.log('Error al obtener las citas:', response.mensaje);
+        }
+        this.currentDate = this.getCurrentDate();
+        this.generateCalendarDays();
+        this.selectedDate = this.currentDate;
+
+        this.generateDayCards(this.selectedDate);
+        this.handleDayClick(this.selectedDate);
+      },
+      (error) => {
+        console.log('Error al obtener las citas:', error);
+      }
+    );
   }
 
   generateCalendarDays() {
@@ -81,32 +106,60 @@ export class CalendarComponent implements OnInit {
     this.generateCalendarDays();
   }
 
-  getCitasAgendadas(): void {
-    this.citaService.getCitas().subscribe(
-      citas => {
-        this.citasAgendadas = citas;
-        this.generateCalendarDays();
-      },
-      error => {
-        console.log('Error al obtener las citas:', error);
-      }
-    );
+  generateDayCards(date: Date) {
+    this.selectedDayCitas = this.citasAgendadas.filter(cita => {
+      const citaDate = new Date(cita.fecha);
+      return this.isSameDate(citaDate, date);
+    });
   }
 
   hasCitas(date: Date): boolean {
-    return this.citasAgendadas.some(cita => this.isSameDate(cita.date, date));
+    if (date instanceof Date && !isNaN(date.getTime())) {
+      const dateString = this.formatDate(date);
+
+      if (this.citasAgendadas && this.citasAgendadas.length > 0) {
+        return this.citasAgendadas.some(cita => {
+          const citaDate = new Date(cita.fecha);
+          return citaDate instanceof Date && !isNaN(citaDate.getTime()) && this.formatDate(citaDate) === dateString;
+        });
+      }
+    }
+
+    return false;
   }
 
-  handleDayClick(day: any) {
-    console.log('Selected Day:', day);
-    this.selectedDayCitas = this.citasAgendadas.filter(cita => this.isSameDate(cita.date, day.date));
+ handleDayClick(day: any) {
+  this.selectedDay = day;
+  if (day && day.date) {
+    this.generateDayCards(day.date);
+    this.selectedDayCitas = this.currentDayCitas.filter(cita => {
+      const citaDate = new Date(cita.fecha);
+      return this.isSameDate(citaDate, day.date);
+    });
   }
+}
+
 
   isSameDate(date1: Date, date2: Date): boolean {
-    return (
-      date1.getFullYear() === date2.getFullYear() &&
-      date1.getMonth() === date2.getMonth() &&
-      date1.getDate() === date2.getDate()
-    );
+    if (!date1 || !date2) {
+      return false;
+    }
+
+    const date1Formatted = new Date(date1.getFullYear(), date1.getMonth(), date1.getDate());
+    const date2Formatted = new Date(date2.getFullYear(), date2.getMonth(), date2.getDate());
+
+    return date1Formatted.getTime() === date2Formatted.getTime();
+  }
+
+  formatDate(date: Date): string {
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+    return `${day}-${month}-${year}`;
+  }
+
+  goModificar(id_cita: number) {
+    console.log(id_cita)
+    this.router.navigate(['/modificar-cita', id_cita]);
   }
 }
