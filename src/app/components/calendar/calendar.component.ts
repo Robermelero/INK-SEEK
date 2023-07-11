@@ -162,4 +162,8 @@ export class CalendarComponent implements OnInit {
     console.log(id_cita)
     this.router.navigate(['/modificar-cita', id_cita]);
   }
+
+  goAdd(){
+    this.router.navigate(['/add-cita']);
+  }
 }
