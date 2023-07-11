@@ -16,13 +16,16 @@ export class ArtistasComponent {
   @Input() artistaPadre: User;
 
   constructor(private router: Router, public userService: UserService) {
+    this.user = this.userService.user;
   }
 
   verPerfil() {
-    console.log("caca")
-    this.userService.usuarioSeleccionado = this.artistaPadre
-      this.router.navigate(['/profile-tatuador-externa']);
-
+      if(this.artistaPadre.id_user == this.user.id_user){
+        this.router.navigate(['/profile-tatuador-propia']);
+      }else{
+        this.router.navigate(['/profile-tatuador-externa']);
+        this.userService.usuarioSeleccionado = this.artistaPadre;
+      }
     }
   }
 
