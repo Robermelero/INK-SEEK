@@ -38,7 +38,6 @@ import { FormsModule } from '@angular/forms';
 import { EstrellasComponent } from './pages/estrellas/estrellas.component';
 import { CerrarMenuDirective } from './cerrar-menu.directive';
 import { ModificarCitaComponent } from './pages/modificar-cita/modificar-cita.component';
-import { CamaraComponent } from './pages/camara/camara.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ArtistasComponent } from './components/artistas/artistas.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
@@ -86,7 +85,6 @@ import { DecimalPipe } from '@angular/common';
     EstrellasComponent,
     CerrarMenuDirective,
     ModificarCitaComponent,
-    CamaraComponent,
     ArtistasComponent,
 
   ],

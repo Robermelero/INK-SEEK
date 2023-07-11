@@ -15,7 +15,7 @@ export class EditProfileTatuadorComponent {
 
   constructor(public userService: UserService) {
     this.usuario = this.userService.user;
-    // this.is_Tatuador = this.userService.is_Tatuador;
+    this.is_Tatuador = this.userService.is_Tatuador;
     this.id_user = this.userService.user.id_user;
     console.log(this.usuario);
   }

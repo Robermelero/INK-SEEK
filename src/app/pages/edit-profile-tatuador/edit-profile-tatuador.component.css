@@ -48,14 +48,13 @@
 }
 
 .user-form{
-  padding-bottom: 190px;
-  height: auto;
-  width: 100%;
-  display: flex;
-  padding-top:20px;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
+  padding-bottom: 150px;
+    height: auto;
+    width: 80%;
+    display: flex;
+    padding-top:20px;
+    justify-content: space-around;
+    flex-direction: column;
 }
 
 .tatuador-form{
