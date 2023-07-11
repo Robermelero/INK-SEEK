@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user';
+import { Opinion } from '../models/opinion';
 
 @Injectable({
   providedIn: 'root'
@@ -76,11 +77,6 @@ export class UserService {
     return this.http.post<any>(url, {});
   }
 
-  deleteCardPerfil(id_photo: number): Observable<any> {
-    let url = (`${this.url}/profile-tatuador-propia/${id_photo}`);
-    return this.http.delete(url)
-
-  }
   //BUSCAR CITAS POR ID LOGUEADO
   public getCitas(user: number): Observable<any> {
     return this.http.get(`${this.url}/citas/${user}`);
@@ -91,6 +87,35 @@ public buscarTatuador(inputValue: string): Observable<any> {
   let url = `${this.url}/explorar?nickname=${inputValue}&style=${inputValue}&studio=${inputValue}`;
   return this.http.get(url);
 }
+
+  deleteCardPerfil(idPhoto: number){
+
+    console.log('servicio');
+
+    let url = (`${this.url}/profile-tatuador-propia`);
+    console.log(idPhoto)
+    const httpOptions = {headers: null, body:{id_photo : idPhoto}};
+    return this.http.delete(url, httpOptions)
+
+  }
+
+  enviarOpinion(opinion: Opinion) {
+    const url = `${this.url}/estrellas`;
+    return this.http.post(url, opinion);
+  }
+
+  borrarOpinion(idOpinion: number){
+    let url = (`${this.url}/estrellas`);
+    let httpOptions = {headers: null, body:{id_opiniones : idOpinion}};
+    return this.http.delete(url, httpOptions)
+  }
+
+  getOpiniones(receptor: number) {
+    
+    const url = `${this.url}/opiniones/${receptor}`;
+    return this.http.get(url);
+
+  }
 
 }
 

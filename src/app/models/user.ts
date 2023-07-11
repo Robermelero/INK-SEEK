@@ -1,4 +1,5 @@
 import { Publicacion } from "./publicacion";
+import { Opinion } from "./opinion";
 
 export class User {
     constructor(
@@ -16,6 +17,9 @@ export class User {
       public valoracion?: string,
       public descripcion?: string,
       public photo?: string,
-      public publicaciones ?: Publicacion[]
+      public publicaciones ?: Publicacion[],
+      public opiniones ?: Opinion[]
     ) {}
     }
+
+    

@@ -87,6 +87,7 @@ import { DecimalPipe } from '@angular/common';
     ModificarCitaComponent,
     ArtistasComponent,
 
+
   ],
   imports: [
     BrowserModule,

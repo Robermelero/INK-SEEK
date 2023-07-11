@@ -58,5 +58,9 @@ export class ProfileTatuadorExternaComponent {
     // this.usuarioSeleccionado = this.userService.usuarioSeleccionado;
   }
   
-  
+  goOpiniones(id_user: number){
+    console.log(id_user);
+    
+    this.router.navigate(["opiniones"])
+  }
 }

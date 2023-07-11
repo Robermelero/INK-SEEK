@@ -1,33 +1,43 @@
-import { Component } from '@angular/core';
+
+import { Component, OnInit } from '@angular/core';
 import { Opinion } from 'src/app/models/opinion';
+import { Router } from '@angular/router';
+import { User } from 'src/app/models/user';
+import { UserService } from 'src/app/shared/user.service';
+import { Respuesta } from 'src/app/models/respuesta';
 
 @Component({
   selector: 'app-opiniones',
   templateUrl: './opiniones.component.html',
   styleUrls: ['./opiniones.component.css']
 })
-export class OpinionesComponent {
- 
-  opiniones: any[] = [];
+export class OpinionesComponent  {
+  user: User;
+  opiniones: Opinion[] = [];
   showInput: boolean[] = [];
-
-  showResponseInput(index: number) {
-    this.showInput[index] = true;
-  }
-
-
+  public id_opiniones: number;
+  public emisor: number;
+  public receptor: number;
+  opinion :Opinion;
  
-  public opiniones2: Opinion[]
 
-  constructor(){
-    this.opiniones = [
-      // new Opinion(1, "Alba Carranza", "/assets/chat-registro/albaricoque.png", 0, "Joe como pincha el Rober!"),
-      // new Opinion(2, "Leo", "/assets/chat-registro/leo.png", 0, "Joe como pincha el Rober!"),
-      new Opinion(3, "Dani", "/assets/chat-registro/dani.png", 0, "Chacho increíble!!"),
-      // new Opinion(4, "MariTere", "/assets/chat-registro/maritere.png", 0, "Joe como pincha el Rober!"),
-      // new Opinion(5, "alex", "/assets/chat-registro/alex.png", 0, "Joe como pincha el Rober!")
+  constructor(private router: Router, public userService: UserService) {
 
-
-    ]
+    this.user = this.userService.user
+    // console.log(this.user);
+    // this.id_opiniones = this.router.getCurrentNavigation().extras.state['idOpiniones'];
+    // this.emisor = this.router.getCurrentNavigation().extras.state['emisor1'];
+    // console.log(this.router.getCurrentNavigation().extras.state['receptor']);
+    
+    // this.receptor = this.router.getCurrentNavigation().extras.state['receptor'];
+    this.userService.getOpiniones(this.userService.user.id_user).subscribe((respuesta: Respuesta) => {
+      console.log(respuesta.data_opinion);
+      this.user.opiniones = respuesta.data_opinion
+      
+      console.log(respuesta);
+      
+      
+    });
   }
+
 }
