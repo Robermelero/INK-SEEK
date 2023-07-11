@@ -30,7 +30,7 @@
 }
 
 .inputs{
-    
+   
     height: 300px;
     display: flex;
     flex-direction: column;
@@ -43,12 +43,13 @@
     z-index: 1;
 }
 .inputs input{
+    color: white;
     height: 50px;
     background: var(--gris1);
     border-radius: 36px;
     border: 1px solid var(--principal);
     font-size: 15px;
-   
+    padding: 20px;
 }
 
 .back{    

@@ -1,23 +1,23 @@
 <main>
     <div class="buscador">
         <div class="input-wrapper">
-          <input type="text" placeholder="Buscar...">
-          <img src="/assets/img/lupa-gris.png" alt="Lupa" class="lupa-img">
+          <input type="text" placeholder="Buscar..." #newID>
+          <button (click) ="encontrado(newID)" class="boton-buscar"><img src="/assets/img/lupa-gris.png" alt="Lupa" class="lupa-img"></button>
         </div>
       </div>
 
-    <section class="chats">
-        <a routerLink="/conversacion-chat" routerLinkActive="active" >
-            <div class="chat">
-                <div class ="chat-foto"><img src="/assets/chat-registro/moro.png" alt=""></div>
-                <div class ="chat-nombre">El moro</div>
-                <div class ="chat-logo"><img src="/assets/chat-registro/Communication.png" alt=""></div>
+            <div class="chats" *ngFor="let conversacion of chats" >
+                <div class ="chatPapa">
+                <button class = "chat" (click)="goMensajes(conversacion.id_chat, conversacion.photo,conversacion.name)"  >
+
+                    <div class="chat-foto"><img src="{{conversacion.photo}}" alt=""></div>
+                    <div class ="chat-nombre">{{conversacion.name}}</div>
+                
+                 <img src="/assets/chat-registro/Communication-gris.png" class="caja-logo" alt="">
+               
+                </button>
+                <button class = "cerrar" (click)="deleteChat(conversacion)"><img src="./assets/delete.png" alt=""></button>
             </div>
-            <div *ngFor="let conversacion of chats" class="chat">
-                <div class ="chat-foto"><img src="{{conversacion.photo}}" alt=""></div>
-                <div class ="chat-nombre">{{conversacion.user_name}}</div>
-                <div class ="chat-logo"><img src="/assets/chat-registro/Communication-gris.png" alt=""></div>
-            </div>             
-        </a>  
-    </section>
+            </div>
+
 </main>

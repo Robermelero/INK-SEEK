@@ -7,14 +7,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
 
-*{
+* {
     font-family: "Lato" sans-serif;
 }
 
-main{
+main {
     min-height: 750px;
     background-color: var(--negro);
 }
+
 .buscador {
     padding-top: 80px;
     padding-bottom: 30px;
@@ -22,13 +23,16 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .input-wrapper {
+}
+.boton-buscar{
+    background: none;
+    border: none;
+}
+.input-wrapper {
     position: relative;
-  }
-  
-  .input-wrapper input {
+}
+
+.input-wrapper input {
     background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(29, 185, 84, 0.3));
     height: 45px;
     width: 250px;
@@ -37,69 +41,104 @@ main{
     color: var(--blanco);
     font-size: 18px;
     padding-left: 10px;
-  }
-  
-  .input-wrapper .lupa-img {
+}
+
+.input-wrapper .lupa-img {
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 20px;
     height: 20px;
     right: 5px;
-  }
+}
 
-.chats{
-  
-    padding: 5px ;
-    /* border : 2px solid blue */
+.chats {
+    /* border: 2px solid red; */
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
 }
-a{
-    text-decoration: none;
-    color: white;
-    
+
+.chatPapa {
+    /* border: 2px solid white; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
 }
-.chat{
+
+.chat {
+    border: 2px solid red;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-content: center;
-    height: 80px;
-    /* border: 1px solid red; */
-    border-left: 1px solid white;
-    margin-bottom: 15px;
-    
+    align-items: center;
+    height: 100px;
+    margin-bottom: 10px;
+    width: 90%;
+    background: none;
+    border-bottom: none;
+    border-right: none;
+    border-top: none;
+    border-left: 2px solid var(--gris2);
+    z-index: 1;
 }
 
-.chat-foto {
-    width: 56px;
+.chat button {
+    width: 100%;
+    background: none;
+}
+
+
+
+.caja-logo {
+    margin-left: 200px;
+    margin-top: 20px;
+}
+
+/* .chat-foto {
+    width: 100px;
     height: 45px;
     left: 30px;
     top: 257px;
     /* border: 2px solid white; */
-    /* padding-left: 20px; */
-    margin-top: 18px;
+/* padding-left: 20px; */
+/* margin-top: 18px;
     margin-left: 18px;
+}  */
+.chat-foto img {
+    width: 90px;
+    height: 90px;
+    border-radius: 6px;
+    margin-left: 10px;
 }
-.chat-foto img{
-    width: 100%;
-    height: 100%;
-  
-}
-.chat-nombre{
+
+.chat-nombre {
     width: 30%;
-    /* border: 2px solid pink; */
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    margin-right: 90px;
+    align-items: center;
+    margin-right: 170px;
+    color: white;
+    font-size: 25px;
+    margin-left: 20px;
 }
 
-.chat-logo{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-right: 20px;
+.caja-logo {
+    position: absolute;
+    height: 40px;
+    right: 40px;
+    margin-bottom: 20px;
 }
 
-
-
+.cerrar {
+    z-index: 5;
+    margin-bottom: 80px;
+    border: none;
+    background: none;
+}
