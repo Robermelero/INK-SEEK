@@ -11,7 +11,6 @@
         <input type="text" placeholder="Cartel del evento"[(ngModel)]="photo" name="photo" class="imput">
         <input type="text" placeholder="Nombre del evento"[(ngModel)]="title" name="title" class="imput">
         <input type="date" placeholder="fecha inicio" [(ngModel)]="fecha_inicio" name="fecha_inicio" class="imput">
-        <!-- <input type="date" [(ngModel)]="fecha_inicio" name="fecha_inicio" class="imput" style="display: none;">  -->
         <input type="date" placeholder="Fecha fin "[(ngModel)]="fecha_final" name="fecha_final" class="imput"> 
         <input type="text" placeholder="Lugar del evento"[(ngModel)]="place" name="place" class="imput"> 
 
@@ -21,14 +20,9 @@
     <section class ="back" (click)="postEvent()">
             <img src="/assets/Calendario/Vector.png" alt="" >
 
-
     </section>
-    <section>
         <div class ="logo">
-            <img src="/assets/Calendario/polilla.png" alt="">
+            <img  src="/assets/Calendario/polilla.png" alt="">
         </div>
-    </section>
-
-
 </main>
 

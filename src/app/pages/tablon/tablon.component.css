@@ -8,6 +8,7 @@
     background-color: var(--gris1);
     padding-top: 70px;
     overflow-y: auto;
+    padding-bottom: 70px;
 }
 .buscador {
   padding-top: 10px;

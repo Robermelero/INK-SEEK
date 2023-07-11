@@ -34,8 +34,6 @@ export class TablonComponent implements OnInit{
     this.eventService.getEvents().subscribe(
       (response:any)=>{
         this.eventos = response.eventos[0]
-        console.log("this eventos",this.eventos);
-        console.log("response",response.eventos[0])
       },
       (error)=>{
         console.log(error);
