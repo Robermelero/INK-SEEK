@@ -1,6 +1,6 @@
 <div class="fondo">
     <div class="margenY">
-        <div class="exit" *ngif="is_Tatuador"> <img src="./assets/delete.png" alt="" routerLink="/profile-tatuador-propia" routerLinkActive="active" ></div>
+        <div class="exit" *ngIf="is_Tatuador"> <img src="./assets/delete.png" alt="" routerLink="/profile-tatuador-propia" routerLinkActive="active" ></div>
     </div>
     <div class="centro">
         <div class="foto">
@@ -8,7 +8,7 @@
         </div>
         <div class="user-form" *ngIf = "!is_Tatuador">
             <label class="name-label-nombre">Foto</label>
-            <input type="text" #photo placeholder="URL.."/>
+            <input type="text" #photo [value]="this.usuario.photo"/>
             <label class="name-label-nombre">Nombre</label>
             <input type="text" #name placeholder=" " [value]="this.usuario.name"/>
             <label class="name-label-apellidos">Apellidos</label>
@@ -24,7 +24,7 @@
         </div>
         <div class="tatuador-form" *ngIf = "is_Tatuador">
             <label class="name-label-nombre">Foto</label>
-            <input type="text" #photo placeholder="URL.."/>
+            <input type="text" #photo [value]="this.usuario.photo"/>
             <label class="name-label-nombre">Nombre</label>
             <input type="text" #name [value]="this.usuario.name" />
             <label class="name-label-nombre">AKA</label>

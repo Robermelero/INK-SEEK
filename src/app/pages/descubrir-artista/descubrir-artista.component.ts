@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { debounceTime } from 'rxjs';
 import { Publicacion } from 'src/app/models/publicacion';
 import { Respuesta } from 'src/app/models/respuesta';
 import { User } from 'src/app/models/user';
@@ -15,9 +16,12 @@ export class DescubrirArtistaComponent implements OnInit {
   public publicaciones: Publicacion[];
   public artistas: User[];
   public artista: User;
+  public logueado: User;
+  inputValue:string="";
 
   constructor(private router: Router, public userService: UserService) {
     this.artistas = [];
+    this.logueado = this.userService.user;
   }
 
   getTatuador(inputValue: string) {
