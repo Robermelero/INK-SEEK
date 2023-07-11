@@ -8,25 +8,21 @@
     </section>
 
     <section class ="inputs">
-        <input type="text" placeholder="     Cartel del evento"[(ngModel)]="photo" name="photo">
-        <input type="text" placeholder="     Nombre del evento"[(ngModel)]="title" name="title">
-        <input type="text" placeholder="     Fecha del evento "[(ngModel)]="date" name="date"> 
-        <input type="text" placeholder="     Lugar del evento"[(ngModel)]="place" name="place"> 
+        <input type="text" placeholder="Cartel del evento"[(ngModel)]="photo" name="photo" class="imput">
+        <input type="text" placeholder="Nombre del evento"[(ngModel)]="title" name="title" class="imput">
+        <input type="date" placeholder="fecha inicio" [(ngModel)]="fecha_inicio" name="fecha_inicio" class="imput">
+        <input type="date" placeholder="Fecha fin "[(ngModel)]="fecha_final" name="fecha_final" class="imput"> 
+        <input type="text" placeholder="Lugar del evento"[(ngModel)]="place" name="place" class="imput"> 
+
     </section>
 
 
     <section class ="back" (click)="postEvent()">
-        <!-- <a routerLink="/tablon" routerLinkActive="active"> -->
             <img src="/assets/Calendario/Vector.png" alt="" >
-        <!-- </a> -->
 
     </section>
-    <section>
         <div class ="logo">
-            <img src="/assets/Calendario/polilla.png" alt="">
+            <img  src="/assets/Calendario/polilla.png" alt="">
         </div>
-    </section>
-
-
 </main>
 
