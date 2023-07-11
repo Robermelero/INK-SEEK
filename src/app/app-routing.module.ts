@@ -28,6 +28,7 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { RecomendacionesComponent } from './pages/recomendaciones/recomendaciones.component';
 import { EstrellasComponent } from './pages/estrellas/estrellas.component';
 import { ModificarCitaComponent } from './pages/modificar-cita/modificar-cita.component';
+import { Opinion } from './models/opinion';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -58,7 +59,8 @@ const routes: Routes = [
   {path: "aboutUs", component: AboutUsComponent},
   {path: "recomendaciones", component: RecomendacionesComponent},
   {path: "estrellas", component: EstrellasComponent},
-  {path: "modificar-cita/:id", component: ModificarCitaComponent}
+  {path: "modificar-cita/:id", component: ModificarCitaComponent},
+  {path: "opinion", component: OpinionesComponent}
 
   
   

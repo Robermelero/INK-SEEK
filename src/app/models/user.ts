@@ -1,3 +1,4 @@
+import { Opinion } from "./opinion";
 import { Publicacion } from "./publicacion";
 
 export class User {
@@ -13,9 +14,10 @@ export class User {
       public nickname?: string,
       public style?: string,
       public studio?: string,
-      public valoracion?: string,
+      public valoracion?: number,
       public descripcion?: string,
       public photo?: string,
-      public publicaciones ?: Publicacion[]
+      public publicaciones ?: Publicacion[],
+      public opiniones ?: Opinion[],
     ) {}
     }

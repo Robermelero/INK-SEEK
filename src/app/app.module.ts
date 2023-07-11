@@ -39,6 +39,7 @@ import { CerrarMenuDirective } from './cerrar-menu.directive';
 import { ModificarCitaComponent } from './pages/modificar-cita/modificar-cita.component';
 import { CamaraComponent } from './pages/camara/camara.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AutosizeModule } from 'ngx-autosize';
 
 
 
@@ -86,7 +87,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AutosizeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

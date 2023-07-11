@@ -17,9 +17,9 @@
       </div>
       <div class="info1">
         <div class="valoracion">
-          <a routerLink="/estrellas">
-            <img src="./assets/estrellas.png" alt="" routerLinkActive="active">
-          </a>
+          <button (click)="goOpiniones(this.userService.user.id_user)"> 
+            <img src="./assets/estrellas.png" alt="" >
+          </button>
         </div>
       </div>
     </div>
