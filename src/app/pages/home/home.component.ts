@@ -3,6 +3,7 @@ import { Publicacion } from 'src/app/models/publicacion';
 import { Router } from '@angular/router';
 import { HomeService } from 'src/app/shared/home.service';
 import { UserService } from 'src/app/shared/user.service';
+import { debounceTime } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -13,42 +14,58 @@ export class HomeComponent implements OnInit {
   public id_user:number
   publicaciones:any[]=[];
   foto:any;
-  id_user2:number
+  id_user2:number;
+  search:string="";
   constructor(private homeService: HomeService,private userService:UserService ) { 
-    this.id_user=this.userService.user.id_user
-    this.id_user2=6
-    
+    this.id_user=this.userService.user.id_user 
   }
   ngOnInit(): void {
-    this.getUserPhotos(this.id_user, 6);
+    this.getUserPhotos(this.id_user);
   }
 
-  getUserPhotos(id_user:number, id_user2: number): void {
-    console.log("holi");
-    
-    this.homeService.getUserPhotos(id_user, 6).subscribe(
+  getUserPhotos(id_user: number): void {
+    console.log("Obteniendo fotos");
+  
+    this.homeService.getFollowedUsers(id_user).subscribe(
       response => {
-        this.publicaciones=response.fotos[0]
-        console.log(response);
-      },
+        const followedUsers = response?.followedUsers;
+        if(followedUsers){
+        const followedUserIds = followedUsers.map((user: any) => user.id_user);
+        this.homeService.getUserPhotos(followedUserIds).subscribe(
+          photosResponse => {
+            this.publicaciones = photosResponse.fotos;
+            console.log(this.publicaciones);
+            console.log("follid",followedUserIds);
+            console.log("foll",followedUserIds);
+            
+            
+          },
+          error => {
+            console.log(error);
+          }
+        );
+      }},
       error => {
         console.log(error);
       }
     );
   }
 
-  searchPhotos(id_user: number, query: string): void {
-    this.homeService.searchPhotos(id_user, query).subscribe(
-      response => {
-        this.publicaciones=response.fotos
-        console.log(response);
+  searchHome() {
+    this.homeService.searchPhotos(this.id_user,this.search).pipe(debounceTime(300)).subscribe(
+      (response: any) => {
+        this.publicaciones = response.publicaciones;
+        console.log("publicaciones",this.publicaciones);
+        console.log("respuesta", response);
+        
       },
-      error => {
+      
+      
+      (error) => {
         console.log(error);
-      }
-    );
+      });
+    }
   }
-}
 
 
 

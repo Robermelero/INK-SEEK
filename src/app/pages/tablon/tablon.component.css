@@ -8,6 +8,7 @@
     background-color: var(--gris1);
     padding-top: 70px;
     overflow-y: auto;
+    padding-bottom: 70px;
 }
 .buscador {
   padding-top: 10px;
@@ -78,13 +79,14 @@
   }
   
   .contenido h3 {
-    font-size: 18px;
-    margin: 0;
+    font-size: 17px;
+    padding-left: 10px;
   }
   
   .contenido p {
-    font-size: 18px;
-    margin: 8px 0;
+    font-size: 15px;
+    margin: 4px 0;
+    padding-left: 10px;
   }
 
 
@@ -101,17 +103,15 @@
       justify-content: center;
     }
     .buter{ 
-      background-color:rgb(179, 179, 179,0.2) ;
-      color: var(--gris3);
+      background-color:rgb(179, 179, 179,0.8) ;
+      color: red;
       width: 30px;
       height: 30px;
       border-radius: 8px;
       border: transparent;
       font-size: 14pt;
       font-weight: bold;
-      position: relative;
-      top: -40px;
-      left: -1px;
+      position: absolute;
   } 
   
   

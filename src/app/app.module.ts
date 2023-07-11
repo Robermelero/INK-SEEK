@@ -40,6 +40,7 @@ import { CerrarMenuDirective } from './cerrar-menu.directive';
 import { ModificarCitaComponent } from './pages/modificar-cita/modificar-cita.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ArtistasComponent } from './components/artistas/artistas.component';
+import { ToastrModule } from 'ngx-toastr';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { CommonModule } from '@angular/common';
@@ -95,6 +96,7 @@ import { DecimalPipe } from '@angular/common';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(),,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory}),
