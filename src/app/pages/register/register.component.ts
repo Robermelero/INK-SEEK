@@ -45,7 +45,7 @@ export class RegisterComponent implements OnInit {
       nuevoNombre,
       nuevoApellido,
       nuevoEmail,
-      101,
+      0,
       nuevaContraseña,
       this.is_Tatuador
     );
