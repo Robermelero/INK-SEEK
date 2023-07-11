@@ -18,32 +18,32 @@ export class DescubrirArtistaComponent implements OnInit {
 
   constructor(private router: Router, public userService: UserService) {
     this.artistas = [];
-    // this.userService.getArtistas()
-    // .subscribe((res:Respuesta) => {
-    //   this.artistas = res.data_artistas;
-    // })
   }
-  mostrarPerfil(tatuador: User) {
-    // console.log("caca")
-    // this.artista = tatuador;
-    // this.userService.perfilArtista(tatuador)
-    // .subscribe((res:Respuesta) => {
-    //   this.artista = res.data_user[0]
-    //   console.log(this.artista)
-    // })
+
+  getTatuador(inputValue: string) {
+    this.userService.buscarTatuador(inputValue).subscribe(
+      (response: any) => {
+        if (inputValue == "" || inputValue == null || inputValue == undefined){
+          this.userService.getArtistas()
+          .subscribe((res:Respuesta) => {
+            this.userService.artistas = res.data_artistas;
+            console.log(res);
+          })
+        }else{
+          this.userService.artistas = response.data;
+          console.log(response);
+        }        
+      },
+    );
+  }
+
+  mostrarPerfil(tatuador: User) {    
     this.router.navigate(['/profile-tatuador-externa', tatuador.id_user]);
-    // this.userService.getArtistaInfo(artista.id_user)
-    // .subscribe((res: Respuesta) => {
-    //   const artistaInfo = res.data_artista;
-    //   this.router.navigate(['/profile-tatuador-externa', artistaInfo.id_user]);
-    // });
-    
   }
   
   ngOnInit(): void {
     this.userService.getArtistas()
     .subscribe((res:Respuesta) => {
-      // this.artistas = res.data_artistas;
       this.userService.artistas = res.data_artistas;
     })
   }
