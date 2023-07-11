@@ -44,9 +44,6 @@ export class TablonComponent implements OnInit{
     this.eventService.searchEvent(this.search).pipe(debounceTime(300)).subscribe(
       (response: any) => {
         this.eventos = response.eventos[0];
-      },
-      (error) => {
-        console.log(error);
-      });
+      },)
     }
   }
