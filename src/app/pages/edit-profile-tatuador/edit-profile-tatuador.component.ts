@@ -15,12 +15,13 @@ export class EditProfileTatuadorComponent {
 
   constructor(public userService: UserService) {
     this.usuario = this.userService.user;
-    this.is_Tatuador = this.userService.is_Tatuador;
+    // this.is_Tatuador = this.userService.is_Tatuador;
     this.id_user = this.userService.user.id_user;
     console.log(this.usuario);
-  } 
-
-  info(newName: HTMLInputElement, newLastname: HTMLInputElement, newEmail: HTMLInputElement, newPassword: HTMLInputElement) {
+  }
+  
+  info(newPhoto: HTMLInputElement, newName: HTMLInputElement, newLastname: HTMLInputElement, newEmail: HTMLInputElement, newPassword: HTMLInputElement) {
+    this.usuario.photo = newPhoto.value;
     this.usuario.name = newName.value;
     this.usuario.last_name = newLastname.value;
     this.usuario.email = newEmail.value;
@@ -37,8 +38,9 @@ export class EditProfileTatuadorComponent {
       });
   }
 
-  info2(newName: string, nickname: string, newLastname: string, newEmail: string,  studio: string, style: string, descripcion: string, newPassword: string) {
+  info2(newPhoto: string, newName: string, nickname: string, newLastname: string, newEmail: string,  studio: string, style: string, descripcion: string, newPassword: string) {
     this.usuario.id_user = this.userService.user.id_user;
+    this.usuario.photo = newPhoto;
     this.usuario.name = newName;
     this.usuario.last_name = newLastname;
     this.usuario.email = newEmail;
