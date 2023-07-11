@@ -20,15 +20,11 @@ export class ArtistasComponent {
   }
 
   verPerfil() {
-    console.log(this.artistaPadre)
-    console.log(this.user)
       if(this.artistaPadre.id_user == this.user.id_user){
         this.router.navigate(['/profile-tatuador-propia']);
-        console.log("holaaaa")
       }else{
         this.router.navigate(['/profile-tatuador-externa']);
         this.userService.usuarioSeleccionado = this.artistaPadre;
-        console.log("cacaaaa")
       }
     }
   }
