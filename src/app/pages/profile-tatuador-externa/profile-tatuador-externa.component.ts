@@ -19,10 +19,8 @@ export class ProfileTatuadorExternaComponent {
     this.usuarioSeleccionado = this.userService.usuarioSeleccionado;
     this.userService.getTatuadorInfo2().subscribe((respuesta: Respuesta ) =>{
       console.log(respuesta.data_foto);
-      this.usuarioSeleccionado.publicaciones = respuesta.data_foto
-      
-      });
-    
+      this.usuarioSeleccionado.publicaciones = respuesta.data_foto      
+      });    
   }
 
   followUser(id_user: number) {
