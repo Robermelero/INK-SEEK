@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
@@ -29,6 +28,7 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { RecomendacionesComponent } from './pages/recomendaciones/recomendaciones.component';
 import { EstrellasComponent } from './pages/estrellas/estrellas.component';
 import { ModificarCitaComponent } from './pages/modificar-cita/modificar-cita.component';
+import { Opinion } from './models/opinion';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -37,6 +37,7 @@ const routes: Routes = [
   {path: 'pre-register', component: PreRegisterComponent, data: { hideHeader: true, hideNavbar: true } },
   {path: "on-boarding", component: OnBoardingComponent, data: { hideHeader: true, hideNavbar: true }},
   {path: 'home', component: HomeComponent },
+  {path: "profile-tatuador-externa", component: ProfileTatuadorExternaComponent},
   {path: "profile-tatuador-propia", component: ProfileTatuadorPropiaComponent},
   {path: "edit-profile-tatuador", component: EditProfileTatuadorComponent},
   {path: "edit-profile-user", component: EditProfileUserComponent},
@@ -59,12 +60,14 @@ const routes: Routes = [
   {path: "recomendaciones", component: RecomendacionesComponent},
   {path: "estrellas", component: EstrellasComponent},
   {path: "modificar-cita/:id", component: ModificarCitaComponent},
-  { path: 'profile-tatuador-externa', component: ProfileTatuadorExternaComponent }
+  {path: "opinion", component: OpinionesComponent}
+
+  
   
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)], 
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

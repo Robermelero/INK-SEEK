@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { Opinion } from 'src/app/models/opinion';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/shared/user.service';
+import { Respuesta } from 'src/app/models/respuesta';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-estrellas',
@@ -7,22 +11,64 @@ import { Opinion } from 'src/app/models/opinion';
   styleUrls: ['./estrellas.component.css']
 })
 export class EstrellasComponent {
-
-  opiniones: any[] = [];
+  public user: User;
   showInput: boolean = false;
+  public opiniones: Opinion[] = [];
+  opinion: Opinion;
+  //****/
+  rating: number = 0;
 
-  showResponseInput() {
-    this.showInput = true;
+  constructor(private router: Router, public userService: UserService) {
+    this.user = this.userService.user;
+    this.opiniones = this.user.opiniones || []; 
+    console.log(this.user);
   }
 
-  public opiniones2: Opinion[]
+  showResponseInput(rating: number) {
+    this.showInput = true;
+    this.rating = rating;
+    }
 
-  constructor(){
-    this.opiniones = [
-      new Opinion(1, "Alba Carranza", "/assets/chat-registro/albaricoque.png", 0, "Joe como pincha el Rober!"),
-     
-    ]
+  enviarOpinion(newOpinion : HTMLInputElement, rating: number) {
+    console.log('¿Se envía o no se envía, chacho?');
+    let puntuacion = rating
+   
+
+    let nombre = this.userService.user.name;
+    let emisor = this.userService.user.id_user;
+    let receptor = this.userService.user.id_user;
+    let comment = newOpinion;
+    
+    let opinion : Opinion ={
+      user_name : nombre,
+      emisor : emisor,
+      receptor : receptor,
+      comentario : comment.value,
+      puntuacion : puntuacion,
+
+    }
+
+    this.userService.enviarOpinion(opinion).subscribe((respuesta: Respuesta) => {
+      this.opiniones.push(opinion); 
+      console.log(respuesta);
+    });
+    this.showInput = true;
+    this.rating = rating;
+  }
+
+  borrarOpinion(opinion: Opinion){
+    console.log("holaaaaaaaaaaaaaaaaaaa");
+    console.log(opinion);
+    
+    
+    this.userService.borrarOpinion(opinion.id_opiniones).subscribe((respuesta: Respuesta) => {
+    
+      this.user.opiniones = this.user.opiniones.filter(opinion1 => opinion1.id_opiniones !== opinion.id_opiniones);
+      console.log(respuesta);
+      
+    });
   }
 }
+
 
 

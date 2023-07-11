@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,13 +38,6 @@ import { EstrellasComponent } from './pages/estrellas/estrellas.component';
 import { CerrarMenuDirective } from './cerrar-menu.directive';
 import { ModificarCitaComponent } from './pages/modificar-cita/modificar-cita.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ArtistasComponent } from './components/artistas/artistas.component';
-import { ToastrModule } from 'ngx-toastr';
-import { CalendarModule, DateAdapter } from 'angular-calendar';
-import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
-import { CommonModule } from '@angular/common';
-import { DatePipe } from '@angular/common';
-import { DecimalPipe } from '@angular/common';
 
 
 
@@ -85,7 +77,6 @@ import { DecimalPipe } from '@angular/common';
     EstrellasComponent,
     CerrarMenuDirective,
     ModificarCitaComponent,
-    ArtistasComponent,
 
   ],
   imports: [
@@ -94,15 +85,8 @@ import { DecimalPipe } from '@angular/common';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
-    ToastrModule.forRoot(),
-    CalendarModule.forRoot({
-      provide: DateAdapter,
-      useFactory: adapterFactory}),
-          CommonModule,
   ],
-  providers: [DatePipe,
-    DecimalPipe],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,4 @@
+import { Opinion } from "./opinion";
 import { Publicacion } from "./publicacion";
 
 export class User {
@@ -6,16 +7,17 @@ export class User {
       public name?: string,
       public last_name?: string,
       public email?: string,
-      public id_photo?: number,
+      public id_photo?: string,
       public password?: string,
       public is_Tatuador?: boolean,
 
       public nickname?: string,
       public style?: string,
       public studio?: string,
-      public valoracion?: string,
+      public valoracion?: number,
       public descripcion?: string,
       public photo?: string,
-      public publicaciones ?: Publicacion[]
+      public publicaciones ?: Publicacion[],
+      public opiniones ?: Opinion[],
     ) {}
     }
