@@ -4,7 +4,7 @@ export class User {
       public name?: string,
       public last_name?: string,
       public email?: string,
-      public photo_perfil?: string,
+      public photo?: string,
       public password?: string,
       public is_Tatuador?: boolean
     ) {}

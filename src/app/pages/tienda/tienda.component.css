@@ -110,5 +110,5 @@ position:absolute;
   margin-top: 3px;
   margin-left: 3px;
   position: absolute;
-
+  z-index: 4;
 }
