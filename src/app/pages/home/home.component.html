@@ -1,8 +1,8 @@
 <div class="artista-container">
   <div class="buscador">
     <div class="input-wrapper">
-      <input type="text" placeholder="Buscar...">
-      <img src="/assets/img/lupa-gris.png" alt="Lupa" class="lupa-img">
+      <input type="text" placeholder="Buscar..." [(ngModel)]="search" (keyup)="searchHome()">
+      <img src="/assets/img/lupa-gris.png" alt="Lupa" class="lupa-img"  >
     </div>
   </div>
   <div class="artista-card" *ngFor="let publicacion of publicaciones">
@@ -13,7 +13,7 @@
           <div class="perfil-foto">
             <img [src]="publicacion.photoPerfil" alt="Foto de Perfil" />
           </div>
-          <p class="perfil-nombre">{{ publicacion.name }}</p>
+          <p class="perfil-nombre">{{ publicacion.user_name }}</p>
         </div>
       </a>
     </div>

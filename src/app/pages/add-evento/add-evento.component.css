@@ -46,8 +46,10 @@ right: 10px;
     background: var(--gris1);
     border-radius: 36px;
     border: 1px solid var(--principal);
-    color: var(--blanco);
+    color: var(--gris3);
     font-size: 15px;
+    padding-left: 26px;
+    padding-right: 26px;
 }
 
 .back{
@@ -77,3 +79,14 @@ margin-top: 8px;
     position: absolute;
     
 }
+input::-webkit-calendar-picker-indicator {
+    color: var(--gris3);
+    background-image: url('/assets/iconos/Vector.png'); /* Ruta de la imagen o icono personalizado */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; /* Ajusta el tamaño de la imagen según tus necesidades */
+    width: 24px; /* Ajusta el ancho según tus necesidades */
+    height: 24px; /* Ajusta el alto según tus necesidades */
+    opacity: 1; /* Asegúrate de que la opacidad sea 1 para que se muestre la imagen */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse sobre el icono */
+  } 

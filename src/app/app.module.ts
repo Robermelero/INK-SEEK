@@ -41,6 +41,7 @@ import { ModificarCitaComponent } from './pages/modificar-cita/modificar-cita.co
 import { CamaraComponent } from './pages/camara/camara.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ArtistasComponent } from './components/artistas/artistas.component';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -90,7 +91,8 @@ import { ArtistasComponent } from './components/artistas/artistas.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
