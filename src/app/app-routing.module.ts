@@ -60,8 +60,6 @@ const routes: Routes = [
   {path: "estrellas", component: EstrellasComponent},
   {path: "modificar-cita/:id", component: ModificarCitaComponent},
   { path: 'profile-tatuador-externa', component: ProfileTatuadorExternaComponent }
-
-  
   
 ];
 

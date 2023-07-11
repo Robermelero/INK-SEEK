@@ -3,7 +3,7 @@
     <div class="flecha1" (click)="changeMonth(-1)"><img src="/assets/images/Arrow 3.png" alt=""></div>
     <p class="nombre_mes" style="font-weight: bold">{{ viewDate | date: 'MMMM' }}</p>
     <div class="flecha2" (click)="changeMonth(1)"><img src="/assets/images/Arrow 2.png" alt=""></div>
-    <a routerLink="/add-cita" routerLinkActive="active" *ngIf="is_Tatuador" class="mas"><img src="/assets/Calendario/simbolo de mas.png" alt=""></a>
+    <a *ngIf="is_Tatuador" class="mas" (click)="goAdd()"><img src="/assets/Calendario/simbolo de mas.png" alt=""></a>
   </section>
   <section class="dia">
     <div class="dias__item">L</div>
