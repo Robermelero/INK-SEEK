@@ -47,18 +47,14 @@ export class UserService {
 
   public perfilArtista(tatuador: User){
     let url = `${this.url}/profile-tatuador-externa/${tatuador.id_user}`
-    console.log(url)
   return this.http.get(url)
   }
 
   getTatuadorInfo(){
-    console.log("caca");
-    console.log(this.user);    
     return this.http.get(`${this.url}/profile-tatuador-propia/${this.user.id_user}`);
   }
 
   getTatuadorInfo2(){
-    console.log("caca");
     console.log(this.usuarioSeleccionado);    
     return this.http.get(`${this.url}/profile-tatuador-externa/${this.usuarioSeleccionado.id_user}`);
   }
@@ -69,15 +65,13 @@ export class UserService {
   
 
   public followUser(id_user: number): Observable<any> {
-    console.log(id_user)
-    const url = `${this.url}/user/follow/${this.user.id_user}/${id_user}`;
+    const url = `${this.url}/user/${id_user}/follow/`;
     return this.http.post<any>(url, {});
     
   };
     
   public unfollowUser(id_user: number): Observable<any> {
-    console.log(id_user)
-    const url = `${this.url}/user/unfollow/${this.user.id_user}/${id_user}`;
+    const url = `${this.url}/user/${id_user}/unfollow`;
     return this.http.post<any>(url, {});
   }
 
