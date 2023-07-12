@@ -20,37 +20,42 @@ export class ProfileTatuadorExternaComponent {
     this.userService.getTatuadorInfo2().subscribe((respuesta: Respuesta ) =>{
       console.log(respuesta.data_foto);
       this.usuarioSeleccionado.publicaciones = respuesta.data_foto      
-      });    
+      });     
+      this.checkFollow(this.usuarioSeleccionado.id_user);
+  }  
+  checkFollow(id_user: number) {
+    this.userService.checkFollow(id_user).subscribe(
+      (response) => {
+        console.log(response);
+      }
+    );
   }
-
+  
+  
+  toggleFollow() {
+    if (this.isFollowed) {
+      this.unfollowUser(this.usuarioSeleccionado.id_user);
+    } else {
+      this.followUser(this.usuarioSeleccionado.id_user);
+    }
+  }
+  
   followUser(id_user: number) {
-    console.log('pepito');
     this.userService.followUser(id_user).subscribe(
       (response) => {
-        console.log(response);
-        console.log("cucu");
         this.isFollowed = true;
-      },
+      }
     );
   }
+  
   unfollowUser(id_user: number) {
-    console.log('lalala');
     this.userService.unfollowUser(id_user).subscribe(
       (response) => {
-        console.log(response);
-        console.log("pipipi");
         this.isFollowed = false;
-      },
+      }
     );
   }
-    toggleFollow() {
-      if (this.isFollowed) {
-        this.unfollowUser(this.usuarioSeleccionado.id_user);
-      } else {
-        this.followUser(this.usuarioSeleccionado.id_user);
-      }
-
-    }
+  
   quitarCaja(){
     }
   

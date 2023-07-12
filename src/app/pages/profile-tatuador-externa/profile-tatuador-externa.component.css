@@ -149,10 +149,11 @@ img {
 .bedit {
   height: 45px;
   width: 45px;
-  background-color: red;
+  background-color: transparent;
   position:absolute;
   top:90px;
   border:none;
+  scale:1.2;
 }
 
 p {

@@ -134,6 +134,14 @@
     opacity: 0.5;
     cursor: not-allowed;
   }
+
+.invalid-feedback {
+  color: var(--blanco);
+  position:relative;
+    bottom:20px;
+}
+
+ 
   
   
   
