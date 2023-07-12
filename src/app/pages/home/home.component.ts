@@ -12,59 +12,27 @@ import { debounceTime } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   public id_user:number
-  publicaciones:any[]=[];
-  foto:any;
-  id_user2:number;
-  search:string="";
-  constructor(private homeService: HomeService,private userService:UserService ) { 
-    this.id_user=this.userService.user.id_user 
-  }
+  public publicaciones:any[]=[];
+  public foto:any;
+  public search:string="";
+  constructor(private homeService: HomeService,private userService:UserService ) { }
   ngOnInit(): void {
-    this.getUserPhotos(this.id_user);
-  }
-
-  getUserPhotos(id_user: number): void {
-    console.log("Obteniendo fotos");
-  
-    this.homeService.getFollowedUsers(id_user).subscribe(
-      response => {
-        const followedUsers = response?.followedUsers;
-        if(followedUsers){
-        const followedUserIds = followedUsers.map((user: any) => user.id_user);
-        this.homeService.getUserPhotos(followedUserIds).subscribe(
-          photosResponse => {
-            this.publicaciones = photosResponse.fotos;
-            console.log(this.publicaciones);
-            console.log("follid",followedUserIds);
-            console.log("foll",followedUserIds);
-            
-            
-          },
-          error => {
-            console.log(error);
-          }
-        );
-      }},
-      error => {
-        console.log(error);
-      }
-    );
-  }
-
-  searchHome() {
-    this.homeService.searchPhotos(this.id_user,this.search).pipe(debounceTime(300)).subscribe(
-      (response: any) => {
-        this.publicaciones = response.publicaciones;
-        console.log("publicaciones",this.publicaciones);
-        console.log("respuesta", response);
+    this.id_user=this.userService.user.id_user
+    this.homeService.getUserPhotos(this.id_user).subscribe(
+      (res:any)=>{
+        this.publicaciones=res.fotos[0]
         
-      },
-      
-      
-      (error) => {
-        console.log(error);
-      });
-    }
+      }
+    )
+  }
+  searchHome():void{
+    this.id_user=this.userService.user.id_user
+    this.homeService.searchPhotos(this.id_user, this.search).pipe(debounceTime(300)).subscribe(
+      (res:any)=>{
+        this.publicaciones=res.fotos[0]
+      }
+    )
+  }
   }
 
 
