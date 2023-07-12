@@ -61,18 +61,22 @@ export class UserService {
     console.log(this.usuarioSeleccionado);    
     return this.http.get(`${this.url}/profile-tatuador-externa/${this.usuarioSeleccionado.id_user}`);
   }
-
-  public followUser(id_user: number): Observable<any> {
-    console.log('holaaaa');
-    const url = `${this.url}/user/${id_user}/follow/`;
-    console.log(id_user);
-    return this.http.post<any>(url, {});
+  public checkFollow(id_user: number): Observable<any> {
+    const url = `${this.url}/user/check/${this.user.id_user}/${id_user}`;
+    return this.http.get<any>(url);
   }
   
+
+  public followUser(id_user: number): Observable<any> {
+    console.log(id_user)
+    const url = `${this.url}/user/follow/${this.user.id_user}/${id_user}`;
+    return this.http.post<any>(url, {});
+    
+  };
+    
   public unfollowUser(id_user: number): Observable<any> {
-    console.log('adiooooos');
-    const url = `${this.url}/user/${id_user}/unfollow`;
-    console.log(url);
+    console.log(id_user)
+    const url = `${this.url}/user/unfollow/${this.user.id_user}/${id_user}`;
     return this.http.post<any>(url, {});
   }
 

@@ -7,36 +7,24 @@
       <label class="name-label-email">Email</label>
 
       <input type="text" class="form-control" placeholder=" " name="email" [(ngModel)]="user.email" 
-      #emailID="ngModel" [ngClass]="{'is-invalid': (emailID.dirty || emailID.touched) && emailID.invalid}" email required/>
+        #emailID="ngModel" [ngClass]="{'is-invalid': (emailID.dirty || emailID.touched) && emailID.invalid}" email required/>
+      <div *ngIf="(emailID.dirty || emailID.touched) && emailID.invalid" class="invalid-feedback">
+        <div *ngIf="emailID.errors['required']">La dirección de email es obligatoria</div>
+        <div *ngIf="emailID.errors['email']">La dirección de email no es válida</div>
+      </div>
 
       <label class="name-label-contraseña">Contraseña</label>
       <input type="password" class="form-control" placeholder=" " name="password" [(ngModel)]="user.password"
-      #passwordID="ngModel" [ngClass]="{'is-invalid': (passwordID.dirty || passwordID.touched) && passwordID.invalid}" minlength="8" required />
+        #passwordID="ngModel" [ngClass]="{'is-invalid': (passwordID.dirty || passwordID.touched) && passwordID.invalid}" minlength="8" required />
+      <div *ngIf="(passwordID.dirty || passwordID.touched) && passwordID.invalid" class="invalid-feedback">
+        <div *ngIf="passwordID.errors['required']">La clave es obligatoria</div>
+        <div *ngIf="passwordID.errors['minlength']">La clave debe tener al menos 8 caracteres</div>
+      </div>
       
-      <button  class="boton" [disabled]="loginForm?.form.invalid" [ngClass]="{'disabled': loginForm?.form.invalid}">Sign in</button>
+      <button class="boton" [disabled]="loginForm.form.invalid" [ngClass]="{'disabled': loginForm.form.invalid}">Sign in</button>
 
       <p>¿No tienes una cuenta todavía?</p>
       <a routerLink="/pre-register" routerLinkActive="active">Sign up</a>
     </form>
   </div>
 </div>
-
-<!-- <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="mb-4">
-  <div class="form-group">
-      <label>Email</label>
-      <input type="email" style="width: 250px;" class="form-control" name="email" [(ngModel)]="user.email" #emailID="ngModel" [ngClass]="{'is-invalid': (emailID.dirty || emailID.touched) && emailID.invalid}" email required>
-      <div *ngIf="(emailID.dirty || emailID.touched) && emailID.invalid" class="invalid-feedback">
-      </div>
-  </div>
-  <div class="form-group">
-      <label>Contraseña</label>
-      <input type="password" style="width: 250px;" class="form-control" name="password" [(ngModel)]="user.password" #passwordID="ngModel" [ngClass]="{'is-invalid': (passwordID.dirty || passwordID.touched) && passwordID.invalid}" minlength="8" required>
-      <div *ngIf="(passwordID.dirty || passwordID.touched) && passwordID.invalid" class="invalid-feedback">
-      </div>
-  </div>
-  <div class="form-group">
-      <button class="btn btn-danger btn-block" [disabled]="loginForm?.form.invalid"> Submit</button>
-  </div>
-</form> -->
-
-  
