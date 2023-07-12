@@ -5,17 +5,9 @@
       <img src="/assets/img/lupa-gris.png" alt="Lupa" class="lupa-img"  >
     </div>
   </div>
-  <div class="artista-card" *ngFor="let publicacion of publicaciones">
-    <div class="foto">
-      <a routerLink="/profile-tatuador-externa" routerLinkActive="active">
-        <img [src]="publicacion.photo" alt="Foto" />
-        <div class="perfil-info">
-          <div class="perfil-foto">
-            <img [src]="publicacion.photoPerfil" alt="Foto de Perfil" />
-          </div>
-          <p class="perfil-nombre">{{ publicacion.user_name }}</p>
-        </div>
-      </a>
-    </div>
+  <div class="card" >
+    <ng-container *ngFor="let publicacion of homeService.publicaciones">
+      <app-home-card [publicacionPadre] = "publicacion" (click)="mostrarPerfil(publicacion)"></app-home-card>
+    </ng-container>
   </div>
 </div>

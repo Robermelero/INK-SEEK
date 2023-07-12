@@ -41,6 +41,7 @@ import { ModificarCitaComponent } from './pages/modificar-cita/modificar-cita.co
 import { HttpClientModule } from '@angular/common/http';
 import { ArtistasComponent } from './components/artistas/artistas.component';
 import { ToastrModule } from 'ngx-toastr';
+import { HomeCardComponent } from './components/home-card/home-card.component';
 
 
 
@@ -81,6 +82,7 @@ import { ToastrModule } from 'ngx-toastr';
     CerrarMenuDirective,
     ModificarCitaComponent,
     ArtistasComponent,
+    HomeCardComponent,
 
   ],
   imports: [

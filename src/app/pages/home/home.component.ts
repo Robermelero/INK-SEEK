@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Publicacion } from 'src/app/models/publicacion';
 import { Router } from '@angular/router';
 import { HomeService } from 'src/app/shared/home.service';
 import { UserService } from 'src/app/shared/user.service';
 import { debounceTime } from 'rxjs';
+import { Publicaciones } from 'src/app/models/publicaciones';
+import { User } from 'src/app/models/user';
+import { Publicacion } from 'src/app/models/publicacion';
 
 @Component({
   selector: 'app-home',
@@ -12,26 +14,34 @@ import { debounceTime } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   public id_user:number
-  public publicaciones:any[]=[];
+  public publicaciones:Publicaciones[]=[];
   public foto:any;
   public search:string="";
-  constructor(private homeService: HomeService,private userService:UserService ) { }
+  
+  constructor(public homeService: HomeService,public userService:UserService, public router: Router) { }
   ngOnInit(): void {
     this.id_user=this.userService.user.id_user
     this.homeService.getUserPhotos(this.id_user).subscribe(
       (res:any)=>{
-        this.publicaciones=res.fotos[0]
+        this.homeService.publicaciones=res.fotos[0]
+        console.log(this.homeService.publicaciones);
         
       }
     )
   }
   searchHome():void{
     this.id_user=this.userService.user.id_user
+     if(this.search){
     this.homeService.searchPhotos(this.id_user, this.search).pipe(debounceTime(300)).subscribe(
       (res:any)=>{
-        this.publicaciones=res.fotos[0]
+        this.homeService.publicaciones=res.fotos[0]
       }
-    )
+    )}else{
+      this.homeService.getUserPhotos(this.id_user)
+    }
+  }
+  mostrarPerfil(publicacion: Publicaciones) {
+
   }
   }
 

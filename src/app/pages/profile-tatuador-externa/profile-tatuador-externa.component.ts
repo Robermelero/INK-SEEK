@@ -18,27 +18,20 @@ export class ProfileTatuadorExternaComponent {
   constructor(private router: Router, public userService: UserService) {
     this.usuarioSeleccionado = this.userService.usuarioSeleccionado;
     this.userService.getTatuadorInfo2().subscribe((respuesta: Respuesta ) =>{
-      console.log(respuesta.data_foto);
       this.usuarioSeleccionado.publicaciones = respuesta.data_foto      
       });    
   }
 
   followUser(id_user: number) {
-    console.log('pepito');
     this.userService.followUser(id_user).subscribe(
       (response) => {
-        console.log(response);
-        console.log("cucu");
         this.isFollowed = true;
       },
     );
   }
   unfollowUser(id_user: number) {
-    console.log('lalala');
     this.userService.unfollowUser(id_user).subscribe(
       (response) => {
-        console.log(response);
-        console.log("pipipi");
         this.isFollowed = false;
       },
     );
