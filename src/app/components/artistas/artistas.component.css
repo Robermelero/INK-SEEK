@@ -17,6 +17,7 @@
 .foto-perfil{
     width: 75%;  
     height: 80%;
+    object-fit: cover;
     border-radius: 150px;   
 }
 .perfil-foto{

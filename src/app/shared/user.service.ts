@@ -88,7 +88,6 @@ public buscarTatuador(inputValue: string): Observable<any> {
 
   deleteCardPerfil(idPhoto: number){
 
-    console.log('servicio');
 
     let url = (`${this.url}/profile-tatuador-propia`);
     console.log(idPhoto)

@@ -18,7 +18,6 @@ export class ProfileTatuadorExternaComponent {
   constructor(private router: Router, public userService: UserService) {
     this.usuarioSeleccionado = this.userService.usuarioSeleccionado;
     this.userService.getTatuadorInfo2().subscribe((respuesta: Respuesta ) =>{
-      console.log(respuesta.data_foto);
       this.usuarioSeleccionado.publicaciones = respuesta.data_foto      
       });     
       this.checkFollow(this.usuarioSeleccionado.id_user);
@@ -64,7 +63,6 @@ export class ProfileTatuadorExternaComponent {
   }
   
   goOpiniones(id_user: number){
-    console.log(id_user);
     
     this.router.navigate(["opiniones"])
   }
