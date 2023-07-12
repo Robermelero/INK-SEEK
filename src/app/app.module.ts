@@ -48,6 +48,7 @@ import { DatePipe } from '@angular/common';
 import { DecimalPipe } from '@angular/common';
 
 
+import { HomeCardComponent } from './components/home-card/home-card.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,7 @@ import { DecimalPipe } from '@angular/common';
     CerrarMenuDirective,
     ModificarCitaComponent,
     ArtistasComponent,
-
+    HomeCardComponent
 
   ],
   imports: [

@@ -12,7 +12,24 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   animations: [
-    // Animations code here...
+    trigger('volar', [
+      state('inicial', style({
+        transform: 'translateY(0)'
+      })),
+      state('final', style({
+        transform: 'translateY(-85vh)'
+      })),
+      transition('inicial => final', animate('4s 0.5s')),
+    ]),
+    trigger('aparecer', [
+      state('inicial', style({
+        opacity: 0
+      })),
+      state('final', style({
+        opacity: 1
+      })),
+      transition('inicial => final', animate('5s 1.5s')),
+    ])
   ]
 })
 export class LoginComponent implements OnInit {
