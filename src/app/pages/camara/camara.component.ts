@@ -2,8 +2,8 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-camera',
-  templateUrl: './camera.component.html',
-  styleUrls: ['./camera.component.css']
+  templateUrl: './camara.component.html',
+  styleUrls: ['./camara.component.css']
 })
 export class CameraComponent {
   @ViewChild('videoElement', { static: true }) videoElement: ElementRef;

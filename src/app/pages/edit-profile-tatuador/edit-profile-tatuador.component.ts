@@ -33,7 +33,7 @@ export class EditProfileTatuadorComponent {
         if (resp.mensaje === 'Los datos son correctos') {
           this.userService.user = resp.data_user[0];
         } else {
-          console.log('Error al iniciar sesión');
+          
         }
       });
   }
@@ -55,7 +55,7 @@ export class EditProfileTatuadorComponent {
         if (resp.mensaje === 'Los datos son correctos') {
           this.userService.user = resp.data_user[0];
         } else {
-          console.log('Error al iniciar sesión');
+          
         }
       });
   }

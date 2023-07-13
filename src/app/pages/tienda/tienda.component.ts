@@ -19,7 +19,7 @@ export class TiendaComponent implements OnInit {
     public userService: UserService) {
     this.tiendaService.getAll().subscribe((respuesta: Respuesta) => {
       this.prendas = respuesta.data_prenda;
-      console.log(this.prendas)
+      
     })
   }
   goAdd() {
@@ -27,11 +27,11 @@ export class TiendaComponent implements OnInit {
   }
 
   delete(prenda: Prenda) {
-    console.log("ENTROOOOOOOOOOOOO")
+    
     this.tiendaService.delete(prenda.id_photo).subscribe((respuesta: Respuesta) => {
 
       this.prendas = this.prendas.filter(prenda1 => prenda1.id_photo !== prenda.id_photo)
-      console.log(respuesta)
+      
     })
 
   }
@@ -39,12 +39,12 @@ export class TiendaComponent implements OnInit {
 
     if (this.prendas.filter(prenda => prenda.name.includes(id_prenda.value))) {
       this.prendas = this.prendas.filter(prenda => prenda.name.includes(id_prenda.value))
-      console.log(this.prendas)
+      
     }
     if(id_prenda.value == ""){
       this.tiendaService.getAll().subscribe((respuesta: Respuesta) => {
         this.prendas = respuesta.data_prenda;
-        console.log(this.prendas)
+        
       })
     }
  

@@ -49,7 +49,7 @@ export class RegisterComponent implements OnInit {
       nuevaContraseña,
       this.is_Tatuador
     );
-console.log(user)
+
     this.userService.register(user).subscribe((data: string) => {
       if (data !== '-1') {
         user.id_user = Number(data);

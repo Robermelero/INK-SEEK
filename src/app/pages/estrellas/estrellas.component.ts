@@ -23,7 +23,7 @@ export class EstrellasComponent {
   constructor(private router: Router, public userService: UserService) {
     this.user = this.userService.user;
     this.opiniones = this.user.opiniones || [] ; 
-    console.log(this.user);
+    
   }
 
   showResponseInput(rating: number) {
@@ -56,21 +56,18 @@ export class EstrellasComponent {
       // console.log(opinion);
       
       
-      console.log(respuesta);
+      
     });
     this.showInput = true;
     this.rating = rating;
   }
 
-  borrarOpinion(opinion : Opinion){
-    console.log("holaaaaaaaaaaaaaaaaaaa");
-    console.log(opinion);
-    
+  borrarOpinion(opinion : Opinion){    
     
     this.userService.borrarOpinion(opinion.id_opiniones).subscribe((respuesta: Respuesta) => {
     
       this.opiniones = this.opiniones.filter(opinion1 => opinion1.id_opiniones !== opinion.id_opiniones);
-      console.log(respuesta);
+      
       
     });
   }

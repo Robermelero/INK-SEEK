@@ -41,12 +41,10 @@ export class AddCitaComponent {
           this.cita.fecha = formattedDate;
           this.guardarCita(this.idTatuador, idCliente.toString());
         } else {
-          console.log('No se encontró el cliente con el correo electrónico especificado');
+          
         }
       },
-      error => {
-        console.log('Error al obtener el ID del cliente:', error);
-      }
+
     );
   }
   
@@ -57,12 +55,10 @@ export class AddCitaComponent {
     this.cita.email = idCliente;
     this.citaService.addCita(this.cita).subscribe(
       response => {
-        console.log('Cita agregada con éxito');
+        
         this.router.navigate(['/calendario']);
       },
-      error => {
-        console.log('Error al agregar la cita:', error);
-      }
+  
     );
   }
 }

@@ -67,11 +67,9 @@ export class ProfileTatuadorExternaComponent {
       this.userService.usuarioSeleccionado.name,
       )
 
-    console.log(this.chatCreado);
-    console.log(this.chatCreado.id_user1);
-    console.log(this.chatCreado.id_user2);
+
     this.chatService.postChat(this.chatCreado).subscribe((respuestaChat : RespuestaChat)=>{
-      console.log(respuestaChat.id_chat)
+      
       this.chatCreado.id_chat = respuestaChat.id_chat;
       this.chatService.chat = this.chatCreado;
       this.router.navigate(["conversacion-chat"]);

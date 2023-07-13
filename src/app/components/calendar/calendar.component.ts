@@ -46,11 +46,11 @@ export class CalendarComponent implements OnInit {
     this.currentDate = this.getCurrentDate();
     this.citaService.getCitas(this.id_user).subscribe(
       (response: any) => {
-        console.log('Citas obtenidas:', response);
+        
         if (!response.error) {
           this.citasAgendadas = response.data_citas || [];
         } else {
-          console.log('Error al obtener las citas:', response.mensaje);
+          
         }
         this.currentDate = this.getCurrentDate();
         this.generateCalendarDays();
@@ -60,7 +60,7 @@ export class CalendarComponent implements OnInit {
         this.handleDayClick(this.selectedDate);
       },
       (error) => {
-        console.log('Error al obtener las citas:', error);
+        
       }
     );
   }

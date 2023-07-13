@@ -108,8 +108,6 @@ top: 98px;
     display: flex;
     flex-direction: column;
     margin:5px;
-    padding-left: 10px;
-    padding-bottom: 80px;
  }
  .cliente{
     font-size: 20px;
@@ -123,7 +121,6 @@ top: 98px;
     justify-content: space-around;
     background-color: var(--gris1);
     border-radius: 10px;
-    padding-left: 10px;
  }
  
  button{
@@ -138,8 +135,19 @@ top: 98px;
  }
  .cita-card{
   margin: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   border-left: 1px solid var(--gris3);
+  text-align:left;
  }
+
+ .cita-card button {
+  text-align: left;
+  padding-left: 35px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+
+
   
