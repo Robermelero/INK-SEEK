@@ -1,10 +1,23 @@
-<input type="file" accept="image/*" capture="camera" id="camera" class="inputget">
-<header class="header">PWA Experts I/O</header>
-<div class="container-photo">
-  <img id="photo" class="photo">
+<div class="container">
+  <div class="video-container">
+    <video #videoElement class="video-element" autoplay muted></video>
+  </div>
+  <div class="button-container">
+    <button class="hacerFoto" (click)="capture()"><img src="/assets/iconos/camara.png"/></button>
+    <input type="file" id="fileInput" class="file-input" accept="image/*" (change)="handleFileInput($event)">
+    <label for="fileInput" class="galeria"><img src="/assets/iconos/galeria.png"/></label>
+  </div>
 </div>
-<footer class="footer">
-  <video #videoElement></video>
-<button (click)="capturePhoto()">Capturar Foto</button>
-</footer>
 
+<!-- Modal de confirmación -->
+<div class="modal" *ngIf="isConfirmationModalOpen">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <h2>Confirmar foto</h2>
+    <img [src]="selectedPhoto" class="selected-photo" alt="Selected Photo">
+    <div class="buttons">
+      <button (click)="uploadSelectedPhoto()"><img src="/assets/Calendario/Vector.png" alt="" class="tick" /></button>
+      <button (click)="closeConfirmationModal()"><img src="./assets/delete.png" alt="" class="cruz"/></button>
+    </div>
+  </div>
+</div>

@@ -46,6 +46,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { CommonModule } from '@angular/common';
 import { DatePipe } from '@angular/common';
 import { DecimalPipe } from '@angular/common';
+import { CamaraComponent } from './pages/camara/camara.component';
 
 
 import { HomeCardComponent } from './components/home-card/home-card.component';
@@ -87,6 +88,7 @@ import { HomeCardComponent } from './components/home-card/home-card.component';
     CerrarMenuDirective,
     ModificarCitaComponent,
     ArtistasComponent,
+    CamaraComponent,
     HomeCardComponent
 
   ],
