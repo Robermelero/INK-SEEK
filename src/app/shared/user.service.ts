@@ -111,9 +111,7 @@ public buscarTatuador(inputValue: string): Observable<any> {
     
     const url = `${this.url}/opiniones/${receptor}`;
     return this.http.get(url);
-
   }
-
 }
 
 

@@ -17,6 +17,7 @@ export class ProfileTatuadorExternaComponent {
 
   constructor(private router: Router, public userService: UserService) {
     this.usuarioSeleccionado = this.userService.usuarioSeleccionado;
+    console.log("Holaaaaaa")
     this.userService.getTatuadorInfo2().subscribe((respuesta: Respuesta ) =>{
       this.usuarioSeleccionado.publicaciones = respuesta.data_foto      
       });     
