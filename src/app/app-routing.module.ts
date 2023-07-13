@@ -63,8 +63,7 @@ const routes: Routes = [
   {path: "modificar-cita/:id", component: ModificarCitaComponent},
   { path: 'profile-tatuador-externa', component: ProfileTatuadorExternaComponent },
   {path: "opinion", component: OpinionesComponent},
-  {path: 'camara', component: CamaraComponent}
-  
+  {path: 'camara', component: CamaraComponent},
 ];
 
 @NgModule({
