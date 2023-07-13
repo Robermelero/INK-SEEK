@@ -4,7 +4,7 @@
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
-    max-width: 390px;
+    max-width: 100%;
     min-height: 60px;
 
 }
@@ -103,7 +103,7 @@
     position: relative;
     background: var(--negro);
     min-height: 48px;
-    width: 390PX;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;

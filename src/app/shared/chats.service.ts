@@ -24,38 +24,39 @@ export class ChatsService {
 
 
 
-  getConversaciones(){
-    
-    console.log("ENTROOOOOOOOOOOOOOOOOOOOOO")
-    let iduser = this.userService.user.id_user;
-    console.log(iduser);
-    return this.http.get(this.url2+"/"+iduser)
+  // getConversaciones(){
+  //   let iduser = this.userService.user.id_user;
+  //   return this.http.get(this.url2+"/"+iduser)
+  // }
+
+  getConversaciones(id_user : number){
+    let url = (this.url2+`?id_user=${id_user}`)
+    return this.http.get(url)
   }
 
-
   getMensaje(id_chat : number){
-    console.log("MENSAJEEEEEEEEEEEEEEEEEEEEEEES")
     return this.http.get(this.url+"/"+id_chat)
   }
 
   getOneChat(name : string){
-    console.log("ENCONTRADOOOOOOOOO")
-    
     let iduser = this.userService.user.id_user
-  
     return this.http.get(this.url2+"/"+iduser+"/"+name)
   }
 
   postMensaje(mensaje : Mensaje){
-    console.log("MENSAJE ENVIADO")
-    console.log(mensaje);
     return this.http.post(this.url, mensaje)
   }
   
   deleteChat(idChat : number){
-    console.log("borrado")
     const httpOptions = {headers: null, body:{id_chat : idChat}};
     return this.http.delete(this.url2, httpOptions)
+  }
+
+  postChat(chat : Chat){
+    console.log("creando chat")
+    // let id_user1 = this.userService.user.id_user;
+    // let id_user2 = this.userService.usuarioSeleccionado.id_user
+    return this.http.post(this.url2, chat)
   }
 
 }

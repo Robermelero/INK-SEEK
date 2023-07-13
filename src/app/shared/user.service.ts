@@ -12,7 +12,7 @@ export class UserService {
   public is_Tatuador: boolean;
   public user: User;
   public logueado: boolean = false;
-  public artistas : User [];
+  public artistas: User[];
   public idUser: number;
   public usuarioSeleccionado: User;
 
@@ -21,97 +21,96 @@ export class UserService {
     this.user = new User();
     this.logueado = true;
   }
-// OBTENER EL ID DE UN USER DESDE SU EMAIL///
+
   obtenerIdCliente(email: string): Observable<any> {
     return this.http.get(`${this.url}/user/${email}`);
   }
- //REGISTRO DE USUARIOS///
+
   register(user: User): Observable<any> {
     return this.http.post<any>(`${this.url}/registro`, user);
   }
-  //FUNCIONALIDAD PARA EDITAR EL PERFIL DEL USUARIO
-  public edit (usuario: User){
-    let url = `${this.url}/edit-profile-tatuador`
-    return this.http.put(url, usuario)
+
+  public edit(usuario: User): Observable<any> {
+    let url = `${this.url}/edit-profile-tatuador`;
+    return this.http.put(url, usuario);
   }
-//LOGIN//
-  public login (user:User){
+
+  public login(user: User): Observable<any> {
     let url = `${this.url}/login`;
-    return this.http.post(url,user);
-  }
- //ARTISTAS EXPLORA
- public getArtistas(){
-  let url = `${this.url}/descubrir-artista`
-  return this.http.get(url)
+    return this.http.post(url, user);
   }
 
-  public perfilArtista(tatuador: User){
-    let url = `${this.url}/profile-tatuador-externa/${tatuador.id_user}`
-  return this.http.get(url)
+  public getArtistas(): Observable<any> {
+    let url = `${this.url}/descubrir-artista`;
+    return this.http.get(url);
   }
 
-  getTatuadorInfo(){
+  public perfilArtista(tatuador: User): Observable<any> {
+    let url = `${this.url}/profile-tatuador-externa/${tatuador.id_user}`;
+    console.log(url);
+    return this.http.get(url);
+  }
+
+  public getTatuadorInfo(): Observable<any> {
+
     return this.http.get(`${this.url}/profile-tatuador-propia/${this.user.id_user}`);
   }
 
-  getTatuadorInfo2(){
-    console.log(this.usuarioSeleccionado);    
+  public getTatuadorInfo2(): Observable<any> {
     return this.http.get(`${this.url}/profile-tatuador-externa/${this.usuarioSeleccionado.id_user}`);
   }
+
   public checkFollow(id_user: number): Observable<any> {
+    
     const url = `${this.url}/user/check/${this.user.id_user}/${id_user}`;
-    return this.http.get<any>(url);
+    
+    return this.http.get<any>(url)
   }
-  
 
   public followUser(id_user: number): Observable<any> {
-    const url = `${this.url}/user/${id_user}/follow/`;
-    return this.http.post<any>(url, {});
     
-  };
-    
-  public unfollowUser(id_user: number): Observable<any> {
-    const url = `${this.url}/user/${id_user}/unfollow`;
+    const url = `${this.url}/user/follow/${this.user.id_user}/${id_user}`;
     return this.http.post<any>(url, {});
   }
 
-  //BUSCAR CITAS POR ID LOGUEADO
+  public unfollowUser(id_user: number): Observable<any> {
+    
+    const url = `${this.url}/user/unfollow/${this.user.id_user}/${id_user}`;
+    return this.http.post<any>(url, {});
+  }
+
   public getCitas(user: number): Observable<any> {
     return this.http.get(`${this.url}/citas/${user}`);
   }
 
-// BUSCAR TATUADOR//
-public buscarTatuador(inputValue: string): Observable<any> {
-  let url = `${this.url}/explorar?nickname=${inputValue}&style=${inputValue}&studio=${inputValue}`;
-  return this.http.get(url);
-}
-
-  deleteCardPerfil(idPhoto: number){
-
-
-    let url = (`${this.url}/profile-tatuador-propia`);
-    console.log(idPhoto)
-    const httpOptions = {headers: null, body:{id_photo : idPhoto}};
-    return this.http.delete(url, httpOptions)
-
+  public buscarTatuador(inputValue: string): Observable<any> {
+    let url = `${this.url}/explorar?nickname=${inputValue}&style=${inputValue}&studio=${inputValue}`;
+    return this.http.get(url);
   }
 
-  enviarOpinion(opinion: Opinion) {
+  public deleteCardPerfil(idPhoto: number): Observable<any> {
+    
+    let url = `${this.url}/profile-tatuador-propia`;
+    
+    const httpOptions = { headers: null, body: { id_photo: idPhoto } };
+    return this.http.delete(url, httpOptions);
+  }
+
+  public enviarOpinion(opinion: Opinion): Observable<any> {
     const url = `${this.url}/estrellas`;
     return this.http.post(url, opinion);
   }
 
-  borrarOpinion(idOpinion: number){
-    let url = (`${this.url}/estrellas`);
-    let httpOptions = {headers: null, body:{id_opiniones : idOpinion}};
-    return this.http.delete(url, httpOptions)
+  public borrarOpinion(id_opiniones: number): Observable<any> {
+    let url = `${this.url}/estrellas/${id_opiniones}`;
+    return this.http.delete(url);
   }
 
-  getOpiniones(receptor: number) {
-    
+  public getOpiniones(receptor: number): Observable<any> {
     const url = `${this.url}/opiniones/${receptor}`;
     return this.http.get(url);
   }
+  getInfoArtista(id_user:number){
+    return this.http.get(`${this.url}/chats/${id_user}`)
+  }
 }
-
-

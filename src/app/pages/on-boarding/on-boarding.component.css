@@ -97,35 +97,23 @@
   opacity: 0;
   scale: 1;
 }
-
+/*  */
 .burger {
+  height: 30px;
+  width: 30px;
   background-image: url("src\assets\onboard\iconos\burger.png");
   background-size: contain;
   background-repeat: no-repeat;
   position: relative;
   z-index: 9999;
   position:inherit;
-  top: 47px;
-  left: 26px;
+  top: 48px;
+  left: 23px;
   animation: aparecer 3s 55s forwards, desaparecer 3s 58s forwards;
   opacity: 0;
   scale: 1;
 }
-/* .buscador {
-  background-image: url("../../../assets/img/buscador.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 6.5%;
-  width: 245px;
-  position: relative;
-  z-index: 9999;
-  position:inherit;
-  top: 104.5px;
-  left: 72px;
-  animation: aparecer 3s 91s forwards, desaparecer 3s 92s forwards;
-  opacity: 0;
-  scale: 1;
-} */
+
 .chat {
   background-image: url("src\assets\onboard\iconos\chat.png");
   background-size: contain;
@@ -141,7 +129,7 @@
   opacity: 0;
   scale: 1;
 }
-.añadir{
+/* .añadir{
 background-image: url("src\assets\onboard\aña.png");
 background-size: contain;
 background-repeat: no-repeat;
@@ -155,8 +143,8 @@ right: 52px;
 animation: aparecer 3s 63s forwards, desaparecer 3s 66s forwards;
 opacity: 0;
 scale: 1;
-}
-.calendario2{
+} */
+/* .calendario2{
 background-size: contain;
 background-repeat: no-repeat;
 height: 375px;
@@ -169,8 +157,8 @@ left: 25px;
 animation: bordes 3s 71s forwards, bordes-out 3s 74s forwards;
 opacity: 0;
 scale: 1;
-}
-.consultar {
+} */
+/* .consultar {
 background-size: contain;
 background-repeat: no-repeat;
 height: 140px;
@@ -183,8 +171,8 @@ left: 30px;
 opacity: 0;
 scale: 1;
 animation: bordes 3s 79s forwards, bordes-out 3s 82s forwards;
-}
-/* .elemento1{
+} */
+ .elemento1{
   background-image:url("src/assets/editarp.png");
   background-size: contain;
   background-repeat:no-repeat;
@@ -197,7 +185,8 @@ animation: bordes 3s 79s forwards, bordes-out 3s 82s forwards;
   position:inherit;
   top: 200px;
   right: 200px;
-  animation: aparecer 3s 90s forwards, desaparecer 3s 92s forwards;
+  animation: aparecer 3s 63s forwards, desaparecer 3s 66s forwards;
+  /* animation: aparecer 3s 90s forwards, desaparecer 3s 92s forwards; */
   opacity: 0;
   scale: 1;
 } 
@@ -206,16 +195,17 @@ animation: bordes 3s 79s forwards, bordes-out 3s 82s forwards;
   background-image:url("src/assets/onboardv2/editar_tienda/foto_tienda.png");
   background-size: contain;
   background-repeat:no-repeat;
-  height: 10%;
+  height: 7%;
   width: 17.2%;
   position: relative;
   z-index: 9999;
   position:inherit;
-  bottom: 340px;
-  left: 275px;
-  animation: aparecer 3s 98s forwards, desaparecer 3s 100s forwards;
+  bottom: 545px;
+  left: 290px;
+  animation: aparecer 3s 73s forwards, desaparecer 3s 76s forwards;
+  /* animation: aparecer 3s 98s forwards, desaparecer 3s 100s forwards; */
   opacity: 0;
-  scale: 1;
+  scale: 1.3;
   
 } 
  .elemento3 {
@@ -229,7 +219,8 @@ animation: bordes 3s 79s forwards, bordes-out 3s 82s forwards;
   position:inherit;
   bottom: 520px;
   left: 260px;
-  animation: aparecer 3s 106s forwards, desaparecer 3s 108s forwards;
+  animation: aparecer 3s 81s forwards, desaparecer 3s 84s forwards;
+  /* animation: aparecer 3s 106s forwards, desaparecer 3s 108s forwards; */
   opacity: 0;
   scale: 1;
 }
@@ -244,11 +235,12 @@ animation: bordes 3s 79s forwards, bordes-out 3s 82s forwards;
     position:inherit;
     bottom: 420px;
     left: 235px;
-    animation: aparecer 3s 124s forwards, desaparecer 3s 126s forwards;
+    animation: aparecer 3s 97s forwards, desaparecer 3s 100s forwards;
+    /* animation: aparecer 3s 124s forwards, desaparecer 3s 126s forwards; */
     opacity: 0;
-    scale: 1; */
-/* } */
-/* .elemento5 {
+    scale: 1;
+ }
+.elemento5 {
   background-image:url("src/assets/Vector.png");    
   background-repeat:no-repeat;
   background-size: contain;
@@ -261,7 +253,8 @@ animation: bordes 3s 79s forwards, bordes-out 3s 82s forwards;
   position:inherit;
   bottom: 80px;
   left: 310px;
-  animation: aparecer 3s 132s forwards, desaparecer 3s 134s forwards; 
+  animation: aparecer 3s 107s forwards, desaparecer 3s 111s forwards;
+  /* animation: aparecer 3s 132s forwards, desaparecer 3s 134s forwards;  */
   opacity: 0;
   scale: 1;
 }
@@ -278,13 +271,14 @@ animation: bordes 3s 79s forwards, bordes-out 3s 82s forwards;
   position:inherit;
   bottom: 510px;
   left: 300px;
-  animation: aparecer 3s 142s forwards, desaparecer 3s 144s forwards; 
+  animation: aparecer 3s 132s forwards, desaparecer 3s 134s forwards;
+  /* animation: aparecer 3s 142s forwards, desaparecer 3s 144s forwards;  */
   opacity: 0;
   scale: 1;
 }
 
 
-/* .elemento7 {
+ /* .elemento7 {
   background-image:url("../../../assets/img/");    
   background-repeat:no-repeat;
   background-size: contain;
@@ -298,7 +292,7 @@ animation: bordes 3s 79s forwards, bordes-out 3s 82s forwards;
 animation: aparecer 3s 148s forwards, desaparecer 3s 150s forwards; 
   opacity: 0;
   scale: 1;
-} */
+}  */
 
 @keyframes aparecer{
   0% {

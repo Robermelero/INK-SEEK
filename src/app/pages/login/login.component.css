@@ -1,52 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
-.container {
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
-  }
-  
-  .background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("../../../assets/images/fondo-degradado.png");
 
-  }
-  
-  .content {
-    position: relative;
-    z-index: 1;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .mariposa {
-    position: absolute;
-    bottom: -350px;
-    animation: volar 4s 0.5s forwards;
-  }
-  
-  .titulo {
-    padding-top: 230px;
-    opacity: 0;
-    animation: aparecer 5s 1.5s forwards;
-    margin-left: 5px;
-  }
-  
-  .formulario {
-    opacity: 0;
-    padding-top: 135px;
-    animation: aparecer 2s 2.5s forwards;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
+.container {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.background img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 500px; /* Establece un ancho máximo para evitar que el contenido se vuelva demasiado ancho en pantallas grandes */
+}
+
+.mariposa {
+  position: absolute;
+  bottom: -390px;
+  animation: volar 3s 0.5s forwards;
+}
+
+.titulo {
+  padding-top: 20vh; /* Ajusta el valor para controlar la distancia del título desde la parte superior */
+  opacity: 0;
+  animation: aparecer 5s 1.5s forwards;
+  margin-left: 5px;
+}
+
+.formulario {
+  opacity: 0;
+  padding-top: 10vh; /* Ajusta el valor para controlar la distancia del formulario desde la parte superior */
+  animation: aparecer 2s 2.5s forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Resto del código CSS sin cambios */
+
+
   @keyframes volar {
     0% {
       transform: translateY(0);

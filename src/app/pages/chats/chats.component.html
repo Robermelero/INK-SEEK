@@ -8,7 +8,7 @@
 
             <div class="chats" *ngFor="let conversacion of chats" >
                 <div class ="chatPapa">
-                <button class = "chat" (click)="goMensajes(conversacion.id_chat, conversacion.photo,conversacion.name)"  >
+                <button class = "chat" (click)="goMensajes(conversacion)"  >
 
                     <div class="chat-foto"><img src="{{conversacion.photo}}" alt=""></div>
                     <div class ="chat-nombre">{{conversacion.name}}</div>

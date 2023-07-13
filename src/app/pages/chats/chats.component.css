@@ -12,7 +12,7 @@
 }
 
 main {
-    min-height: 750px;
+    min-height: 100vh;
     background-color: var(--negro);
 }
 
