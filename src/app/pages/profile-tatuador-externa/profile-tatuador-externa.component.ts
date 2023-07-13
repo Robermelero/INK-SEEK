@@ -15,28 +15,20 @@ import { UserService } from 'src/app/shared/user.service';
 })
 export class ProfileTatuadorExternaComponent {
   public publicaciones: Publicacion[] = [];
-  public isFollowed: boolean;
+  
   public usuarioSeleccionado: User;
   public chatCreado : Chat
 
-  constructor(private router: Router, public userService: UserService, public chatService : ChatsService) {
-    this.usuarioSeleccionado = this.userService.usuarioSeleccionado;
-    this.userService.getTatuadorInfo2().subscribe((respuesta: Respuesta ) =>{
-      this.usuarioSeleccionado.publicaciones = respuesta.data_foto      
-      });     
-      this.checkFollow(this.usuarioSeleccionado.id_user);
-  }  
-  checkFollow(id_user: number) {
-    this.userService.checkFollow(id_user).subscribe(
-      (response) => {
-        console.log(response);
-      }
-    );
+  constructor(private router: Router, public userService: UserService, public chatService: ChatsService) {
+    
+    this.usuarioSeleccionado = this.userService.usuarioSeleccionado; 
+    this.userService.getTatuadorInfo2().subscribe((respuesta: Respuesta) => {
+    this.usuarioSeleccionado.publicaciones = respuesta.data_foto;
+
+      });  
   }
-  
-  
   toggleFollow() {
-    if (this.isFollowed) {
+    if (this.userService.usuarioSeleccionado.seguido) {
       this.unfollowUser(this.usuarioSeleccionado.id_user);
     } else {
       this.followUser(this.usuarioSeleccionado.id_user);
@@ -46,7 +38,7 @@ export class ProfileTatuadorExternaComponent {
   followUser(id_user: number) {
     this.userService.followUser(id_user).subscribe(
       (response) => {
-        this.isFollowed = true;
+        this.userService.usuarioSeleccionado.seguido = true;
       }
     );
   }
@@ -54,7 +46,7 @@ export class ProfileTatuadorExternaComponent {
   unfollowUser(id_user: number) {
     this.userService.unfollowUser(id_user).subscribe(
       (response) => {
-        this.isFollowed = false;
+        this.userService.usuarioSeleccionado.seguido = false;
       }
     );
   }
