@@ -101,19 +101,16 @@ public buscarTatuador(inputValue: string): Observable<any> {
     return this.http.post(url, opinion);
   }
 
-  borrarOpinion(idOpinion: number){
-    let url = (`${this.url}/estrellas`);
-    let httpOptions = {headers: null, body:{id_opiniones : idOpinion}};
-    return this.http.delete(url, httpOptions)
+  borrarOpinion(id_opiniones: number): Observable<any> {
+    const url = `${this.url}/estrellas/${id_opiniones}`;
+    return this.http.delete(url);
   }
 
-  getOpiniones(receptor: number) {
+  getOpiniones(id_user: number) {
     
-    const url = `${this.url}/opiniones/${receptor}`;
+    const url = `${this.url}/opiniones/${id_user}`;
     return this.http.get(url);
 
   }
 
 }
-
-

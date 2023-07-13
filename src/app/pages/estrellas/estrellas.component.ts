@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { Opinion } from 'src/app/models/opinion';
 import { Router } from '@angular/router';
@@ -14,7 +13,7 @@ import { User } from 'src/app/models/user';
 export class EstrellasComponent {
   
 
-  opiniones: any[] = [];
+  opiniones:Opinion[];
   showInput: boolean = false;
   public user: User;
   opinion: Opinion;
@@ -23,7 +22,7 @@ export class EstrellasComponent {
 
   constructor(private router: Router, public userService: UserService) {
     this.user = this.userService.user;
-    this.opiniones = this.user.opiniones || []; 
+    this.opiniones = this.user.opiniones || [] ; 
     console.log(this.user);
   }
 
@@ -33,17 +32,17 @@ export class EstrellasComponent {
     }
 
   enviarOpinion(newOpinion : HTMLInputElement, rating: number) {
-    console.log('¿Se envía o no se envía, chacho?');
+    // console.log('¿Se envía o no se envía, chacho?');
     let puntuacion = rating
    
 
     let nombre = this.userService.user.name;
     let emisor = this.userService.user.id_user;
-    let receptor = this.userService.user.id_user;
+    let receptor = this.userService.usuarioSeleccionado.id_user;
     let comment = newOpinion;
     
     let opinion : Opinion ={
-      user_name : nombre,
+      name : nombre,
       emisor : emisor,
       receptor : receptor,
       comentario : comment.value,
@@ -53,24 +52,26 @@ export class EstrellasComponent {
 
     this.userService.enviarOpinion(opinion).subscribe((respuesta: Respuesta) => {
       this.opiniones.push(opinion); 
+      // console.log(this.opiniones);
+      // console.log(opinion);
+      
+      
       console.log(respuesta);
     });
     this.showInput = true;
     this.rating = rating;
   }
 
-  borrarOpinion(opinion: Opinion){
+  borrarOpinion(opinion : Opinion){
     console.log("holaaaaaaaaaaaaaaaaaaa");
     console.log(opinion);
     
     
     this.userService.borrarOpinion(opinion.id_opiniones).subscribe((respuesta: Respuesta) => {
     
-      this.user.opiniones = this.user.opiniones.filter(opinion1 => opinion1.id_opiniones !== opinion.id_opiniones);
+      this.opiniones = this.opiniones.filter(opinion1 => opinion1.id_opiniones !== opinion.id_opiniones);
       console.log(respuesta);
       
     });
   }
 }
-
-
