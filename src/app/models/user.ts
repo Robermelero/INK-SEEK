@@ -2,7 +2,9 @@ import { Publicacion } from "./publicacion";
 import { Opinion } from "./opinion";
 
 export class User {
+    public seguido?:boolean
     constructor(
+    
       public id_user?: number,
       public name?: string,
       public last_name?: string,

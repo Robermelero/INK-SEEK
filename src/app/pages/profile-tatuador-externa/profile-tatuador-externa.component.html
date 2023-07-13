@@ -1,29 +1,29 @@
 <div class="fondo">
   <div class="cajaNueva">
-    <div class="line1">   
-        <div class="profileimg">
-          <img class = "photo" src={{userService.usuarioSeleccionado.photo}} alt="">
+    <div class="line1">
+      <div class="profileimg">
+        <img class="photo" [src]="userService.usuarioSeleccionado.photo" alt="">
+      </div>
+      <div class="editar">
+        <div>
+          <button class="bedit" type="button"  (click)="toggleFollow()">
+            <img [src]="userService.usuarioSeleccionado.seguido? './assets/fondoCorazon.png' : './assets/corazon.png'">
+          </button>
         </div>
-        <div class="editar">
-          <div>
-            <button class="bedit" type="button" [ngClass]="{ 'followed': isFollowed }" (click)="toggleFollow()">
-              <img src="./assets/AED.png" >
-            </button>
-          </div>
-        </div>   
+      </div>
       <div class="valoracion">
         <a routerLink="/estrellas">
           <img src="./assets/estrellas.png" alt="" routerLinkActive="active">
         </a>
-      </div>    
+      </div>
     </div>
   </div>
   <div class="line2">
     <div class="name">
-      <h3>{{userService.usuarioSeleccionado.nickname}}</h3>
+      <h3>{{ userService.usuarioSeleccionado.nickname }}</h3>
     </div><br>
     <div class="descrip">
-      <p>{{userService.usuarioSeleccionado.descripcion}}</p>
+      <p>{{ userService.usuarioSeleccionado.descripcion }}</p>
     </div>
     <div class="emojis">
       <div class="tienda">
@@ -32,14 +32,15 @@
         </a>
       </div>
       <div class="chat">
-        <a  routerLink="/conversacion-chat">
-            <p routerLinkActive="active"> <br></p></a>
+        <a routerLink="/conversacion-chat">
+          <p routerLinkActive="active"> <br></p>
+        </a>
       </div>
     </div>
   </div>
-  <div class="artista-card" *ngFor="let photo of userService.usuarioSeleccionado.publicaciones">
+  <!-- <div class="artista-card" *ngFor="let photo of userService.usuarioSeleccionado.publicaciones">
     <div class="foto">
-      <img src={{photo.photo}} alt="Foto">
+      <img [src]="photo.photo" alt="Foto">
     </div>
-  </div>
+  </div> -->
 </div>

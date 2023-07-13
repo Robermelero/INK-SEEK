@@ -23,8 +23,12 @@ export class ArtistasComponent {
       if(this.artistaPadre.id_user == this.user.id_user){
         this.router.navigate(['/profile-tatuador-propia']);
       }else{
-        this.router.navigate(['/profile-tatuador-externa']);
         this.userService.usuarioSeleccionado = this.artistaPadre;
+        this.userService.checkFollow(this.artistaPadre.id_user).subscribe((isFollowed: boolean) => {
+          this.userService.usuarioSeleccionado.seguido = isFollowed;
+          this.router.navigate(['/profile-tatuador-externa']); 
+        })
+            
       }
     }
   }

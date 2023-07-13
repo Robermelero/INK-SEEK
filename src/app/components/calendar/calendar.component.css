@@ -107,12 +107,14 @@ top: 98px;
   .cards {
     display: flex;
     flex-direction: column;
+    justify-content:left;
     margin:5px;
     padding-left: 10px;
     padding-bottom: 80px;
  }
  .cliente{
     font-size: 20px;
+    text-align: left;
     
  }
  .content{  
@@ -138,8 +140,8 @@ top: 98px;
  }
  .cita-card{
   margin: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border-left: 1px solid var(--gris3);
  }
   
