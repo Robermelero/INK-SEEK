@@ -22,18 +22,14 @@ main{
     background-color: var(--negro);
     display: flex;
     align-items: center;
-    justify-content: center;
-    /* flex-direction: column;
-    justify-content: flex-end; */
- 
+    justify-content: center; 
 }
 .chat-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* position: absolute; */
-    /* border:2px  solid red; */
+
     
 }
 
@@ -69,12 +65,9 @@ main{
     background-color: transparent;
     color: var(--principal);
     overflow: hidden;
-    /* position: relative; */
-    /* margin-left: 5px; */
     cursor: pointer;
     transition: 0.4s ease-in-out;
     border-style: none;
-    /* /* margin-bottom: 5px; */
     margin-right: 15px; 
 
     
@@ -98,9 +91,8 @@ i{
 
 
 .chats {   
-  
     width: 400px;
-    min-height: 540px;
+    min-height: 600px;
     padding: 0 15px;
     color: white; 
     margin-top: 115px;
@@ -175,11 +167,12 @@ i{
     transform: scale(0.85);
 }
 
-.chats  :last-child{
-    
- margin-bottom: 60px;
-}
 .contenedor_conversacion{
     overflow: scroll;
     padding: 0.3rem;
 }
+
+.msj_ocultar {
+    opacity: 0;
+    height: 40px;
+   }

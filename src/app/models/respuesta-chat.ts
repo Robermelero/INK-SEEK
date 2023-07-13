@@ -6,6 +6,7 @@ export class RespuestaChat {
         public error:boolean,
         public codigo: number,
         public mensaje: string,
-        public data_conversacion : Chat[]
+        public data_conversacion : Chat[],
+        public id_chat : number
     ){}
 }

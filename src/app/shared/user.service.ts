@@ -86,25 +86,9 @@ public buscarTatuador(inputValue: string): Observable<any> {
   return this.http.get(url);
 }
 
-  deleteCardPerfil(idPhoto: number){
-
-
-    let url = (`${this.url}/profile-tatuador-propia`);
-    console.log(idPhoto)
-    const httpOptions = {headers: null, body:{id_photo : idPhoto}};
-    return this.http.delete(url, httpOptions)
-
-  }
-
-  enviarOpinion(opinion: Opinion) {
-    const url = `${this.url}/estrellas`;
-    return this.http.post(url, opinion);
-  }
-
-  borrarOpinion(id_opiniones: number): Observable<any> {
-    const url = `${this.url}/estrellas/${id_opiniones}`;
-    return this.http.delete(url);
-  }
+getInfoArtista(id_user:number){
+  return this.http.get(`${this.url}/chats/${id_user}`)
+}
 
   getOpiniones(id_user: number) {
     
@@ -113,4 +97,19 @@ public buscarTatuador(inputValue: string): Observable<any> {
 
   }
 
+  deleteCardPerfil(id_photo : number) : Observable <any>{
+    let url = (`${this.url}/profile-tatuador-propia/${id_photo}`);
+    return this.http.delete(url)
+
+  }
+
+  enviarOpinion(opinion : Opinion){
+    const url = `${this.url}/estrellas`; 
+    return this.http.post(url, opinion)
+  }
+
+  borrarOpinion(id_opiniones : number) : Observable <any>{
+    let url = `${this.url}/estrellas/${id_opiniones}`
+    return this.http.delete(url)
+  }
 }
