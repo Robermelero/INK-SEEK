@@ -29,6 +29,8 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { RecomendacionesComponent } from './pages/recomendaciones/recomendaciones.component';
 import { EstrellasComponent } from './pages/estrellas/estrellas.component';
 import { ModificarCitaComponent } from './pages/modificar-cita/modificar-cita.component';
+import { CamaraComponent } from './pages/camara/camara.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -59,7 +61,9 @@ const routes: Routes = [
   {path: "recomendaciones", component: RecomendacionesComponent},
   {path: "estrellas", component: EstrellasComponent},
   {path: "modificar-cita/:id", component: ModificarCitaComponent},
-  { path: 'profile-tatuador-externa', component: ProfileTatuadorExternaComponent }
+  {path: 'profile-tatuador-externa', component: ProfileTatuadorExternaComponent },
+  {path: 'camara', component: CamaraComponent}
+
 
   
   
