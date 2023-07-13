@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user';
 import { Opinion } from '../models/opinion';
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -53,34 +52,29 @@ export class UserService {
   }
 
   public getTatuadorInfo(): Observable<any> {
-    console.log("caca");
-    console.log(this.user);
+
     return this.http.get(`${this.url}/profile-tatuador-propia/${this.user.id_user}`);
   }
 
   public getTatuadorInfo2(): Observable<any> {
-    console.log("caca");
-    console.log(this.usuarioSeleccionado);
     return this.http.get(`${this.url}/profile-tatuador-externa/${this.usuarioSeleccionado.id_user}`);
   }
 
   public checkFollow(id_user: number): Observable<any> {
-    console.log('checkFollow llamado con id_user:', id_user);
+    
     const url = `${this.url}/user/check/${this.user.id_user}/${id_user}`;
-    console.log('URL:', url);
-    return this.http.get<any>(url).pipe(
-      map((response) => response.isFollowed)
-    );
+    
+    return this.http.get<any>(url)
   }
 
   public followUser(id_user: number): Observable<any> {
-    console.log(id_user);
+    
     const url = `${this.url}/user/follow/${this.user.id_user}/${id_user}`;
     return this.http.post<any>(url, {});
   }
 
   public unfollowUser(id_user: number): Observable<any> {
-    console.log(id_user);
+    
     const url = `${this.url}/user/unfollow/${this.user.id_user}/${id_user}`;
     return this.http.post<any>(url, {});
   }
@@ -95,9 +89,9 @@ export class UserService {
   }
 
   public deleteCardPerfil(idPhoto: number): Observable<any> {
-    console.log('servicio');
+    
     let url = `${this.url}/profile-tatuador-propia`;
-    console.log(idPhoto);
+    
     const httpOptions = { headers: null, body: { id_photo: idPhoto } };
     return this.http.delete(url, httpOptions);
   }

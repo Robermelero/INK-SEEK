@@ -6,8 +6,8 @@
       </div>
       <div class="editar">
         <div>
-          <button class="bedit" type="button" (click)="toggleFollow()">
-            <img [src]="isFollowed ? './assets/fondoCorazon.png' : './assets/corazon.png'">
+          <button class="bedit" type="button"  (click)="toggleFollow()">
+            <img [src]="userService.usuarioSeleccionado.seguido? './assets/fondoCorazon.png' : './assets/corazon.png'">
           </button>
         </div>
       </div>
