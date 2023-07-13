@@ -15,33 +15,45 @@ export class TiendaComponent implements OnInit {
   public is_Tatuador: Boolean = true;
 
   constructor(private router: Router,
-              public tiendaService : TiendaService,
-              public userService : UserService) {
-    this.tiendaService.getAll().subscribe((respuesta :Respuesta)=>{
+    public tiendaService: TiendaService,
+    public userService: UserService) {
+    this.tiendaService.getAll().subscribe((respuesta: Respuesta) => {
       this.prendas = respuesta.data_prenda;
-    console.log(this.prendas)})
+      console.log(this.prendas)
+    })
   }
-  goAdd(){
+  goAdd() {
     this.router.navigate(['/add-producto'])
   }
 
-  delete(prenda:Prenda){
+  delete(prenda: Prenda) {
     console.log("ENTROOOOOOOOOOOOO")
-    this.tiendaService.delete(prenda.id_photo).subscribe((respuesta : Respuesta)=>{
+    this.tiendaService.delete(prenda.id_photo).subscribe((respuesta: Respuesta) => {
 
       this.prendas = this.prendas.filter(prenda1 => prenda1.id_photo !== prenda.id_photo)
       console.log(respuesta)
     })
-    
+
+  }
+  find(id_prenda: HTMLInputElement) {
+
+    if (this.prendas.filter(prenda => prenda.name.includes(id_prenda.value))) {
+      this.prendas = this.prendas.filter(prenda => prenda.name.includes(id_prenda.value))
+      console.log(this.prendas)
+    }
+    if(id_prenda.value == ""){
+      this.tiendaService.getAll().subscribe((respuesta: Respuesta) => {
+        this.prendas = respuesta.data_prenda;
+        console.log(this.prendas)
+      })
+    }
+ 
   }
 
-  // quitarCaja(prenda : Prenda){
-    // console.log("ENTROOOOOOOOOOOOO")
-    // this.tiendaService.delete(prenda.id_photo).subscribe((respuesta : Respuesta)=>{
+  ngOnInit(): void {
 
-    //   this.prendas = this.prendas.filter(prenda1 => prenda1.id_photo !== prenda.id_photo)
-    //   console.log(respuesta)
-    // })
-  // }
-  ngOnInit(): void {}
+  }
+
 }
+
+

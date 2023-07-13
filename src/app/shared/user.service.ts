@@ -91,7 +91,9 @@ public buscarTatuador(inputValue: string): Observable<any> {
   let url = `${this.url}/explorar?nickname=${inputValue}&style=${inputValue}&studio=${inputValue}`;
   return this.http.get(url);
 }
-
+getInfoArtista(id_user:number){
+  return this.http.get(`${this.url}/chats/${id_user}`)
+}
 }
 
 

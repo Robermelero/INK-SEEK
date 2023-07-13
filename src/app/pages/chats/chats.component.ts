@@ -18,7 +18,7 @@ export class ChatsComponent {
     public mensaje : Mensaje[]
     public chat : Chat
     constructor(public chatService : ChatsService, public userService : UserService, public router : Router){
-      this.chatService.getConversaciones().subscribe((respuestaChat : RespuestaChat)=>{
+      this.chatService.getConversaciones(this.userService.user.id_user).subscribe((respuestaChat : RespuestaChat)=>{
         this.chats = respuestaChat.data_conversacion
         console.log(this.chats)
       })
@@ -34,16 +34,22 @@ export class ChatsComponent {
       this.chats = this.chats.filter(chat => chat.name == id.value)
       }
       else{
-        this.chatService.getConversaciones().subscribe((respuestaChat : RespuestaChat)=>{
+        this.chatService.getConversaciones(this.userService.user.id_user).subscribe((respuestaChat : RespuestaChat)=>{
           this.chats = respuestaChat.data_conversacion
           console.log(this.chats)
         })
       }
     }
 
-    goMensajes(id_chat : number, photo : string,name : string){
+    // goMensajes(id_chat : number, photo : string,name : string){
     
-      this.router.navigate(["conversacion-chat"], {state: {idchat: id_chat, photo1 : photo, name1 : name}})  
+    //   this.router.navigate(["conversacion-chat"], {state: {idchat: id_chat, photo1 : photo, name1 : name}})  
+         
+    // }
+    
+    goMensajes(conversacion : Chat){
+      this.chatService.chat = conversacion;
+      this.router.navigate(["conversacion-chat"]);
          
     }
 deleteChat(chat : Chat){
