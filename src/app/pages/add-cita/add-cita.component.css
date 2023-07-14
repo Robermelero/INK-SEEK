@@ -99,10 +99,14 @@ h1{
         z-index:999;
     }
     input[type="date"]::-webkit-calendar-picker-indicator {
-        width: 30px;
-        height: 30px;
-        padding-right: 15px;
-        color: var(--principal);
+        color: var(--gris3);
+        background-image: url('/assets/iconos/Vector.png'); 
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 24px; 
+        height: 24px;
+        opacity: 1; 
         cursor: pointer;
-        border: var(--principal);
+        padding-right: 26px; 
       }

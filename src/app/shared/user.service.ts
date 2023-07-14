@@ -84,7 +84,7 @@ export class UserService {
   }
 
   public buscarTatuador(inputValue: string): Observable<any> {
-    let url = `${this.url}/explorar?nickname=${inputValue}&style=${inputValue}&studio=${inputValue}`;
+    let url = `${this.url}/explorar/search?search=${inputValue}`;
     return this.http.get(url);
   }
   public deleteCardPerfil(idPhoto: number): Observable<any> {
