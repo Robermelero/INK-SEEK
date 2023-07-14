@@ -90,4 +90,14 @@ export class ProfileTatuadorExternaComponent {
     
     this.router.navigate(["opiniones"])
   }
+
+
+  verTienda(){
+    this.userService.getInfoArtista(this.userService.usuarioSeleccionado.id_user)
+    .subscribe((respuesta : Respuesta) => {
+      this.userService.usuarioSeleccionado = respuesta.data_user[0]
+      this.router.navigate(['tienda-externa']);
+      console.log(respuesta.data_user);
+    })
+  }
 }

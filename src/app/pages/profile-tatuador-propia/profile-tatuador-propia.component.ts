@@ -38,4 +38,9 @@ export class ProfileTatuadorPropiaComponent{
       
     });
   }
+
+  goTienda(id_user : number){
+    this.userService.user.id_user = id_user;
+    this.router.navigate(["tienda"]);
+  }
 };

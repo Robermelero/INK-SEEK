@@ -90,6 +90,10 @@ getInfoArtista(id_user:number){
   return this.http.get(`${this.url}/chats/${id_user}`)
 }
 
+getInfoTienda(id_user:number){
+  return this.http.get(`${this.url}/tienda/${id_user}`)
+}
+
   getOpiniones(id_user: number) {
     
     const url = `${this.url}/opiniones/${id_user}`;

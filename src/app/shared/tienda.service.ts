@@ -10,15 +10,21 @@ import { UserService } from './user.service';
 })
 export class TiendaService {
   private url = "http://localhost:3000/tienda"
+  private url2 = "http://localhost:3000/tiendas"
   public prenda : Prenda
   constructor(private http : HttpClient, private userService : UserService) {
       this.prenda = new Prenda();
    }
 
-   getAll(){
-    let iduser = this.userService.user.id_user;
-    console.log(iduser);
-    return this.http.get(this.url+"/"+iduser)
+   getAll(id_user : number){
+    
+    console.log(id_user);
+    return this.http.get(this.url+`?id_user=${id_user}`)
+   }
+
+   getAllUserExterno(id_user : number){
+    console.log(id_user)
+    return this.http.get(this.url2+`?id_user=${id_user}`)
    }
 
 

@@ -30,6 +30,7 @@ import { RecomendacionesComponent } from './pages/recomendaciones/recomendacione
 import { EstrellasComponent } from './pages/estrellas/estrellas.component';
 import { ModificarCitaComponent } from './pages/modificar-cita/modificar-cita.component';
 import { Opinion } from './models/opinion';
+import { TiendaExternaComponent } from './pages/tienda-externa/tienda-externa.component';
 
 
 const routes: Routes = [
@@ -62,8 +63,8 @@ const routes: Routes = [
   {path: "estrellas", component: EstrellasComponent},
   {path: "modificar-cita/:id", component: ModificarCitaComponent},
   { path: 'profile-tatuador-externa', component: ProfileTatuadorExternaComponent },
-  {path: "opinion", component: OpinionesComponent}
-  
+  {path: "opinion", component: OpinionesComponent},
+  {path: "tienda-externa", component: TiendaExternaComponent}
 ];
 
 @NgModule({

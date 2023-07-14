@@ -17,10 +17,14 @@ export class TiendaComponent implements OnInit {
   constructor(private router: Router,
     public tiendaService: TiendaService,
     public userService: UserService) {
-    this.tiendaService.getAll().subscribe((respuesta: Respuesta) => {
+
+    
+    this.tiendaService.getAll(this.userService.user.id_user).subscribe((respuesta: Respuesta) => {
       this.prendas = respuesta.data_prenda;
       console.log(this.prendas)
+      console.log(this.userService.user.id_user)
     })
+
   }
   goAdd() {
     this.router.navigate(['/add-producto'])
@@ -42,7 +46,7 @@ export class TiendaComponent implements OnInit {
       console.log(this.prendas)
     }
     if(id_prenda.value == ""){
-      this.tiendaService.getAll().subscribe((respuesta: Respuesta) => {
+      this.tiendaService.getAll(this.userService.user.id_user).subscribe((respuesta: Respuesta) => {
         this.prendas = respuesta.data_prenda;
         console.log(this.prendas)
       })
