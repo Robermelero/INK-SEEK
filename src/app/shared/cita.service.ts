@@ -9,6 +9,7 @@ import { Cita } from '../models/cita';
 export class CitaService {
 
   private url = "http://localhost:3000";
+  cita: any;
 
   constructor(private http: HttpClient) {}
 
@@ -25,6 +26,11 @@ export class CitaService {
     const url = `${this.url}/citas/${id_user}`;
     return this.http.get<{ error: boolean, codigo: number, mensaje: string, data_citas: Cita[] }>(url);
   }
+  getCitasEmail(email: number): Observable<{ error: boolean, codigo: number, mensaje: string, data_citas: Cita[] }> {
+    const url = `${this.url}/citas/email/${email}`;
+    return this.http.get<{ error: boolean, codigo: number, mensaje: string, data_citas: Cita[] }>(url);
+  }
+  
   getCitaById(id_cita: number): Observable<{ error: boolean, codigo: number, mensaje: string, data_cita: Cita }> {
     const url = `${this.url}/cita/${id_cita}`;
     return this.http.get<{ error: boolean, codigo: number, mensaje: string, data_cita: Cita }>(url);

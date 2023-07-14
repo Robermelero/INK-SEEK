@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class CalendarComponent implements OnInit {
   selectedDate: Date;
   is_Tatuador: boolean = true;
-  citasAgendadas: Cita[]=[];
+  citasAgendadas: Cita[] = [];
   viewDate: Date = new Date();
   calendarDays: any[];
   selectedDayCitas: Cita[];
@@ -44,25 +44,55 @@ export class CalendarComponent implements OnInit {
 
   ngOnInit(): void {
     this.currentDate = this.getCurrentDate();
-    this.citaService.getCitas(this.id_user).subscribe(
-      (response: any) => {
-        console.log('Citas obtenidas:', response);
-        if (!response.error) {
-          this.citasAgendadas = response.data_citas || [];
-        } else {
-          console.log('Error al obtener las citas:', response.mensaje);
-        }
-        this.currentDate = this.getCurrentDate();
-        this.generateCalendarDays();
-        this.selectedDate = this.currentDate;
 
-        this.generateDayCards(this.selectedDate);
-        this.handleDayClick(this.selectedDate);
-      },
-      (error) => {
-        console.log('Error al obtener las citas:', error);
-      }
-    );
+    if (this.is_Tatuador) {
+      this.citaService.getCitas(this.id_user).subscribe(
+        (response: any) => {
+          console.log('Citas obtenidas:', response);
+          if (!response.error) {
+            this.citasAgendadas = response.data_citas || [];
+          } else {
+            console.log('Error al obtener las citas:', response.mensaje);
+          }
+          this.currentDate = this.getCurrentDate();
+          this.generateCalendarDays();
+          this.selectedDate = this.currentDate;
+          this.generateDayCards(this.selectedDate);
+          this.handleDayClick(this.selectedDate);
+        },
+        (error) => {
+          console.log('Error al obtener las citas:', error);
+        }
+      );
+    } else {
+      this.userService.obtenerIdCliente(this.userService.user.email).subscribe(
+        (citaEmail: number) => {
+          console.log('Número de email de cita obtenido:', citaEmail);
+
+          this.citaService.getCitasEmail(citaEmail).subscribe(
+            (citasResponse: any) => {
+              console.log('Citas obtenidas:', citasResponse);
+              if (!citasResponse.error) {
+                this.citasAgendadas = citasResponse.data_citas || [];
+              } else {
+                console.log('Error al obtener las citas:', citasResponse.mensaje);
+              }
+              this.currentDate = this.getCurrentDate();
+              this.generateCalendarDays();
+              this.selectedDate = this.currentDate;
+              this.generateDayCards(this.selectedDate);
+              this.handleDayClick(this.selectedDate);
+            },
+            (error) => {
+              console.log('Error al obtener las citas:', error);
+            }
+          );
+        },
+        (error) => {
+          console.log('Error al obtener el número de email de cita:', error);
+        }
+      );
+    }
   }
 
   generateCalendarDays() {
@@ -128,17 +158,16 @@ export class CalendarComponent implements OnInit {
     return false;
   }
 
- handleDayClick(day: any) {
-  this.selectedDay = day;
-  if (day && day.date) {
-    this.generateDayCards(day.date);
-    this.selectedDayCitas = this.currentDayCitas.filter(cita => {
-      const citaDate = new Date(cita.fecha);
-      return this.isSameDate(citaDate, day.date);
-    });
+  handleDayClick(day: any) {
+    this.selectedDay = day;
+    if (day && day.date) {
+      this.generateDayCards(day.date);
+      this.selectedDayCitas = this.currentDayCitas.filter(cita => {
+        const citaDate = new Date(cita.fecha);
+        return this.isSameDate(citaDate, day.date);
+      });
+    }
   }
-}
-
 
   isSameDate(date1: Date, date2: Date): boolean {
     if (!date1 || !date2) {
@@ -159,11 +188,11 @@ export class CalendarComponent implements OnInit {
   }
 
   goModificar(id_cita: number) {
-    console.log(id_cita)
+    console.log(id_cita);
     this.router.navigate(['/modificar-cita', id_cita]);
   }
 
-  goAdd(){
+  goAdd() {
     this.router.navigate(['/add-cita']);
   }
 }
