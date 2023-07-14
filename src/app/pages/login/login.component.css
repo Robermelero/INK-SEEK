@@ -43,7 +43,7 @@
   padding-top: 20vh; /* Ajusta el valor para controlar la distancia del título desde la parte superior */
   opacity: 0;
   animation: aparecer 5s 1.5s forwards;
-  margin-left: 5px;
+  margin-left: 7px;
 }
 
 .formulario {
