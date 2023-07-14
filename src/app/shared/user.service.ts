@@ -88,9 +88,11 @@ export class UserService {
     return this.http.get(url);
   }
 
-  public deleteCardPerfil(idPhoto: number): Observable<any> {
-    
-    let url = `${this.url}/profile-tatuador-propia`;
+getInfoArtista(id_user:number){
+  return this.http.get(`${this.url}/chats/${id_user}`)
+}
+
+  getOpiniones(id_user: number) {
     
     const httpOptions = { headers: null, body: { id_photo: idPhoto } };
     return this.http.delete(url, httpOptions);

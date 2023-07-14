@@ -34,7 +34,7 @@
       <p>{{this.user.descripcion}}</p>
     </div>
     <div class="tienda">
-      <a routerLink="/tienda">
+      <a (click) = "goTienda(userService.user.id_user)">
         <p routerLinkActive="active"><br></p>
       </a>
     </div>

@@ -50,6 +50,7 @@ import { CamaraComponent } from './pages/camara/camara.component';
 
 
 import { HomeCardComponent } from './components/home-card/home-card.component';
+import { TiendaExternaComponent } from './pages/tienda-externa/tienda-externa.component';
 
 @NgModule({
   declarations: [
@@ -88,9 +89,10 @@ import { HomeCardComponent } from './components/home-card/home-card.component';
     CerrarMenuDirective,
     ModificarCitaComponent,
     ArtistasComponent,
+    HomeCardComponent,
+ 
     CamaraComponent,
-    HomeCardComponent
-
+    TiendaExternaComponent
   ],
   imports: [
     BrowserModule,

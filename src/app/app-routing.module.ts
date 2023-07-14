@@ -31,6 +31,8 @@ import { EstrellasComponent } from './pages/estrellas/estrellas.component';
 import { ModificarCitaComponent } from './pages/modificar-cita/modificar-cita.component';
 import { Opinion } from './models/opinion';
 import { CamaraComponent } from './pages/camara/camara.component';
+import { TiendaExternaComponent } from './pages/tienda-externa/tienda-externa.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -62,7 +64,7 @@ const routes: Routes = [
   {path: "estrellas", component: EstrellasComponent},
   {path: "modificar-cita/:id", component: ModificarCitaComponent},
   { path: 'profile-tatuador-externa', component: ProfileTatuadorExternaComponent },
-  {path: "opinion", component: OpinionesComponent},
+  {path: "opinion", component: OpinionesComponent}
   {path: 'camara', component: CamaraComponent},
 ];
 
