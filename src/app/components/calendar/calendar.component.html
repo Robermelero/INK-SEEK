@@ -29,7 +29,11 @@
   <ng-container *ngIf="selectedDayCitas && selectedDayCitas.length > 0">
     <div class="cita-card" *ngFor="let cita of selectedDayCitas">
       <button (click)="goModificar(cita.id_cita)">
-        <p class="cliente">Cliente: {{ cita.name }} {{ cita.last_name }}</p>
+        <p class="cliente">
+          <ng-container *ngIf="is_Tatuador; else tatuadorText">Cliente</ng-container>
+          <ng-template #tatuadorText>Tatuador</ng-template>
+          : {{ cita.name }} {{ cita.last_name }}
+        </p>
         <p>Hora: {{ cita.hora.slice(0, 5) }}</p>
         <p>Especificaciones: {{ cita.asunto }}</p>
       </button>
