@@ -58,6 +58,7 @@
   .card {
     margin-bottom: 60px;
     margin-top: 30px;
+    background-color: var(---gris3);
   }
   
   .card:last-child{
