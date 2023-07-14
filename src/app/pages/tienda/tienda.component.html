@@ -9,8 +9,8 @@
     <div><img  src="./assets/images/flecha-atras.png" alt="" routerLink="/profile-tatuador-propia" routerLinkActive="active" class="atras"></div>
     <div class="buscador">
       <div class="input-wrapper">
-        <input type="text" placeholder="Buscar...">
-        <img src="/assets/img/lupa-gris.png" alt="Lupa" class="lupa-img">
+        <input type="text" placeholder="Buscar..." #id_prenda>
+        <button class ="boton-lupa"><img src="/assets/img/lupa-gris.png" alt="Lupa" class="lupa-img" (click)="find(id_prenda)"></button>
       </div>
     </div>
     <div class="mas" (click)="goAdd()" *ngIf="is_Tatuador">

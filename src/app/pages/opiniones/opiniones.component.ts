@@ -19,20 +19,24 @@ export class OpinionesComponent  {
   public emisor: number;
   public receptor: number;
   opinion :Opinion;
- 
+  public rating : number = 0;
+  public puntuacion :number;
+
 
   constructor(private router: Router, public userService: UserService) {
 
-    this.user = this.userService.user
+    // this.user = this.userService.user
     // console.log(this.user);
     // this.id_opiniones = this.router.getCurrentNavigation().extras.state['idOpiniones'];
     // this.emisor = this.router.getCurrentNavigation().extras.state['emisor1'];
     // console.log(this.router.getCurrentNavigation().extras.state['receptor']);
     
-    // this.receptor = this.router.getCurrentNavigation().extras.state['receptor'];
+
+    // console.log(this.receptor);
+    
     this.userService.getOpiniones(this.userService.user.id_user).subscribe((respuesta: Respuesta) => {
       console.log(respuesta.data_opinion);
-      this.user.opiniones = respuesta.data_opinion
+      this.opiniones = respuesta.data_opinion || []
       
       console.log(respuesta);
       
@@ -41,3 +45,14 @@ export class OpinionesComponent  {
   }
 
 }
+
+// getOpiniones(receptor: number){
+//   this.userService.getOpiniones(receptor).subscribe(
+//     (response) => {
+//       console.log(response);      
+//     }
+//   );
+// }
+
+
+// }

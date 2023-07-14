@@ -22,7 +22,9 @@ export class HomeCardComponent {
     .subscribe((res:any) => {
       this.userService.usuarioSeleccionado = res.data_user[0]
       this.router.navigate(['/profile-tatuador-externa']);
-      console.log(this.userService.usuarioSeleccionado.id_user);
+      this.userService.checkFollow(this.publicacionPadre.id_user).subscribe((isFollowed: boolean) => {
+        this.userService.usuarioSeleccionado.seguido = isFollowed;
     })
-  }
+  })
+}
 }
