@@ -6,7 +6,7 @@
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
-    max-width: 390px;
+    max-width: 100vw;
     min-height: auto;
 }
 
@@ -25,7 +25,14 @@
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
-    height: 750px;
+    height: 100vh;
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
 }
 
 /* //////////////////// */
@@ -60,12 +67,10 @@ input {
     width: 350px;
     background: linear-gradient(to right, rgba(0, 0, 0, 9), rgba(29,185,84, 0.3));
     box-shadow: 0 1px 25px rgba(0,0,0,);
-    top: 20%;
-    left: 50%;
     padding: 12px 10px;
     border-left: 3px solid var(--gris2);
     transition: transform 0.7s ease;
-    margin-bottom: 15px;
+    margin-bottom: 15px;   
 }
 
 .card:hover {

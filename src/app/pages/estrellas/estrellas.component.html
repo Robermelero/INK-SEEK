@@ -14,26 +14,27 @@
       <input type="radio" name="clr1" [(ngModel)]="rating" (click)="showResponseInput(1)">
     </div>
   </div>
-
-  <div class="card" *ngFor="let opinion of opiniones">
-    <div class="card2">
-      <div class="perfil"><img src="{{user.photo}}"></div>
-      <button class="eliminar"  (click)="borrarOpinion(opinion)">X</button>
-
-      <div class="nombre">{{opinion.name}}</div>
+  <div class="info">
+    <div class="card" *ngFor="let opinion of opiniones">
+      <div class="card2">
+        <div class="perfil"><img src="{{user.photo}}"></div>
+        <button class="eliminar"  (click)="borrarOpinion(opinion)">X</button>
+  
+        <div class="nombre">{{opinion.name}}</div>
+      </div>
+      <div class="estrellas">
+        <img *ngIf="rating >= 1" src="/assets/iconos/Star 1.png">
+        <img *ngIf="rating >= 2" src="/assets/iconos/Star 1.png">
+        <img *ngIf="rating >= 3" src="/assets/iconos/Star 1.png">
+        <img *ngIf="rating >= 4" src="/assets/iconos/Star 1.png">
+        <img *ngIf="rating >= 5" src="/assets/iconos/Star 1.png">
+      </div>
+      <div class="text2">{{opinion.comentario}}</div>
     </div>
-    <div class="estrellas">
-      <img *ngIf="rating >= 1" src="/assets/iconos/Star 1.png">
-      <img *ngIf="rating >= 2" src="/assets/iconos/Star 1.png">
-      <img *ngIf="rating >= 3" src="/assets/iconos/Star 1.png">
-      <img *ngIf="rating >= 4" src="/assets/iconos/Star 1.png">
-      <img *ngIf="rating >= 5" src="/assets/iconos/Star 1.png">
-    </div>
-    <div class="text2">{{opinion.comentario}}</div>
-  </div>
-
-  <div *ngIf="showInput">
-    <input type="text" placeholder="Deja tu opinión..." #opinion />
-    <button class="btn_" (click)="enviarOpinion(opinion, rating)">ENVIAR</button>
+  
+    <div *ngIf="showInput">
+      <input type="text" placeholder="Deja tu opinión..." #opinion />
+      <button class="btn_" (click)="enviarOpinion(opinion, rating)">ENVIAR</button>
+    </div>  
   </div>
 </div>
