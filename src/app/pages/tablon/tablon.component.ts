@@ -12,7 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class TablonComponent implements OnInit{
   public eventos: Evento [];
-  is_Tatuador: boolean = true;
+  is_Tatuador: boolean;
   search:string="";
   id_user:number
 
