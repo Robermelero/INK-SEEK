@@ -31,11 +31,11 @@ export class DescubrirArtistaComponent implements OnInit {
           this.userService.getArtistas()
           .subscribe((res:Respuesta) => {
             this.userService.artistas = res.data_artistas;
-            console.log(res);
+            
           })
         }else{
           this.userService.artistas = response.data;
-          console.log(response);
+          
         }        
       },
     );

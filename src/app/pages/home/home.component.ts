@@ -24,8 +24,7 @@ export class HomeComponent implements OnInit {
     this.homeService.getUserPhotos(this.id_user).subscribe(
       (res:any)=>{
         this.homeService.publicaciones=res.fotos[0]
-        console.log(this.homeService.publicaciones);
-        
+               
       }
     )
   }

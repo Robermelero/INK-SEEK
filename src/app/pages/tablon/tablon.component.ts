@@ -35,9 +35,6 @@ export class TablonComponent implements OnInit{
       (response:any)=>{
         this.eventos = response.eventos[0]
       },
-      (error)=>{
-        console.log(error);
-      }
     )
   }
   searchEvent() {

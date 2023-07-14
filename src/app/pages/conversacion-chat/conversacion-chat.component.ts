@@ -82,7 +82,7 @@ export class ConversacionChatComponent implements AfterViewInit {
     .subscribe((respuesta : Respuesta) => {
       this.userService.usuarioSeleccionado = respuesta.data_user[0]
       this.router.navigate(['/profile-tatuador-externa']);
-      console.log(respuesta.data_user);
+      
     })
   }
 }

@@ -35,7 +35,7 @@ export class AddProductoComponent {
     this.tiendaService.add(producto).subscribe((respuesta : Respuesta)=>{
       
       if(respuesta.data_prenda){
-        console.log("prenda añadida correctamente")
+        
       }
     })
     this.router.navigate(['/tienda'])

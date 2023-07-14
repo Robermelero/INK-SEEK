@@ -35,10 +35,10 @@ export class OpinionesComponent  {
     // console.log(this.receptor);
     
     this.userService.getOpiniones(this.userService.user.id_user).subscribe((respuesta: Respuesta) => {
-      console.log(respuesta.data_opinion);
+      
       this.opiniones = respuesta.data_opinion || []
       
-      console.log(respuesta);
+     
       
       
     });

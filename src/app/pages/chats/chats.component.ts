@@ -20,7 +20,7 @@ export class ChatsComponent {
     constructor(public chatService : ChatsService, public userService : UserService, public router : Router){
       this.chatService.getConversaciones(this.userService.user.id_user).subscribe((respuestaChat : RespuestaChat)=>{
         this.chats = respuestaChat.data_conversacion
-        console.log(this.chats)
+        
       })
     }
 
@@ -36,7 +36,7 @@ export class ChatsComponent {
       else{
         this.chatService.getConversaciones(this.userService.user.id_user).subscribe((respuestaChat : RespuestaChat)=>{
           this.chats = respuestaChat.data_conversacion
-          console.log(this.chats)
+          
         })
       }
     }
@@ -55,7 +55,7 @@ export class ChatsComponent {
 deleteChat(chat : Chat){
     this.chatService.deleteChat(chat.id_chat).subscribe((respuestaChat : RespuestaChat)=>{
       this.chats = this.chats.filter(chat1 => chat1.id_chat !== chat.id_chat)
-      console.log(respuestaChat)
+      
     })
   }
    

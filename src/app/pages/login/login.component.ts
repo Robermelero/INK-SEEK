@@ -44,27 +44,28 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log('Botón presionado');
     this.userService.login(this.user).subscribe((res: Respuesta) => {
-      console.log(res);
       if (res.mensaje === 'Los datos son correctos') {
-        console.log(res.mensaje);
         this.userService.logueado = true;
         this.userService.user = res.data_user[0];
-        console.log(this.userService.user);
         this.router.navigateByUrl('/home');
+
         if (res.data_user[0].is_Tatuador === 1) {
           this.userService.is_Tatuador = true;
-        } else {
+        } 
+        else {
           this.userService.is_Tatuador = false;
         }
+
         if (this.userService.is_Tatuador === true) {
           this.router.navigate(['/profile-tatuador-propia']);
-        } else {
+        } 
+        else {
           this.router.navigate(['/edit-profile-tatuador']);
         }
-      } else {
-        console.log('Error al iniciar sesión');
+        } 
+      else {
+        
         this.userService.logueado = false;
         this.toastr.error('Usuario o contraseña incorrectos', 'Error');
       }
