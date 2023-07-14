@@ -40,7 +40,7 @@
             <label class="name-label-email" >Descripción</label>
             <textarea #descripcion type="text" class="descripcion-input" [value]="this.usuario.descripcion"></textarea>
             <label class="name-label-contraseña">Contraseña</label>
-            <input type="text" #password placeholder=" " [value]="this.usuario.password" />
+            <input type="password" #password placeholder=" " [value]="this.usuario.password" />
             <div class="checkTatuador">
             <button routerLink="/profile-tatuador-propia" routerLinkActive="active" class="tatuador" (click)="info2(photo.value, name.value, nickname.value, last_name.value, email.value, studio.value, style.value, descripcion.value, password.value)">
                 <img src="./assets/Vector.png" alt="">
