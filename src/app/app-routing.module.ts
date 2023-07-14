@@ -64,8 +64,10 @@ const routes: Routes = [
   {path: "estrellas", component: EstrellasComponent},
   {path: "modificar-cita/:id", component: ModificarCitaComponent},
   { path: 'profile-tatuador-externa', component: ProfileTatuadorExternaComponent },
-  {path: "opinion", component: OpinionesComponent}
+  {path: "opinion", component: OpinionesComponent},
   {path: 'camara', component: CamaraComponent},
+  {path: "tienda-externa", component: TiendaExternaComponent}
+
 ];
 
 @NgModule({

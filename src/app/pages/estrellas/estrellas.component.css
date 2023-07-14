@@ -6,7 +6,7 @@
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
-    max-width: 390px;
+    max-width: 100%;
     min-height: auto;
 }
 
