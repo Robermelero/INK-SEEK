@@ -20,7 +20,7 @@
   <div class="card-container">
     <div *ngFor="let prenda of prendas" class="card">
       <div class="image">
-        <button  *ngIf="is_Tatuador" class="buter" type="button" (click)="delete(prenda)">X</button>
+        <button  *ngIf="is_Tatuador" class="buter" type="button" (click)="deleteProducto(prenda)">X</button>
         <img class="imagen" src="{{prenda.photo}}">
       </div>
       <p class="title" >{{prenda.name}}</p>

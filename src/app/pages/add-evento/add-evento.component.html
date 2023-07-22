@@ -7,7 +7,14 @@
     </section>
 
     <section class ="inputs">
-        <input type="text" placeholder="Cartel del evento"[(ngModel)]="photo" name="photo" class="imput">
+        <div style="display: flex; align-items: center;">
+            <input type="file" accept="image/*" (change)="onFileSelected($event)" #inputFile style="display: none;">
+            <label for="inputFile">
+              <input type="text" [value]="selectedImage || ''" placeholder="    Cartel del evento" class="imput" style="width: 350px;">
+              <img *ngIf="selectedImage" [src]="selectedImage" alt="Imagen seleccionada" class="imagen-seleccionada" style="margin-left: 10px; max-height: 100px;">
+              <img *ngIf="!selectedImage" src="/assets/iconos/galeria.png" alt="Abrir Galería" class="boton-galeria-img" (click)="inputFile.click()">
+            </label>
+          </div>
         <input type="text" placeholder="Nombre del evento"[(ngModel)]="title" name="title" class="imput">
         <input type="date" placeholder="fecha inicio" [(ngModel)]="fecha_inicio" name="fecha_inicio" class="imput">
         <input type="date" placeholder="Fecha fin "[(ngModel)]="fecha_final" name="fecha_final" class="imput"> 

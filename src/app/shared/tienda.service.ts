@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Prenda } from '../models/prenda';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { UserService } from './user.service';
+import { Respuesta } from '../models/respuesta';
 
 
 @Injectable({
@@ -11,37 +12,41 @@ import { UserService } from './user.service';
 export class TiendaService {
   private url = "http://localhost:3000/tienda"
   private url2 = "http://localhost:3000/tiendas"
-  public prenda : Prenda
+  public prendas: Prenda[] = [];
   constructor(private http : HttpClient, private userService : UserService) {
-      this.prenda = new Prenda();
    }
 
    getAll(id_user : number){
-    
     console.log(id_user);
-    return this.http.get(this.url+`?id_user=${id_user}`)
+    return this.http.get(`${this.url}?id_user=${id_user}`)
    }
 
    getAllUserExterno(id_user : number){
     console.log(id_user)
-    return this.http.get(this.url2+`?id_user=${id_user}`)
+    return this.http.get(`${this.url2}?id_user=${id_user}`)
    }
 
 
-   add(prenda : Prenda) : any{
-    // let iduser = this.userService.user.id_user;
-    console.log(prenda)
-   
-    return this.http.post(this.url, prenda)
-   }
+   add(prenda: Prenda): Observable<any> {
+    return this.http.post(this.url, prenda);
+  }
 
-   delete(idPhoto:number){
-    console.log('servicio');
-    
-    console.log(idPhoto)
-    const httpOptions = {headers: null, body:{id_photo : idPhoto}};
-    return this.http.delete(this.url, httpOptions)
-
+   delete(id_producto: number): Observable<any> {
+    console.log("servicio");
+    console.log(id_producto);
+    return this.http.delete(`${this.url}/${id_producto}`).pipe(
+      tap(() => {
+        // Realizar una nueva solicitud para obtener la lista actualizada de productos después de eliminar uno
+        this.getAll(this.userService.user.id_user).subscribe(
+          (respuesta: Respuesta) => {
+            this.prendas = respuesta.data_prenda;
+          },
+          (error) => {
+            console.error("Error al obtener la lista de productos:", error);
+          }
+        );
+      })
+    );
   }
    }
   

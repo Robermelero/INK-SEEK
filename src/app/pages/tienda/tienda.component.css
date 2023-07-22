@@ -45,7 +45,8 @@ position:absolute;
   /* border: 2px solid red; */
   width: 180px;
   position: absolute;
-  padding-top:243px;
+  padding-top:250px;
+  padding-left: 10px;
  
   color: var(--blanco);
   

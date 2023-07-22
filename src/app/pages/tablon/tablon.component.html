@@ -10,20 +10,18 @@
       <img src="/assets/Calendario/simbolo de mas.png" alt="">
     </div>
   </div>
-    <div class="eventos-lista">
-      <div class="evento-card" *ngFor="let evento of eventos">
-        <div class="foto">
-          <button class="buter" type="button" (click)="deleteEvent(evento)" *ngIf="evento.id_user === id_user">X</button> 
-          <img [src]="evento.photo" alt="Foto del evento" />
-          
-        </div>
-        <div class="contenido">
-          <h3>{{ evento.title }}</h3>
-          <p>Inicio {{ evento.fecha_inicio | date: 'dd/MM' }}</p>
-          <p>Final {{ evento.fecha_final | date: 'dd/MM/yyyy' }}</p>
-          <p>{{ evento.place }}</p>
-          
-        </div>
+  <div class="eventos-lista">
+    <div class="evento-card" *ngFor="let evento of eventos">
+      <div class="foto">
+        <button class="buter" type="button" (click)="deleteEvent(evento)" *ngIf="evento.id_user === id_user">X</button>
+        <img [src]="evento.photo" alt="Foto del evento" />
+      </div>
+      <div class="contenido">
+        <h3>{{ evento.title }}</h3>
+        <p>Inicio {{ evento.fecha_inicio | date: 'dd/MM' }}</p>
+        <p>Final {{ evento.fecha_final | date: 'dd/MM/yyyy' }}</p>
+        <p>{{ evento.place }}</p>
       </div>
     </div>
+  </div>
 </div>
