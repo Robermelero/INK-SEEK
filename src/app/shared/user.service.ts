@@ -111,4 +111,10 @@ export class UserService {
   getInfoArtista(id_user:number){
     return this.http.get(`${this.url}/chats/${id_user}`)
   }
+  public enviarRespuesta(opinion: Opinion): Observable<any> {
+    const url = `${this.url}/opiniones/${opinion.id_opiniones}`;
+    const data = { respuestaTatuador: opinion.respuestaTatuador};
+    return this.http.put(url, data);
+  }
+  
 }
