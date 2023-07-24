@@ -88,9 +88,11 @@
     margin-left: 15px;
   }
 
-  .estrellas img{
-    height: 20px;
-   
+  .perfil img{
+    height: 50px;
+    width: 60px;
+    border-radius: 6px;
+    object-fit: cover;
   }
 
   .perfil img{
@@ -142,4 +144,22 @@
 
 .estrellas img {
   margin-right: 5px; 
+  height: 20px;
+}
+
+/* //respuesta del tatuador */
+.respuesta-tatuador {
+  color: var(--gris3);
+  margin-top: 10px;
+  padding-top: 6px;
+  margin-left: 20px;
+  border-top: 1px solid var(--gris2);
+}
+
+.img-responder {
+  height: 20px;
+  width: 20px;
+  margin-left: 300px;
+  
+
 }

@@ -8,7 +8,8 @@ export class Opinion {
       public receptor?: number,
       public name?: string,
       public photo?: string,
-      public puntuacion?: number
+      public puntuacion?: number,
+      public respuestaTatuador?: string
     ) {}
   }
   

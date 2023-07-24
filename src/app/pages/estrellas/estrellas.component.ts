@@ -19,6 +19,8 @@ export class EstrellasComponent {
   opinion: Opinion;
   //****/
   rating: number = 0;
+  opinionesEmisor: Opinion[];
+
 
   constructor(private router: Router, public userService: UserService) {
     this.user = this.userService.user;
@@ -74,4 +76,25 @@ export class EstrellasComponent {
       
     });
   }
+
+  //get opiniones del emisor
+  // getOpinionesEmisor(emisor: number) {
+  //   this.userService.getOpinionesEmisor(emisor).subscribe(
+  //     (respuesta: Respuesta) => {
+  //       console.log(respuesta.data_opinion);
+  //       this.opinionesEmisor = respuesta.data_opinion || [];
+  //       console.log(respuesta);
+  //     },
+  //     (error) => {
+  //       console.error('Error fetching opinions:', error);
+  //     }
+  //   );
+  // }
+
+  
+  // ngOnInit() {
+  //   this.getOpinionesEmisor(this.user.id_user);
+  // }
+  
+
 }
