@@ -11,7 +11,7 @@ import { UserService } from 'src/app/shared/user.service';
   styleUrls: ['./tienda.component.css']
 })
 export class TiendaComponent implements OnInit {
-  public prendas: Prenda[];
+  public prendas: Prenda[]=[];
   public is_Tatuador: Boolean = true;
 
   constructor(private router: Router,
@@ -25,18 +25,31 @@ export class TiendaComponent implements OnInit {
     })
 
   }
+  convertirBase64ToImageUrl(base64String: string): string {
+    if (base64String) {
+      return 'data:image/jpeg;base64,' + base64String;
+    }
+    return '';
+  }
+
   goAdd() {
     this.router.navigate(['/add-producto'])
   }
 
-  delete(prenda: Prenda) {
-    
-    this.tiendaService.delete(prenda.id_photo).subscribe((respuesta: Respuesta) => {
-
-      this.prendas = this.prendas.filter(prenda1 => prenda1.id_photo !== prenda.id_photo)
-      
-    })
-
+  deleteProducto(prenda: Prenda) {
+    this.tiendaService.delete(prenda.id_producto).subscribe(
+      (respuesta: Respuesta) => {
+        if (!respuesta.error) {
+          // Eliminación exitosa, filtrar la lista de productos localmente para quitar el producto eliminado
+          this.prendas = this.prendas.filter((p) => p.id_producto !== prenda.id_producto);
+        } else {
+          console.error("Error al eliminar el producto:", respuesta.mensaje);
+        }
+      },
+      (error) => {
+        console.error("Error en la solicitud al servidor:", error);
+      }
+    );
   }
   find(id_prenda: HTMLInputElement) {
 

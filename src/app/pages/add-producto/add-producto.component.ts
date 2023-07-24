@@ -1,3 +1,5 @@
+// add-producto.component.ts
+
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Prenda } from 'src/app/models/prenda';
@@ -12,33 +14,56 @@ import { UserService } from 'src/app/shared/user.service';
 })
 export class AddProductoComponent {
 
+  public selectedImage: string | undefined;
+
   constructor(private router: Router, 
               public tiendaService : TiendaService,
               public userService : UserService,) {}
   
   goTienda(){
-    this.router.navigate(['/tienda'])
+    this.router.navigate(['/tienda']);
   }
 
-  public addProducto(newName : HTMLInputElement, newPhoto : HTMLInputElement){
-
-
-    let nombre = newName;
-    let foto = newPhoto;
-
-
-    let producto : Prenda ={
-      id_user : this.userService.user.id_user,
-      name : nombre.value,
-      photo : foto.value
+  onFileSelected(event: any) {
+    if (event.target.files && event.target.files.length > 0) {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        this.selectedImage = e.target?.result?.toString() || undefined;
+      };
+      reader.readAsDataURL(file);
+    } else {
+      this.selectedImage = undefined;
     }
-    this.tiendaService.add(producto).subscribe((respuesta : Respuesta)=>{
-      
-      if(respuesta.data_prenda){
-        
-      }
-    })
-    this.router.navigate(['/tienda'])
   }
 
+  addProducto(inputName: HTMLInputElement) {
+    if (!this.selectedImage || !inputName.value) {
+      return;
+    }
+  
+    const producto: Prenda = {
+      id_user: this.userService.user.id_user,
+      name: inputName.value,
+      photo: this.selectedImage,
+    };
+  
+    this.tiendaService.add(producto).subscribe(
+      () => {
+        this.tiendaService.getAll(this.userService.user.id_user).subscribe(
+          (data: Respuesta) => { // Asegurar que 'data' es de tipo Respuesta
+            this.tiendaService.prendas = data.data_prenda; // Acceder a 'data.data_prenda' directamente como 'data'
+            this.router.navigate(['/tienda']);
+          },
+          (error) => {
+            console.error("Error al obtener los productos:", error);
+          }
+        );
+      },
+      (error) => {
+        console.error("Error al agregar el producto:", error);
+      }
+    );
+  }
 }
+  

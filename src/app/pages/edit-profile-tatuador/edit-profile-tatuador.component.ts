@@ -12,6 +12,7 @@ export class EditProfileTatuadorComponent {
   public is_Tatuador: boolean;
   public usuario: User;
   public id_user: number;
+  public selectedImage: string = '';
 
   constructor(public userService: UserService) {
     this.usuario = this.userService.user;
@@ -19,43 +20,37 @@ export class EditProfileTatuadorComponent {
     this.id_user = this.userService.user.id_user;
     console.log(this.usuario);
   }
-  
-  info(newPhoto: HTMLInputElement, newName: HTMLInputElement, newLastname: HTMLInputElement, newEmail: HTMLInputElement, newPassword: HTMLInputElement) {
-    this.usuario.photo = newPhoto.value;
-    this.usuario.name = newName.value;
-    this.usuario.last_name = newLastname.value;
-    this.usuario.email = newEmail.value;
-    this.usuario.id_user = this.userService.user.id_user;
-    this.usuario.password = newPassword.value;
-    console.log(this.usuario);
-    this.userService.edit(this.usuario)
-      .subscribe((resp: Respuesta) => {
-        if (resp.mensaje === 'Los datos son correctos') {
-          this.userService.user = resp.data_user[0];
-        } else {
-          
-        }
-      });
+
+  onFileSelected(event: any) {
+    if (event.target.files && event.target.files.length > 0) {
+      const file = event.target.files[0];
+      // Validar el tamaño de la imagen antes de convertirla en Base64 (opcional)
+      if (file.size <= 10 * 1024 * 1024) {
+        // Crear un FileReader para leer la imagen seleccionada como base64
+        const reader = new FileReader();
+        reader.onload = (e: any) => {
+          // El resultado del FileReader será la imagen en formato base64
+          this.selectedImage = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      } else {
+        // Mostrar un mensaje de error al usuario
+        alert('La imagen seleccionada es demasiado grande. Por favor, elija una imagen más pequeña.');
+      }
+    } else {
+      this.selectedImage = '';
+    }
   }
 
-  info2(newPhoto: string, newName: string, nickname: string, newLastname: string, newEmail: string,  studio: string, style: string, descripcion: string, newPassword: string) {
-    this.usuario.id_user = this.userService.user.id_user;
-    this.usuario.photo = newPhoto;
-    this.usuario.name = newName;
-    this.usuario.last_name = newLastname;
-    this.usuario.email = newEmail;
-    this.usuario.password = newPassword;
-    this.usuario.nickname = nickname;
-    this.usuario.style = style;
-    this.usuario.studio = studio;
-    this.usuario.descripcion = descripcion;
+  guardarCambios() {
+    this.usuario.photo = this.selectedImage || this.usuario.photo;
     console.log(this.usuario);
     this.userService.edit(this.usuario)
       .subscribe((resp: Respuesta) => {
         if (resp.mensaje === 'Los datos son correctos') {
           this.userService.user = resp.data_user[0];
         } else {
-          
+          // Manejar el error aquí si es necesario
         }
       });
   }
