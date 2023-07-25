@@ -5,9 +5,11 @@
       <img src="/assets/img/lupa-gris.png" alt="Lupa" class="lupa-img"  >
     </div>
   </div>
-  <div class="card" >
+  <div class="card">
     <ng-container *ngFor="let publicacion of homeService.publicaciones">
-      <app-home-card [publicacionPadre] = "publicacion" (click)="mostrarPerfil(publicacion)"></app-home-card>
+      <div class="card-container">
+        <app-home-card [publicacionPadre]="publicacion" (click)="mostrarPerfil(publicacion)"></app-home-card>
+      </div>
     </ng-container>
   </div>
 </div>

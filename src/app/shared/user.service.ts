@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user';
 import { Opinion } from '../models/opinion';
+import { Respuesta } from '../models/respuesta';
 
 @Injectable({
   providedIn: 'root'
@@ -116,5 +117,9 @@ export class UserService {
     const data = { respuestaTatuador: opinion.respuestaTatuador};
     return this.http.put(url, data);
   }
+  public getPuntuacionMedia(id_user: number): Observable<any> {
+    return this.http.get<any>(`${this.url}/profile-tatuador-externa/${id_user}`);
+  }
+
   
 }

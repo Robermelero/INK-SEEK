@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Chat } from 'src/app/models/chat';
 import { Publicacion } from 'src/app/models/publicacion';
@@ -13,11 +13,13 @@ import { UserService } from 'src/app/shared/user.service';
   templateUrl: './profile-tatuador-externa.component.html',
   styleUrls: ['./profile-tatuador-externa.component.css']
 })
-export class ProfileTatuadorExternaComponent {
+export class ProfileTatuadorExternaComponent implements OnInit{
   public publicaciones: Publicacion[] = [];
-  
+  public puntuacionMedia: number = 0;
+  public hasPuntuaciones = true;
   public usuarioSeleccionado: User;
   public chatCreado : Chat
+  public starClasses: string[] = [];
 
   constructor(private router: Router, public userService: UserService, public chatService: ChatsService) {
     
@@ -26,6 +28,65 @@ export class ProfileTatuadorExternaComponent {
     this.usuarioSeleccionado.publicaciones = respuesta.data_foto;
 
       });  
+  }
+  ngOnInit(): void {
+    this.usuarioSeleccionado = this.userService.usuarioSeleccionado;
+    this.userService.getPuntuacionMedia(this.userService.usuarioSeleccionado.id_user).subscribe((respuesta: Respuesta) => {
+      if (respuesta.puntuacion_media !== null) {
+        this.puntuacionMedia = Number(respuesta.puntuacion_media);
+        this.hasPuntuaciones = true;
+        // Llamamos a la función para actualizar las clases de las estrellas
+        this.actualizarClasesEstrellas();
+      } else {
+        this.hasPuntuaciones = false;
+      }
+    });
+  }
+  
+
+  actualizarClasesEstrellas() {
+    const puntuacionEntera = Math.floor(this.puntuacionMedia);
+    const decimal = this.puntuacionMedia - puntuacionEntera;
+    const porcentajeRelleno = decimal * 100;
+  
+    this.starClasses = [];
+    for (let i = 1; i <= 5; i++) {
+      if (i <= puntuacionEntera) {
+        // Estrella completa
+        this.starClasses.push('fas fa-star');
+      } else if (i === puntuacionEntera + 1) {
+        // Estrella con relleno según el porcentaje decimal
+        const className = this.getStarClassNameByPercentage(porcentajeRelleno);
+        this.starClasses.push(className);
+      } else {
+        // Estrella vacía
+        this.starClasses.push('far fa-star');
+      }
+    }
+  }
+  
+  getStarClassNameByPercentage(percentage: number): string {
+    if (percentage >= 95) {
+      return 'fas fa-star';
+    } else if (percentage >= 85) {
+      return 'fas fa-star star-85';
+    } else if (percentage >= 75) {
+      return 'fas fa-star star-75';
+    } else if (percentage >= 65) {
+      return 'fas fa-star star-65';
+    } else if (percentage >= 55) {
+      return 'fas fa-star star-55';
+    } else if (percentage >= 45) {
+      return 'fas fa-star star-45';
+    } else if (percentage >= 35) {
+      return 'fas fa-star star-35';
+    } else if (percentage >= 25) {
+      return 'fas fa-star star-25';
+    } else if (percentage >= 15) {
+      return 'fas fa-star star-15';
+    } else {
+      return 'far fa-star';
+    }
   }
   toggleFollow() {
     if (this.userService.usuarioSeleccionado.seguido) {
@@ -54,9 +115,6 @@ export class ProfileTatuadorExternaComponent {
   quitarCaja(){
     }
   
-  ngOnInit(): void {
-    // this.usuarioSeleccionado = this.userService.usuarioSeleccionado;
-  }
   crearChat(){
   
 

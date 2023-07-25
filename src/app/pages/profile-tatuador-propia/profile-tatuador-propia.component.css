@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import '~@fortawesome/fontawesome-free/css/all.css';
 
 .fondo {
   min-height: 100vh;
@@ -36,14 +37,95 @@
   align-items:flex-start;
   justify-content: space-around;
 }
+.star-item {
+  font-size: 24px;
+  color: var(--principal);
+  position: relative;
+  overflow: hidden;
 
 
+}
+.star-rating .stars-outer {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 24px;
+  color: var(--principal);
+}
+
+.star-rating .stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 24px;
+  color: var(--gris1);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 
 
+}
 
+.fas.fa-star {
+  color: var(--principal);
+}
 
-.photo{
-  /* border: 2px solid magenta; */
+.fas.fa-star.star-85:before,
+.fas.fa-star.star-75:before,
+.fas.fa-star.star-65:before,
+.fas.fa-star.star-55:before,
+.fas.fa-star.star-45:before,
+.fas.fa-star.star-35:before,
+.fas.fa-star.star-25:before,
+.fas.fa-star.star-15:before {
+  content: "\f005";
+  position:relative;
+  top: 0;
+  left: 0;
+  color: var(--principal);
+  overflow: hidden;
+}
+
+.fas.fa-star.star-85:before {
+  clip-path: polygon(0 0, 85% 0, 85% 100%, 0% 100%);
+}
+
+.fas.fa-star.star-75:before {
+  clip-path: polygon(0 0, 75% 0, 75% 100%, 0% 100%);
+}
+
+.fas.fa-star.star-65:before {
+  clip-path: polygon(0 0, 65% 0, 65% 100%, 0% 100%);
+}
+
+.fas.fa-star.star-55:before {
+  clip-path: polygon(0 0, 55% 0, 55% 100%, 0% 100%);
+}
+
+.fas.fa-star.star-45:before {
+  clip-path: polygon(0 0, 45% 0, 45% 100%, 0% 100%);
+}
+
+.fas.fa-star.star-35:before {
+  clip-path: polygon(0 0, 35% 0, 35% 100%, 0% 100%);
+}
+
+.fas.fa-star.star-25:before {
+  clip-path: polygon(0 0, 25% 0, 25% 100%, 0% 100%);
+}
+
+.fas.fa-star.star-15:before {
+  clip-path: polygon(0 0, 15% 0, 15% 100%, 0% 100%);
+}
+
+.puntuacion-media {
+  margin-top: 30px;
+  color: var(--principal);
+  font-size: 20px;
+  
+}
+
+.photo {
   width: 170px;
   height: 170px;
   border-radius: 100%;
