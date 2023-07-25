@@ -12,9 +12,19 @@
         </div>
       </div>
       <div class="valoracion">
-        <a routerLink="/estrellas">
-          <img src="./assets/estrellas.png" alt="" routerLinkActive="active">
+        <a routerLink="/opiniones">
+          <div class="star-rating">
+            <span class="stars-outer">
+              <span class="stars-inner">
+                <!-- Primero mostramos la estrella vacía con el borde -->
+                <i class="empty-star"></i>
+                <!-- Luego mostramos las estrellas según la puntuaciónMedia -->
+                <i [ngClass]="starClasses[i]" *ngFor="let star of [0, 1, 2, 3, 4]; let i = index"></i>
+              </span>
+            </span>
+          </div>
         </a>
+        <div class="puntuacion-media" *ngIf="puntuacionMedia !== undefined">{{ puntuacionMedia.toFixed(1) }} de 5</div>
       </div>
     </div>
   </div>

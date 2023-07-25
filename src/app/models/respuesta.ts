@@ -13,7 +13,7 @@ export class Respuesta {
                 public data_prenda : Prenda[],
                 public data_artistas : User [],
                 public data_foto: Publicacion[],
-                
+                public puntuacion_media: number,
                 public data_opinion : Opinion[],
                 public id_opiniones : number ){}
 }
