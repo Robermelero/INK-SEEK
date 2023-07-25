@@ -17,24 +17,20 @@ export class TablonComponent implements OnInit {
   search: string = "";
   id_user: number;
 
-  constructor(
-    private router: Router,
-    private eventService: EventsService,
-    private userService: UserService,
-    private toastrService: ToastrService
-  ) {
-    this.id_user = this.userService.user.id_user;
-  }
-
-  public deleteEvent(evento: Evento) {
-    this.eventService.deleteEvent(evento.id_evento).subscribe(() => {
-      this.eventos = this.eventos.filter((newEvento) => newEvento.id_evento !== evento.id_evento);
-      this.toastrService.show("Evento borrado", null, { toastClass: "toast1" });
-    });
-  }
-
-  goAdd() {
-    this.router.navigate(['/add-evento']);
+  constructor(private router: Router, private eventService:EventsService, private userService:UserService,private toastrService:ToastrService){
+    this.id_user=this.userService.user.id_user
+    this.is_Tatuador=this.userService.user.is_Tatuador
+    
+   }
+   public deleteEvent(evento:Evento){
+    this.eventService.deleteEvent(evento.id_evento).subscribe(()=>{
+      this.eventos=this.eventos.filter((newEvento)=>newEvento.id_evento!==evento.id_evento);
+      this.toastrService.show("Evento borrado",null, {toastClass:"toast1"})
+      })
+    }
+    
+   goAdd(){
+    this.router.navigate(['/add-evento'])
   }
 
   ngOnInit(): void {
