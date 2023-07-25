@@ -19,8 +19,8 @@
         </div>
         <div class="contenido">
           <h3>{{ evento.title }}</h3>
-          <p>Inicio {{ evento.fecha_inicio | date: 'dd/MM' }}</p>
-          <p>Final {{ evento.fecha_final | date: 'dd/MM/yyyy' }}</p>
+          <p>Inicio {{ evento.fecha_inicio | date: 'dd/MM/yy' }}</p>
+          <p>Final {{ evento.fecha_final | date: 'dd/MM/yy' }}</p>
           <p>{{ evento.place }}</p>
           
         </div>

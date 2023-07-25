@@ -18,6 +18,8 @@ export class TablonComponent implements OnInit{
 
   constructor(private router: Router, private eventService:EventsService, private userService:UserService,private toastrService:ToastrService){
     this.id_user=this.userService.user.id_user
+    this.is_Tatuador=this.userService.user.is_Tatuador
+    
    }
    public deleteEvent(evento:Evento){
     this.eventService.deleteEvent(evento.id_evento).subscribe(()=>{
