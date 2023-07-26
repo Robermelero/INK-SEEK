@@ -58,7 +58,7 @@ export class UserService {
   }
 
   public getTatuadorInfo2(): Observable<any> {
-    return this.http.get(`${this.url}/profile-tatuador-externa/${this.usuarioSeleccionado.id_user}`);
+    return this.http.get(`${this.url}/profile-tatuador-propia/${this.usuarioSeleccionado.id_user}`);
   }
 
   public checkFollow(id_user: number): Observable<any> {
